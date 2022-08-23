@@ -2,7 +2,7 @@
 const foodRouter = require('express').Router();
 
 let foodModel = require('../models/food.model');
-
+let postFood = require("../models/foodPost.model");
 
 // post all the data 
 
@@ -31,6 +31,19 @@ foodRouter.get("/getallfoods", async (req, res) => {
     res.send({ "message": "get data successfully", dataGet });
 })
 
+// Delete each element in any  foods
+
+foodRouter.delete("/deleteeach", (req, res) => {
+    // console.log(req.query.id)
+    postFood.findByIdAndDelete(req.query.id)
+        .then(() => res.json(`${req.query.id} Deleted`))
+        .catch(err => res.status(400).json('Error' + err))
+
+})
+
+
+
+
 // Breakfast data
 
 
@@ -42,6 +55,40 @@ foodRouter.get("/getbreakfast", async (req, res) => {
     res.send({ "message": "breakfast data get", "count": breakfast.length, breakfast })
 
 })
+
+// breakfast post
+
+foodRouter.post("/postbreakfast", async (req, res) => {
+
+    const { food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium } = req.body;
+
+    const addData = new postFood({
+        food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium
+    })
+
+    await addData.save();
+    res.send({ "message": "Data successfullay added", addData });
+
+
+})
+
+
+//  Delete all Breakfast
+
+foodRouter.delete("/deletebreakfastall", (req, res) => {
+    // console.log(req.query.id)
+    postFood.deleteMany({ food: "breakfast" })
+        .then(() => res.json("breakfast Deleted"))
+        .catch(err => res.status(400).json('Error' + err))
+
+})
+
 
 
 // lunch data
@@ -55,6 +102,43 @@ foodRouter.get("/getlunch", async (req, res) => {
 
 })
 
+// lunch post
+
+foodRouter.post("/postlunch", async (req, res) => {
+
+    const { food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium } = req.body;
+
+    const addData = new postFood({
+        food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium
+    })
+
+    await addData.save();
+    res.send({ "message": "Data successfullay added", addData });
+
+
+})
+
+
+
+//  Delete all lunch
+
+foodRouter.delete("/deletelunchall", (req, res) => {
+    // console.log(req.query.id)
+    postFood.deleteMany({ food: "lunch" })
+        .then(() => res.json("lunch Deleted"))
+        .catch(err => res.status(400).json('Error' + err))
+
+})
+
+
+
+
 // dinner
 
 foodRouter.get("/getdineer", async (req, res) => {
@@ -63,6 +147,39 @@ foodRouter.get("/getdineer", async (req, res) => {
     // console.log(lunch);
 
     res.send({ "message": "dinner data get", "count": dinner.length, dinner })
+
+})
+
+// dinner post
+
+foodRouter.post("/postdinner", async (req, res) => {
+
+    const { food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium } = req.body;
+
+    const addData = new postFood({
+        food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium
+    })
+
+    await addData.save();
+    res.send({ "message": "Data successfullay added", addData });
+
+
+})
+
+
+//  Delete all dinner
+
+foodRouter.delete("/deletedinnerall", (req, res) => {
+    // console.log(req.query.id)
+    postFood.deleteMany({ food: "dinner" })
+        .then(() => res.json("dinner Deleted"))
+        .catch(err => res.status(400).json('Error' + err))
 
 })
 
@@ -77,7 +194,37 @@ foodRouter.get("/getsnacks", async (req, res) => {
 
 })
 
+// snacks post
 
+foodRouter.post("/postsnacks", async (req, res) => {
+
+    const { food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium } = req.body;
+
+    const addData = new postFood({
+        food, name, subName, img,
+        calories, carbs, protein, totalFat,
+        fdGrade, satFat, tranFat, sodium,
+        fiber, calcium
+    })
+
+    await addData.save();
+    res.send({ "message": "Data successfullay added", addData });
+
+
+})
+
+//  Delete all snacks
+
+foodRouter.delete("/deletesnacksall", (req, res) => {
+    // console.log(req.query.id)
+    postFood.deleteMany({ food: "snacks" })
+        .then(() => res.json("snacks Deleted"))
+        .catch(err => res.status(400).json('Error' + err))
+
+})
 
 
 module.exports = foodRouter;
