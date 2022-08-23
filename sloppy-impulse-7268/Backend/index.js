@@ -9,6 +9,9 @@ app.use(cors());
 const connection = require("./config/db");
 
 
+const foodRouter = require("./routes/foods.routes");
+app.use("/food", foodRouter);
+
 
 
 app.get("/", (req, res) => {
