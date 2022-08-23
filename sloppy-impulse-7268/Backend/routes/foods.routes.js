@@ -31,7 +31,7 @@ foodRouter.get("/getallfoods", async (req, res) => {
     res.send({ "message": "get data successfully", dataGet });
 })
 
-// Delete each element in any  foods
+// Delete  any one element foods
 
 foodRouter.delete("/deleteeach", (req, res) => {
     // console.log(req.query.id)
@@ -41,24 +41,9 @@ foodRouter.delete("/deleteeach", (req, res) => {
 
 })
 
+//  post any element
 
-
-
-// Breakfast data
-
-
-foodRouter.get("/getbreakfast", async (req, res) => {
-
-    const breakfast = await foodModel.find({ food: "breakfast" });
-    // console.log(breakfast);
-
-    res.send({ "message": "breakfast data get", "count": breakfast.length, breakfast })
-
-})
-
-// breakfast post
-
-foodRouter.post("/postbreakfast", async (req, res) => {
+foodRouter.post("/foodpost", async (req, res) => {
 
     const { food, name, subName, img,
         calories, carbs, protein, totalFat,
@@ -73,11 +58,40 @@ foodRouter.post("/postbreakfast", async (req, res) => {
     })
 
     await addData.save();
-    res.send({ "message": "Data successfullay added", addData });
+    res.send({ "message": `${food}  Data successfullay added`, addData });
 
 
 })
 
+
+
+
+// Breakfast all data==============================================================
+
+
+foodRouter.get("/getallbreakfast", async (req, res) => {
+
+    const breakfast = await foodModel.find({ food: "breakfast" });
+    // console.log(breakfast);
+
+    res.send({ "message": "breakfast data get", "count": breakfast.length, breakfast })
+
+})
+
+
+
+// Get Breakfast Post data
+
+
+foodRouter.get("/getpostbreakfast", async (req, res) => {
+
+    const breakfast = await postFood.find({ food: "breakfast" });
+    const calo = await postFood.findB(calories);
+    console.log(calo)
+    // const addition = await postFood.{calories:{$sum :}}
+    res.send({ "message": "breakfast post data data get", "count": breakfast.length, breakfast })
+
+})
 
 //  Delete all Breakfast
 
@@ -91,7 +105,7 @@ foodRouter.delete("/deletebreakfastall", (req, res) => {
 
 
 
-// lunch data
+// lunch data=================================================================
 
 foodRouter.get("/getlunch", async (req, res) => {
 
@@ -102,28 +116,17 @@ foodRouter.get("/getlunch", async (req, res) => {
 
 })
 
-// lunch post
+// Get lunch Post data
 
-foodRouter.post("/postlunch", async (req, res) => {
 
-    const { food, name, subName, img,
-        calories, carbs, protein, totalFat,
-        fdGrade, satFat, tranFat, sodium,
-        fiber, calcium } = req.body;
+foodRouter.get("/getpostlunch", async (req, res) => {
 
-    const addData = new postFood({
-        food, name, subName, img,
-        calories, carbs, protein, totalFat,
-        fdGrade, satFat, tranFat, sodium,
-        fiber, calcium
-    })
+    const lunch = await postFood.find({ food: "lunch" });
+    // console.log(breakfast);
 
-    await addData.save();
-    res.send({ "message": "Data successfullay added", addData });
-
+    res.send({ "message": "lunch post data data get", "count": lunch.length, lunch })
 
 })
-
 
 
 //  Delete all lunch
@@ -139,7 +142,7 @@ foodRouter.delete("/deletelunchall", (req, res) => {
 
 
 
-// dinner
+// dinner===========================================================================
 
 foodRouter.get("/getdineer", async (req, res) => {
 
@@ -150,28 +153,17 @@ foodRouter.get("/getdineer", async (req, res) => {
 
 })
 
-// dinner post
+// Get dinner Post data
 
-foodRouter.post("/postdinner", async (req, res) => {
 
-    const { food, name, subName, img,
-        calories, carbs, protein, totalFat,
-        fdGrade, satFat, tranFat, sodium,
-        fiber, calcium } = req.body;
+foodRouter.get("/getpostdinner", async (req, res) => {
 
-    const addData = new postFood({
-        food, name, subName, img,
-        calories, carbs, protein, totalFat,
-        fdGrade, satFat, tranFat, sodium,
-        fiber, calcium
-    })
+    const dinner = await postFood.find({ food: "dinner" });
+    // console.log(dinner);
 
-    await addData.save();
-    res.send({ "message": "Data successfullay added", addData });
-
+    res.send({ "message": "dinner post data data get", "count": dinner.length, dinner })
 
 })
-
 
 //  Delete all dinner
 
@@ -183,7 +175,9 @@ foodRouter.delete("/deletedinnerall", (req, res) => {
 
 })
 
-// snacks
+
+
+// snacks========================================================================
 
 foodRouter.get("/getsnacks", async (req, res) => {
 
@@ -194,27 +188,18 @@ foodRouter.get("/getsnacks", async (req, res) => {
 
 })
 
-// snacks post
+// Get snacks Post data
 
-foodRouter.post("/postsnacks", async (req, res) => {
 
-    const { food, name, subName, img,
-        calories, carbs, protein, totalFat,
-        fdGrade, satFat, tranFat, sodium,
-        fiber, calcium } = req.body;
+foodRouter.get("/getpostsnacks", async (req, res) => {
 
-    const addData = new postFood({
-        food, name, subName, img,
-        calories, carbs, protein, totalFat,
-        fdGrade, satFat, tranFat, sodium,
-        fiber, calcium
-    })
+    const snacks = await postFood.find({ food: "snacks" });
+    // console.log(snacks);
 
-    await addData.save();
-    res.send({ "message": "Data successfullay added", addData });
-
+    res.send({ "message": "snacks post data data get", "count": snacks.length, snacks })
 
 })
+
 
 //  Delete all snacks
 
