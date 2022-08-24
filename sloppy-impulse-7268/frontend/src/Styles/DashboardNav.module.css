@@ -1,0 +1,15 @@
+.tabClick {
+  border-bottom: 4px solid white;
+  color: white;
+  padding-bottom: 0.6rem;
+}
+.tab {
+  color: #c1d8af;
+  cursor: pointer;
+}
+
+.moreModel {
+  height: 20%;
+  padding: 10% 0 0 5%;
+  cursor: pointer;
+}
