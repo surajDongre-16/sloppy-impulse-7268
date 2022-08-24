@@ -13,3 +13,21 @@
   padding: 10% 0 0 5%;
   cursor: pointer;
 }
+
+.grid{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.dashBtn{
+  margin-top: 1rem;
+  position: absolute;
+  left: 12.5rem;
+
+}
+
+.btnGrp{
+  margin-top: 1rem;
+  width: 12rem;
+  position: relative;
+  left: 21rem;
+
+}
