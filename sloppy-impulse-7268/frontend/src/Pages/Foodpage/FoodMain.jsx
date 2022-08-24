@@ -4,26 +4,8 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { IoPencilSharp } from "react-icons/io5";
-import {
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-    Box,
-    Input,
-    Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
-    Flex,
-} from '@chakra-ui/react'
+import Breakfast from './Breakfast';
+
 
 function FoodMain() {
     return (
@@ -56,62 +38,32 @@ function FoodMain() {
                     <th><AiTwotoneSetting /></th>
                 </thead>
 
-                {/* <tbody>
-                    <tr> */}
 
-                <Accordion defaultIndex={[0]} allowMultiple>
-                    <AccordionItem w='100%'>
-                        <h2>
-                            <AccordionButton bg='rgb(239,240,237)'>
-                                <AccordionIcon fontSize='30px' />
-                                <Box pt='18px' pl='10px' textAlign='center' h='50px'>
+                <tbody>
+                    <tr>
 
-                                    BREAKFAST
-                                </Box>
-                                <Menu>
-                                    <MenuButton as={Button} ml='10px' color='blue.500' >
-                                        ADD
-                                    </MenuButton>
-                                    <MenuList>
-                                        <MenuItem>Same Breakfast</MenuItem>
-                                        <MenuItem>Recent Meal</MenuItem>
-                                        <MenuItem>Quick</MenuItem>
-                                    </MenuList>
-                                </Menu>
+                        {/* 
+                <tbody>
+                    <tr>
+                        <td data-lable="Consumed food, amount">1</td>
+                        <td data-lable="Calories">Calories</td>
+                        <td data-lable="Carbs g">Carbs g</td>
+                        <td data-lable="Protein g">Protein g</td>
+                        <td data-lable="Total Fat g">Total Fat g</td>
+                        <td data-lable="Fd. Grade">Fd. Grade</td>
+                        <td data-lable="Sat. Fat g">Sat. Fat g</td>
+                        <td data-lable="Trans Fat g">Trans Fat g</td>
+                        <td data-lable="Sodium mg">Sodium mg</td>
+                        <td data-lable="Fiber g">Fiber g</td>
+                        <td data-lable="Calcium %">Calcium %</td>
+                        <td data-lable="Marks"><BsThreeDotsVertical /></td>
+
+                    </tr>
+                </tbody> */}
 
 
 
-                            </AccordionButton>
-                        </h2>
-                        <AccordionPanel >
-
-                            {/* <tbody>
-                                <tr>
-                                    <td data-lable="Consumed food, amount">1</td>
-                                    <td data-lable="Calories">Calories</td>
-                                    <td data-lable="Carbs g">Carbs g</td>
-                                    <td data-lable="Protein g">Protein g</td>
-                                    <td data-lable="Total Fat g">Total Fat g</td>
-                                    <td data-lable="Fd. Grade">Fd. Grade</td>
-                                    <td data-lable="Sat. Fat g">Sat. Fat g</td>
-                                    <td data-lable="Trans Fat g">Trans Fat g</td>
-                                    <td data-lable="Sodium mg">Sodium mg</td>
-                                    <td data-lable="Fiber g">Fiber g</td>
-                                    <td data-lable="Calcium %">Calcium %</td>
-                                    <td data-lable="Marks"><BsThreeDotsVertical /></td>
-
-                                </tr>
-                            </tbody> */}
-                            <Flex >
-
-                                <Box mt='10px' mr='10px' fontSize='20px'><IoPencilSharp /> </Box>
-                                <Box w='30%'>   <Input variant='flushed' placeholder='Please enter food name, brand or restaurant' /></Box>
-                            </Flex>
-                        </AccordionPanel>
-                    </AccordionItem>
-                </Accordion>
-
-                {/* </tr>
+                    </tr>
                     <tr>
                         <td data-lable="Consumed food, amount">1</td>
                         <td data-lable="Calories">Calories</td>
@@ -128,10 +80,10 @@ function FoodMain() {
 
                     </tr>
 
-                </tbody> */}
+                </tbody>
 
             </table >
-
+            <Breakfast />
         </div >
     )
 }
