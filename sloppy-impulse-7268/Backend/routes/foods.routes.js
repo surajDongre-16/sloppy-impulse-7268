@@ -63,6 +63,34 @@ foodRouter.post("/foodpost", async (req, res) => {
 
 })
 
+// all food seperate calories counts
+
+foodRouter.get("/allcalories", async (req, res) => {
+
+
+    const allcolories = await postFood.aggregate([
+        {
+            $group: {
+                "_id": "$food",
+                "totalCalo": { "$sum": "$calories" },
+                "totalProtein": { "$sum": "$protein" },
+                "totalFat": { "$sum": "$totalFat" },
+                "totalCarbs": { "$sum": "$carbs" },
+                "totalSatFat": { "$sum": "$satFat" },
+                "totalSodium": { "$sum": "$sodium" },
+                "totalFiber": { "$sum": "$fiber" },
+                "totalCalcium": { "$sum": "$calcium" },
+
+
+            }
+        }
+    ])
+    res.send({ "message": `we got all food sum`, allcolories });
+
+})
+
+
+
 
 
 
@@ -86,8 +114,8 @@ foodRouter.get("/getallbreakfast", async (req, res) => {
 foodRouter.get("/getpostbreakfast", async (req, res) => {
 
     const breakfast = await postFood.find({ food: "breakfast" });
-    const calo = await postFood.findB(calories);
-    console.log(calo)
+    // const calo = await postFood.findB(calories);
+    // console.log(calo)
     // const addition = await postFood.{calories:{$sum :}}
     res.send({ "message": "breakfast post data data get", "count": breakfast.length, breakfast })
 
