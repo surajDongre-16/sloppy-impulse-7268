@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "../../Styles/DashboardNav.module.css";
 
 const tabs = [
@@ -14,12 +14,15 @@ const tabs = [
 ];
 const NavBottom = ({ onClick }) => {
   const [id, setId] = useState(1);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleBorder = (tab) => {
     setId(tab.id);
-    // onClick(tab);
-    navigate(tab.navigateTo);
+    // setSearchParams(tab.id)
+    onClick(tab)
+    // navigate(tab.navigateTo);
   };
+  console.log(id, "id");
+
   return (
     <Box h="40%" display="flex" justifyContent={"space-between"} color="white">
       {tabs.map((tab) => (

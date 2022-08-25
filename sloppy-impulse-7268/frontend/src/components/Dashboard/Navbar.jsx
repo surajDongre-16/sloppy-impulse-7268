@@ -3,17 +3,14 @@ import React from "react";
 import NavBottom from "./NavBottom";
 import NavTop from "./NavTop";
 
-const Navbar = ({ handlePage }) => {
-  const handleClick=(val)=>{
-    console.log("value in nav",val)
-    handlePage(val)
-  }
+const Navbar = ({setPath}) => {
+
   return (
     <Box>
       <Box bg="#3b8302" h="125px" border={"1px solid #3b8302"}>
         <Container maxW={"75rem"}>
           <NavTop />
-          <NavBottom onClick={(val) => handleClick(val)} />
+          <NavBottom onClick={(val) => setPath(val)} />
         </Container>
       </Box>
     </Box>

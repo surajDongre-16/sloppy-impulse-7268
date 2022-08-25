@@ -1,12 +1,11 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react'
-import Footer from '../../components/Dashboard/Footer';
-import Navbar from '../../components/Dashboard/Navbar';
+
 
 const Analysis = () => {
   return (
     <>
-      <Navbar />
-      <Footer />
+      <Box>Analysis Page</Box>
     </>
   );
 }
