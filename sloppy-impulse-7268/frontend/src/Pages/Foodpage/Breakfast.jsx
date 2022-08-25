@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoPencilSharp } from "react-icons/io5";
 import style from './Food.module.css'
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -24,6 +24,26 @@ import {
     Text,
 } from '@chakra-ui/react'
 function Breakfast() {
+    const [allData, setAllData] = useState();
+
+    const getAllData = async () => {
+        await fetch("http://localhost:8080/food/getallbreakfast")
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res.breakfast)
+                setAllData(res.breakfast)
+            })
+            .catch((err) => alert(err))
+    }
+
+    useEffect(() => {
+        getAllData();
+    }, [])
+
+    // allData?.map((item) => (
+    //     console.log(item)
+    // ))
+
     return (
         <div>
 
@@ -140,6 +160,13 @@ function Breakfast() {
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion >
+
+            {
+                allData?.map((i) => (
+                    <div> {i.food}</div>
+
+                ))
+            }
 
         </div >
     )
