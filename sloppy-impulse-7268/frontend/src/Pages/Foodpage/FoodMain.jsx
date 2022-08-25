@@ -5,15 +5,12 @@ import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import Breakfast from './Breakfast';
 import { Flex } from '@chakra-ui/react';
-import Navbar from '../../components/Dashboard/Navbar';
-import Footer from '../../components/Dashboard/Footer';
+
 
 
 function FoodMain() {
     return (
         <div>
-            <Navbar/>
-
 
             <table className={style.table}>
 
@@ -90,7 +87,6 @@ function FoodMain() {
 
             </table >
             <Breakfast />
-            <Footer/>
         </div >
     )
 }
