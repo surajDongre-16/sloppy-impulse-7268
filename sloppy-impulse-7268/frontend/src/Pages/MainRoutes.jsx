@@ -7,13 +7,13 @@ import Dashboard from "./Dashboard";
 
 import Homepage from "./Homepage";
 import Plan from "./Subpages/Plan";
-import Food from "./Subpages/Food";
+
 import Exercise from "./Subpages/Exercise";
 import Analysis from "./Subpages/Analysis";
 import Community from "./Subpages/Community";
 import Setting from "./Subpages/Setting";
 
-import PlanSidebar from "./PlanPage/PlanSidebar";
+
 import PlanWeight from "./PlanPage/PlanWeight";
 import PlanCarbs from "./PlanPage/PlanCarbs";
 import PlanExericse from "./PlanPage/PlanExericse";

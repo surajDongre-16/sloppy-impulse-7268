@@ -6,7 +6,6 @@
 }
 
 
-
 .table {
     width: 70%;
     margin: auto;
@@ -66,12 +65,12 @@
 
 /* breakfast table */
 .tableheadBreak th {
-    padding: 5px 18px;
+    padding: 1px 20px;
     border-right: 0.1px solid rgb(199, 199, 199);
 
 
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     height: 40px;
     font-weight: 400;
 }
@@ -79,13 +78,14 @@
 
 /* Added rows */
 
+#addedrows {}
 
 #addedrows td {
-    padding: 5px 18px;
+    padding: 1px 20px;
     border-right: 0.1px solid rgb(199, 199, 199);
     border-bottom: 0.1px solid rgb(199, 199, 199);
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     height: 40px;
     font-weight: 400;
     background-color: white;
@@ -101,6 +101,60 @@
     margin-left: 550px;
 } */
 
+
+
+
+.outermodal {
+    border-radius: 10px;
+    margin-left: 275px;
+    width: 35%;
+    background-color: rgb(235, 229, 241);
+    position: fixed;
+    z-index: 10px;
+}
+
+#mymodal {
+    display: flex;
+    cursor: pointer;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+#mymodal img {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}
+
+#mymodal span {
+
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: gray;
+}
+
+#mymodal div {
+
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+#mymodal:hover {
+    background-color: rgb(199, 199, 199);
+
+}
+
+.inputs {
+    width: 340px;
+    padding-top: 20px;
+
+    outline: none;
+    border-bottom: 1px solid black;
+}
 
 /* @media (min-width:0px)and (max-width:558px) {
     .table thead {
