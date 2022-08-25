@@ -82,7 +82,13 @@ const Footer = () => {
             <Flex className={styles.ftflex} w="10rem">
               <UnorderedList>
                 {l1.map((el) => (
-                  <ListItem key={el.id} mt="0.5rem" zIndex={'10'} cursor={"pointer"}>
+                  <ListItem
+                    key={el.id}
+                    mt="0.5rem"
+                    zIndex={"10"}
+                    cursor={"pointer"}
+                    _hover={{ borderBottom: "1px solid #afca99;" }}
+                  >
                     <a href="#">{el.text}</a>
                   </ListItem>
                 ))}
@@ -91,7 +97,12 @@ const Footer = () => {
             <Flex className={styles.ftflex} w="10rem">
               <UnorderedList>
                 {l2.map((el) => (
-                  <ListItem key={el.id} mt="0.5rem" cursor={"pointer"}>
+                  <ListItem
+                    key={el.id}
+                    mt="0.5rem"
+                    _hover={{ borderBottom: "1px solid #afca99;" }}
+                    cursor={"pointer"}
+                  >
                     <a href="#">{el.text}</a>
                   </ListItem>
                 ))}
@@ -100,7 +111,12 @@ const Footer = () => {
             <Flex className={styles.ftflex}>
               <UnorderedList>
                 {l3.map((el) => (
-                  <ListItem key={el.id} mt="0.5rem" cursor={"pointer"}>
+                  <ListItem
+                    key={el.id}
+                    mt="0.5rem"
+                    _hover={{ borderBottom: "1px solid #afca99;" }}
+                    cursor={"pointer"}
+                  >
                     <a href="#">{el.text}</a>
                   </ListItem>
                 ))}
@@ -109,7 +125,12 @@ const Footer = () => {
             <Flex className={styles.ftflex}>
               <UnorderedList>
                 {l4.map((el) => (
-                  <ListItem key={el.id} mt="0.5rem" cursor={"pointer"}>
+                  <ListItem
+                    key={el.id}
+                    mt="0.5rem"
+                    _hover={{ borderBottom: "1px solid #afca99;" }}
+                    cursor={"pointer"}
+                  >
                     <a href="#">{el.text}</a>
                   </ListItem>
                 ))}
