@@ -1,6 +1,7 @@
 import { Box, Button, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../components/Dashboard/Navbar';
 import style from './plan.module.css'
 export default function PlanSidebar() {
     const navigate = useNavigate();
@@ -30,37 +31,35 @@ export default function PlanSidebar() {
         setId(id)
     }
     return (
-
-
-        <Box w='25%' border='1px solid black'>
-
-
-            {buttons.map((item) => (
-                <Box
-                    className={` ${id === item.id ? style.lhbg : null}`}
-                    key={item.id}
-                    id={style.btnhover}
-                    onClick={() => handleBorder(item.id)}
-
-                >
-                    <button
-                        onClick={() => { navigate(item.navg) }}
-                        onMouseEnter={imgcolor}
-                        onMouseOut={imgcolorOut}
-                        w='100%'
-                        className={style.sliderbtn}
-                        variant='ghost'>
-                        <img
-                            className={` ${id === item.id || cl ? style.img2 : null}`}
-                            src={item.img1} alt='img' />
-                        {item.heading}
-                    </button>
-
-                </Box>
-            ))}
-
-
+      <>
+        <Box w="25%" border="1px solid black">
+          {buttons.map((item) => (
+            <Box
+              className={` ${id === item.id ? style.lhbg : null}`}
+              key={item.id}
+              id={style.btnhover}
+              onClick={() => handleBorder(item.id)}
+            >
+              <button
+                onClick={() => {
+                  navigate(item.navg);
+                }}
+                onMouseEnter={imgcolor}
+                onMouseOut={imgcolorOut}
+                w="100%"
+                className={style.sliderbtn}
+                variant="ghost"
+              >
+                <img
+                  className={` ${id === item.id || cl ? style.img2 : null}`}
+                  src={item.img1}
+                  alt="img"
+                />
+                {item.heading}
+              </button>
+            </Box>
+          ))}
         </Box>
-
-    )
+      </>
+    );
 }
