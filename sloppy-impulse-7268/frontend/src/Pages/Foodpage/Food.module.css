@@ -11,22 +11,31 @@
     width: 70%;
     margin: auto;
     border-collapse: collapse;
+    margin-top: 50px;
 }
 
-.table th,
-.table td {
+.table th {
     padding: 12px 5px;
     border: 1px solid black;
     text-align: center;
+    font-size: 12px;
+    height: 40px;
+    font-weight: 500;
 }
 
 /* .table th {
     background-color: aquamarine;
 } */
+.table th:nth-child(12) {
+    width: 70px;
+    padding-left: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
 
 .table th:nth-child(1) {
     color: red;
-    width: 400px;
+    width: 300px;
 
 }
 
@@ -34,6 +43,7 @@
     display: flex;
     justify-content: space-around;
     width: 25%;
+    /* font-size: 12px; */
 
 }
 
@@ -46,10 +56,43 @@
 }
 
 
+/* breakfast table */
+.tableheadBreak th {
+    padding: 5px 18px;
+    border-right: 0.1px solid rgb(199, 199, 199);
 
 
+    text-align: center;
+    font-size: 10px;
+    height: 40px;
+    font-weight: 400;
+}
 
-@media (min-width:0px)and (max-width:558px) {
+
+/* Added rows */
+
+
+#addedrows td {
+    padding: 5px 18px;
+    border-right: 0.1px solid rgb(199, 199, 199);
+    border-bottom: 0.1px solid rgb(199, 199, 199);
+    text-align: center;
+    font-size: 10px;
+    height: 40px;
+    font-weight: 400;
+}
+
+#addedrows td:nth-child(1) {
+    border-left: 0.1px solid rgb(199, 199, 199);
+    width: 285px;
+}
+
+/* .tableBreak td:nth-child(1) {
+    margin-left: 550px;
+} */
+
+
+/* @media (min-width:0px)and (max-width:558px) {
     .table thead {
         display: none;
     }
@@ -87,4 +130,4 @@
         color: aqua;
     }
 
-}
+} */
