@@ -5,13 +5,17 @@
     box-sizing: border-box;
 }
 
+/* body {
+    background-color: #f0f0f0;
 
+} */
 
 .table {
     width: 70%;
     margin: auto;
     border-collapse: collapse;
     margin-top: 50px;
+    background-color: white;
 }
 
 .table th {
@@ -21,6 +25,7 @@
     font-size: 12px;
     height: 40px;
     font-weight: 500;
+    background-color: white;
 }
 
 /* .table th {
@@ -34,8 +39,9 @@
 }
 
 .table th:nth-child(1) {
-    color: red;
+
     width: 300px;
+    background-color: white;
 
 }
 
@@ -43,12 +49,17 @@
     display: flex;
     justify-content: space-around;
     width: 25%;
+    background-color: white;
+
+
     /* font-size: 12px; */
 
 }
 
 .tablehead1 div:nth-child(1) {
     font-size: 20px;
+    background-color: white;
+
 }
 
 .tablehead1 div:nth-child(2) {
