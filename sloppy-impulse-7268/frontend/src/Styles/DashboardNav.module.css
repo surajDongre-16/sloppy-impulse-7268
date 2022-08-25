@@ -31,3 +31,17 @@
   left: 21rem;
 
 }
+
+.bx1dot{
+  font-size: 2rem;
+  position: absolute;
+  left: 31rem;
+  bottom: 2rem;
+}
+
+.dtBord{
+  border-bottom: dashed ;
+  width: 32rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
