@@ -6,6 +6,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import styles from "../../Styles/DashboardNav.module.css";
+import Box1 from "./Box1";
 import Box2 from "./Box2";
 import Box3 from "./Box3";
 import Box5 from "./Box5";
@@ -50,7 +51,9 @@ const MiddleSection = () => {
           bg="white"
           h="38rem"
           className={styles.grid}
-        ></GridItem>
+        >
+            <Box1/>
+        </GridItem>
         <GridItem area="bx2" bg="white" className={styles.grid}>
           <Box2 />
         </GridItem>
