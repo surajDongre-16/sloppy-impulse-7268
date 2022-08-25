@@ -1,12 +1,15 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react'
+import MiddleSection from '../components/Dashboard/MiddleSection';
 import Navbar from '../components/Dashboard/Navbar'
 
 
 const Dashboard = () => {
   return (
-    <div>
+    <Box bg="#f0f0f0">
       <Navbar />
-    </div>
+      <MiddleSection />
+    </Box>
   );
 }
 
