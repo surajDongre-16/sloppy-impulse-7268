@@ -4,6 +4,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import Breakfast from './Breakfast';
+import { Flex } from '@chakra-ui/react';
 
 
 function FoodMain() {
@@ -15,14 +16,14 @@ function FoodMain() {
 
                 <thead>
                     <th>
-                        <div style={{ display: "flex" }}>
+                        <Flex>
                             <div className={style.tablehead1}>
                                 <div><BiSearchAlt2 /></div>
                                 <div>  <AiFillStar /></div>
                                 <img style={{ width: "20px" }} src='https://s3.amazonaws.com/img.mynetdiary.com/premiumrecipe/ic_premium_recipes.png' alt="img" />
                             </div>
-                            <div style={{ paddingLeft: '50px', color: 'gray', fontSize: '12px' }}><p>Consumed food, amount</p></div>
-                        </div>
+                            <div style={{ background: "white", paddingLeft: '50px', color: 'gray', fontSize: '12px' }}>Consumed food, amount</div>
+                        </Flex>
                     </th>
                     <th>Calories</th>
                     <th>Carbs g</th>

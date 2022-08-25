@@ -29,7 +29,7 @@ function Breakfast() {
 
 
             <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
-                <AccordionItem>
+                <AccordionItem >
 
                     <AccordionButton bg='rgb(239,240,237)' >
                         <AccordionIcon fontSize='30px' />

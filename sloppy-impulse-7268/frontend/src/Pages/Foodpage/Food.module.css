@@ -5,10 +5,7 @@
     box-sizing: border-box;
 }
 
-/* body {
-    background-color: #f0f0f0;
 
-} */
 
 .table {
     width: 70%;
@@ -91,11 +88,13 @@
     font-size: 10px;
     height: 40px;
     font-weight: 400;
+    background-color: white;
 }
 
 #addedrows td:nth-child(1) {
     border-left: 0.1px solid rgb(199, 199, 199);
     width: 285px;
+    background-color: white;
 }
 
 /* .tableBreak td:nth-child(1) {

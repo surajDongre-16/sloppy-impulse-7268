@@ -1,9 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+
     box-sizing: border-box;
 }
+
+
 
 .lhbg {
     background-color: rgb(199, 199, 199);

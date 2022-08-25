@@ -26,7 +26,6 @@ const MainRoutes = () => {
         <Route path="/food" element={<FoodMain />} />
 
         {/* Plan Routes */}
-        <Route path="/planhome" element={<PlanSidebar />} />
         <Route path="/planweight" element={<PlanWeight />} />
         <Route path="/plancarbs" element={<PlanCarbs />} />
         <Route path="/planexericse" element={<PlanExericse />} />
