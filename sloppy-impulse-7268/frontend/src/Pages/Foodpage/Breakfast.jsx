@@ -47,9 +47,6 @@ function Breakfast() {
     useEffect(() => {
         getAllData();
 
-
-
-
     }, [])
 
     useEffect(() => {
@@ -68,9 +65,10 @@ function Breakfast() {
 
     }, [])
 
-    // allData?.map((item) => (
-    //     console.log(item)
-    // ))
+
+    const handelPostBreak = (data) => {
+        console.log(data)
+    }
 
     return (
         <div>
@@ -159,9 +157,9 @@ function Breakfast() {
             <div className={style.outermodal}>
 
                 {
-                    suggestion && searching?.map((i) => (
+                    suggestion && searching?.map((i, index) => (
                         <div id={style.mymodal} key={i._id}>
-                            <div style={{ display: 'flex' }}>
+                            <div onClick={handelPostBreak(index)} style={{ display: 'flex' }}>
                                 <img src={i.img} alt='img' />
                                 <div> {i.name}</div>
                                 <span>{i.subName}</span>
@@ -171,105 +169,6 @@ function Breakfast() {
                     ))
                 }
             </div>
-
-
-
-
-
-
-            <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
-                <AccordionItem >
-
-                    <AccordionButton bg='rgb(239,240,237)' >
-                        <AccordionIcon fontSize='30px' />
-
-
-                        <Flex textAlign='center' mt='-5px' h='40px'>
-                            <Box w='20%' >
-                                <Flex  >
-                                    <Text pl='10px'> BREAKFAST</Text>
-
-
-                                </Flex>
-                            </Box>
-                            <Box w='80%' ml='60px' >
-                                <thead className={style.tableheadBreak}  >
-<tr>
-                                    <th data-lable="Calories">Calories</th>
-                                    <th data-lable="Carbs g">Carbs g</th>
-                                    <th data-lable="Protein g">Protein g</th>
-                                    <th data-lable="Total Fat g">Total Fat g</th>
-                                    <th data-lable="Fd. Grade">Fd. Grade</th>
-                                    <th data-lable="Sat. Fat g">Sat. Fat g</th>
-                                    <th data-lable="Trans Fat g">Trans Fat g</th>
-                                    <th data-lable="Sodium mg">Sodium mg</th>
-                                    <th data-lable="Fiber g">Fiber g</th>
-                                    <th data-lable="Calcium %">Calcium %</th>
-                                    <th data-lable="Marks"><BsThreeDotsVertical /></th>
-
-                                    </tr>
-                                </thead>
-                            </Box>
-                        </Flex>
-
-
-
-
-                    </AccordionButton>
-
-                    <AccordionPanel >
-                        <Box mt='-10px'>
-
-                            <tbody id={style.addedrows}>
-                                <tr>
-                                    <td data-lable="Consumed food, amount">1</td>
-                                    <td data-lable="Calories">Calories</td>
-                                    <td data-lable="Carbs g">Carbs g</td>
-                                    <td data-lable="Protein g">Protein g</td>
-                                    <td data-lable="Total Fat g">Total Fat g</td>
-                                    <td data-lable="Fd. Grade">Fd. Grade</td>
-                                    <td data-lable="Sat. Fat g">Sat. Fat g</td>
-                                    <td data-lable="Trans Fat g">Trans Fat g</td>
-                                    <td data-lable="Sodium mg">Sodium mg</td>
-                                    <td data-lable="Fiber g">Fiber g</td>
-                                    <td data-lable="Calcium %">Calcium %</td>
-                                    <td data-lable="Marks"><BsThreeDotsVertical /></td>
-
-                                </tr>
-
-                            </tbody>
-                        </Box>
-                        <Flex mt='10px'>
-
-                            <Box mt='15px' fontSize='20px'><IoPencilSharp /> </Box>
-
-                            <Box w='40%' ml='-20px' >
-                                <input
-                                    className={style.inputs}
-                                    onChange={handleChange}
-                                    onFocus={() => setSuggestion(true)}
-
-                                    placeholder='Please enter food name, brand or restaurant' />
-                            </Box>
-
-
-                        </Flex>
-
-                    </AccordionPanel>
-                </AccordionItem>
-            </Accordion >
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
