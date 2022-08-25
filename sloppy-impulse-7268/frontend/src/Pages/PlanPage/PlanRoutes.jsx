@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from "react-router-dom";
 import PlanCarbs from './PlanCarbs';
 import PlanExericse from './PlanExericse';
+import PlanNutrient from './PlanNutrient';
 import PlanSidebar from './PlanSidebar';
 import PlanWeight from './PlanWeight';
 function PlanRoutes() {
@@ -14,6 +15,7 @@ function PlanRoutes() {
 
                 <Route path="plancarbs" element={<PlanCarbs />} />
                 <Route path="/planexericse" element={<PlanExericse />} />
+                <Route path="/plannutrient" element={<PlanNutrient />} />
 
             </Routes>
 
