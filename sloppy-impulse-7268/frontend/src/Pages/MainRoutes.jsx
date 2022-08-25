@@ -19,12 +19,14 @@ import PlanCarbs from "./PlanPage/PlanCarbs";
 import PlanExericse from "./PlanPage/PlanExericse";
 import PlanNutrient from "./PlanPage/PlanNutrient";
 import PlanCycling from "./PlanPage/PlanCycling";
+import Library from "./Library";
 
 const MainRoutes = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path='/library' element={<Library/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path="/dashboard/plan" element={<PlanWeight />} />
         <Route path="/dashboard/food" element={<FoodMain />} />
