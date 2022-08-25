@@ -13,12 +13,33 @@ import Analysis from "./Subpages/Analysis";
 import Community from "./Subpages/Community";
 import Setting from "./Subpages/Setting";
 
+import PlanSidebar from "./PlanPage/PlanSidebar";
+import PlanWeight from "./PlanPage/PlanWeight";
+import PlanCarbs from "./PlanPage/PlanCarbs";
+import PlanExericse from "./PlanPage/PlanExericse";
+import PlanNutrient from "./PlanPage/PlanNutrient";
+import PlanCycling from "./PlanPage/PlanCycling";
+
+
 
 const MainRoutes = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        {/* food */}
+        <Route path="/food" element={<FoodMain />} />
+
+        {/* Plan Routes */}
+        <Route path="/planweight" element={<PlanWeight />} />
+        <Route path="/plancarbs" element={<PlanCarbs />} />
+        <Route path="/planexericse" element={<PlanExericse />} />
+        <Route path="/plannutrient" element={<PlanNutrient />} />
+        <Route path="/plancycling" element={<PlanCycling />} />
+
+        <Route path="/" element={<Homepage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
 
         <Route path="/" element={<Homepage />} />
         <Route path="/dashboard" element={<Dashboard />} />

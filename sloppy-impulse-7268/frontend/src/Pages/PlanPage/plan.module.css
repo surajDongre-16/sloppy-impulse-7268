@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+
+.lhbg {
+    background-color: rgb(199, 199, 199);
+
+}
+
+.sliderbtn {
+    padding: 10px 20px;
+    display: flex;
+
+}
+
+.sliderbtn img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.img2 {
+    background-color: rgb(199, 199, 199);
+
+}
+
+#btnhover {
+    transition: 0.3s;
+}
+
+#btnhover:hover {
+    background-color: rgb(199, 199, 199);
+    transition: 0.3s;
+}
