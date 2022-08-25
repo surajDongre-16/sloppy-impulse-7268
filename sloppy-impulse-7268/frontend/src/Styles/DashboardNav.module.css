@@ -13,3 +13,59 @@
   padding: 10% 0 0 5%;
   cursor: pointer;
 }
+
+.grid {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.dashBtn {
+  margin-top: 1rem;
+  position: absolute;
+  left: 12.5rem;
+}
+
+.btnGrp {
+  margin-top: 1rem;
+  width: 12rem;
+  position: relative;
+  left: 21rem;
+}
+
+.bx1dot {
+  font-size: 2rem;
+  position: absolute;
+  left: 31rem;
+  bottom: 2rem;
+}
+
+.dtBord {
+  border-bottom: dashed;
+  width: 32rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  height: 25rem;
+  background-color: #3b8302;
+}
+
+.ft1 {
+  width: 73rem;
+  margin: auto;
+  position: relative;
+}
+
+.ftimg {
+  position: absolute;
+  width: 38rem;
+  z-index: 1;
+}
+
+.ftflex {
+  flex-direction: column;
+  height: 20rem;
+  margin-top: 2rem;
+  color:#afca99;
+ text-align: left;
+}

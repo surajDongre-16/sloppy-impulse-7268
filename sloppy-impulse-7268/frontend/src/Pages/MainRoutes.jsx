@@ -15,6 +15,7 @@ import PlanNutrient from "./PlanPage/PlanNutrient";
 import PlanCycling from "./PlanPage/PlanCycling";
 
 
+
 const MainRoutes = () => {
   return (
     <div>
@@ -34,6 +35,7 @@ const MainRoutes = () => {
 
         <Route path="/" element={<Homepage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+
 
       </Routes>
     </div>
