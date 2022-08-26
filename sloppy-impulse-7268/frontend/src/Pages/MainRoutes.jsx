@@ -20,6 +20,7 @@ import PlanExericse from "./PlanPage/PlanExericse";
 import PlanNutrient from "./PlanPage/PlanNutrient";
 import PlanCycling from "./PlanPage/PlanCycling";
 import Library from "./Library";
+import Signup from "./Signup";
 
 const MainRoutes = () => {
   return (
@@ -28,6 +29,7 @@ const MainRoutes = () => {
         <Route path="/" element={<Homepage />} />
         <Route path='/library' element={<Library/>} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/signup' element={<Signup/>}/>
         {/* <Route path="/dashboard/plan" element={<PlanWeight />} />
         <Route path="/dashboard/food" element={<FoodMain />} />
         <Route path="/dashboard/exercise" element={<Exercise />} />
