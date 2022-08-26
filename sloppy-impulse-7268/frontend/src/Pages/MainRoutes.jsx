@@ -7,7 +7,7 @@ import Dashboard from "./Dashboard";
 
 import Homepage from "./Homepage";
 
-import Plan from "./Subpages/Plan";
+// import Plan from "./Subpages/Plan";
 
 import Exercise from "./Subpages/Exercise";
 import Analysis from "./Subpages/Analysis";
