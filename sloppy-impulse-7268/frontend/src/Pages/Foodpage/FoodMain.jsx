@@ -14,8 +14,6 @@ function FoodMain() {
     return (
         <>
             <div>
-
-
                 <table className={style.table}>
 
                     <thead>
@@ -41,53 +39,6 @@ function FoodMain() {
                         <th>Calcium %</th>
                         <th><AiTwotoneSetting /></th>
                     </thead>
-
-
-                    {/* <tbody>
-                    <tr width='10px'>
-
-                        
-                <tbody>
-                    <tr>
-                        <td data-lable="Consumed food, amount">1</td>
-                        <td data-lable="Calories">Calories</td>
-                        <td data-lable="Carbs g">Carbs g</td>
-                        <td data-lable="Protein g">Protein g</td>
-                        <td data-lable="Total Fat g">Total Fat g</td>
-                        <td data-lable="Fd. Grade">Fd. Grade</td>
-                        <td data-lable="Sat. Fat g">Sat. Fat g</td>
-                        <td data-lable="Trans Fat g">Trans Fat g</td>
-                        <td data-lable="Sodium mg">Sodium mg</td>
-                        <td data-lable="Fiber g">Fiber g</td>
-                        <td data-lable="Calcium %">Calcium %</td>
-                        <td data-lable="Marks"><BsThreeDotsVertical /></td>
-
-                    </tr>
-                </tbody>
-
-                        <Breakfast />
-
-
-                    </tr>
-                    <tr>
-                        <td data-lable="Consumed food, amount">1</td>
-                        <td data-lable="Calories">Calories</td>
-                        <td data-lable="Carbs g">Carbs g</td>
-                        <td data-lable="Protein g">Protein g</td>
-                        <td data-lable="Total Fat g">Total Fat g</td>
-                        <td data-lable="Fd. Grade">Fd. Grade</td>
-                        <td data-lable="Sat. Fat g">Sat. Fat g</td>
-                        <td data-lable="Trans Fat g">Trans Fat g</td>
-                        <td data-lable="Sodium mg">Sodium mg</td>
-                        <td data-lable="Fiber g">Fiber g</td>
-                        <td data-lable="Calcium %">Calcium %</td>
-                        <td data-lable="Marks"><BsThreeDotsVertical /></td>
-
-                    </tr>
-
-                </tbody> */}
-
-
 
                 </table >
                 <div>

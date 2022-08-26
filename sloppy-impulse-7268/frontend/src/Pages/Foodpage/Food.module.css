@@ -116,6 +116,7 @@
 
 #addedrows td img {
     width: 25px;
+    height: 25px;
     float: left;
     margin-left: -10px;
 }
