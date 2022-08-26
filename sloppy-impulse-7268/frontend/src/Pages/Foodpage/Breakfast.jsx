@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IoPencilSharp } from "react-icons/io5";
 import style from './Food.module.css'
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { useParams } from "react-router-dom";
 
 import {
     Accordion,
@@ -12,6 +13,7 @@ import {
     Box,
     Flex,
     Text,
+    CircularProgress,
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
@@ -20,7 +22,11 @@ function Breakfast() {
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
     const [breakPostData, setBreakPostData] = useState();
-    
+    const [render, setRender] = useState(false);
+    const [totalCal, setTotalCal] = useState();
+
+    // let params = useParams();
+    // console.log(params)
 
     const autoComepeleteRef = useRef();
 
@@ -37,7 +43,7 @@ function Breakfast() {
                 console.log(res.breakfast)
                 setAllData(res.breakfast)
             })
-            .catch((err) => alert(err))
+            .catch((err) => console.log("errrrr", err))
     }
 
     const handelPostBreak = async (data) => {
@@ -67,8 +73,9 @@ function Breakfast() {
             .then((res) => {
                 console.log(res.breakfast)
                 setBreakPostData(res.breakfast)
+                setRender(true)
             })
-            .catch((err) => alert(err))
+            .catch((err) => console.log(err))
     }
 
     const deleteBreakPostDataOne = async (id) => {
@@ -83,7 +90,7 @@ function Breakfast() {
             .then((res) => res.json())
             .then((res) => {
                 console.log(res)
-                alert("Your Task Deleted Successfully done")
+                // alert("Your Task Deleted Successfully done")
                 // console.log("hii")
                 // setData(res)
                 // window.location.reload();
@@ -92,9 +99,29 @@ function Breakfast() {
             .catch((err) => console.log(err))
     }
 
+
+    const getAllCalories = async () => {
+        // http://localhost:8080/food/allcalories
+
+        await fetch("http://localhost:8080/food/allcalories")
+            .then((res) => res.json())
+            .then((res) => {
+                console.log("allcalories", res.allcolories)
+                let dtat = res.allcolories.filter(option => option._id == 'breakfast')
+                // setBreakPostData(res.breakfast)
+
+
+
+                setTotalCal(dtat)
+                console.log(dtat)
+
+            })
+            .catch((err) => console.log(err))
+    }
     useEffect(() => {
         getPostBreakData();
-    }, [])
+        getAllCalories();
+    }, [render])
 
     useEffect(() => {
         getAllData();
@@ -126,9 +153,7 @@ function Breakfast() {
 
     return (
         <div>
-
-
-            <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
+            {allData ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
                     <AccordionButton bg='rgb(239,240,237)' >
@@ -142,23 +167,26 @@ function Breakfast() {
 
                                 </Flex>
                             </Box>
-                            <Box w='90%' ml='80px' >
-                                <thead className={style.tableheadBreak}  >
-                                    <tr>
-                                        <th data-lable="Calories">Calories</th>
-                                        <th data-lable="Carbs g">Carbs g</th>
-                                        <th data-lable="Protein g">Protein g</th>
-                                        <th data-lable="Total Fat g">Total Fat g</th>
-                                        <th data-lable="Fd. Grade">Fd. Grade</th>
-                                        <th data-lable="Sat. Fat g">Sat. Fat g</th>
-                                        <th data-lable="Trans Fat g">Trans Fat g</th>
-                                        <th data-lable="Sodium mg">Sodium mg</th>
-                                        <th data-lable="Fiber g">Fiber g</th>
-                                        <th data-lable="Calcium %">Calcium %</th>
-                                        <th data-lable="Marks"><BsThreeDotsVertical /></th>
-                                    </tr>
+                            <Box w='90%' ml='150px' >
+                                {totalCal?.map((item) => (
+                                    <thead className={style.tableheadBreak}  >
 
-                                </thead>
+                                        <tr>
+                                            <th data-lable="Calories">{item.totalCalo}</th>
+                                            <th data-lable="Carbs g">{item.totalCarbs}</th>
+                                            <th data-lable="Protein g">{item.totalProtein}</th>
+                                            <th data-lable="Total Fat g">{item.totalFat}</th>
+                                            <th data-lable="Fd. Grade">A</th>
+                                            <th data-lable="Sat. Fat g">{item.totalSatFat}</th>
+                                            <th data-lable="Trans Fat g">0</th>
+                                            <th data-lable="Sodium mg">{item.totalSodium}</th>
+                                            <th data-lable="Fiber g">{item.totalFiber}</th>
+                                            <th data-lable="Calcium %">{item.totalCalcium}</th>
+                                            <th data-lable="Marks"><BsThreeDotsVertical /></th>
+                                        </tr>
+
+                                    </thead>
+                                ))}
                             </Box>
                         </Flex>
 
@@ -173,17 +201,24 @@ function Breakfast() {
 
                                 <tbody id={style.addedrows} key={item._id} >
                                     <tr>
-                                        <td data-lable="Consumed food, amount"> </td>
-                                        <td data-lable="Calories">Calories</td>
-                                        <td data-lable="Carbs g">Carbs g</td>
-                                        <td data-lable="Protein g">Protein g</td>
-                                        <td data-lable="Total Fat g">Total Fat g</td>
-                                        <td data-lable="Fd. Grade">Fd. Grade</td>
-                                        <td data-lable="Sat. Fat g">Sat. Fat g</td>
-                                        <td data-lable="Trans Fat g">Trans Fat g</td>
-                                        <td data-lable="Sodium mg">Sodium mg</td>
-                                        <td data-lable="Fiber g">Fiber g</td>
-                                        <td data-lable="Calcium %">Calcium %</td>
+                                        <td data-lable="Consumed food, amount">
+                                            <div className={style.fisrstColoum}>
+                                                <img src={item.img} alt='img' />
+                                                <p>{item.name}</p>
+                                                <p>,{item.subName}</p>
+                                            </div>
+                                        </td>
+
+                                        <td data-lable="Calories">{item.calories}</td>
+                                        <td data-lable="Carbs g">{item.carbs}</td>
+                                        <td data-lable="Protein g">{item.protein}</td>
+                                        <td data-lable="Total Fat g">{item.totalFat}</td>
+                                        <td data-lable="Fd. Grade">{item.fdGrade}</td>
+                                        <td data-lable="Sat. Fat g">{item.satFat}</td>
+                                        <td data-lable="Trans Fat g">{item.tranFat}</td>
+                                        <td data-lable="Sodium mg">{item.sodium}</td>
+                                        <td data-lable="Fiber g">{item.fiber}</td>
+                                        <td data-lable="Calcium %">{item.calcium}</td>
                                         <td onClick={() => deleteBreakPostDataOne(item._id)} data-lable="Marks"><BsThreeDotsVertical /></td>
 
                                     </tr>
@@ -210,7 +245,8 @@ function Breakfast() {
 
                     </AccordionPanel>
                 </AccordionItem>
-            </Accordion >
+            </Accordion > : <CircularProgress isIndeterminate value={30} size='120px' />
+            }
             <div className={style.outermodal}>
 
                 {

@@ -15,7 +15,7 @@
 }
 
 .table th {
-    padding: 12px 5px;
+    padding: 12px 6px;
     border: 1px solid black;
     text-align: center;
     font-size: 12px;
@@ -65,23 +65,36 @@
 
 /* breakfast table */
 .tableheadBreak th {
-    padding: 1px 20px;
+    padding: 16px 30px;
     border-right: 0.1px solid rgb(199, 199, 199);
-
-
+    cursor: pointer;
+    border-left: 0.1px solid rgb(199, 199, 199);
+    font-size: 12px;
     text-align: center;
     font-size: 12px;
     height: 40px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
+.tableheadBreak th:nth-last-child(-n+1) {
+    border: none;
+
+}
+
+.tableheadBreak th:nth-child(1) {
+    color: green;
+}
 
 /* Added rows */
 
-#addedrows {}
+#hov:hover {
+    background-color: red;
+
+
+}
 
 #addedrows td {
-    padding: 1px 20px;
+    padding: 16px 29px;
     border-right: 0.1px solid rgb(199, 199, 199);
     border-bottom: 0.1px solid rgb(199, 199, 199);
     text-align: center;
@@ -89,6 +102,44 @@
     height: 40px;
     font-weight: 400;
     background-color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#addedrows td img {
+    width: 25px;
+    float: left;
+    margin-left: -10px;
+}
+
+#addedrows td:nth-child(2) {
+    color: green;
+}
+
+#addedrows td:nth-last-child(-n+1):hover {
+    background-color: rgb(199, 199, 199);
+    transition: 0.3s;
+}
+
+
+.fisrstColoum {
+    display: flex;
+    margin-left: 0;
+}
+
+.fisrstColoum p:nth-child(2) {
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 5px;
+
+}
+
+.fisrstColoum p:nth-child(3) {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(199, 199, 199);
+
 }
 
 #addedrows td:nth-child(1) {
@@ -97,9 +148,7 @@
     background-color: white;
 }
 
-/* .tableBreak td:nth-child(1) {
-    margin-left: 550px;
-} */
+
 
 
 
