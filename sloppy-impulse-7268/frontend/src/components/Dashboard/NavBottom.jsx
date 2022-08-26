@@ -18,7 +18,7 @@ const NavBottom = ({ onClick }) => {
   const handleBorder = (tab) => {
     setId(tab.id);
     // setSearchParams(tab.id)
-    onClick(tab)
+    onClick(tab.navigateTo)
     // anavigate(tab.navigateTo);
   };
   console.log(id, "id");
