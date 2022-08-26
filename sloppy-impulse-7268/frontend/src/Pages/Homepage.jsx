@@ -9,10 +9,15 @@ import SixthComponents from "../components/Homepage/06_sixth";
 import SeventhComponent from "../components/Homepage/07_seventhComponent";
 import EighthComponent from "../components/Homepage/08_Eighth";
 import Footer from "../components/Homepage/footer";
+import Navbar from "./Navbar";
 
 const Homepage = () => {
   return (
     <Box>
+      <Navbar />
+      <br></br>
+      <br></br>
+      <br></br>
       <Firstcomponent />
       <SecondComponent />
       <ThirdComponent />

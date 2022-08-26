@@ -1,0 +1,21 @@
+.first {
+  align-items: center;
+  color: #466a9c;
+  cursor: pointer;
+  border-bottom: 1px dotted #999999;
+  height: 4rem;
+}
+
+.accord {
+  text-align: left;
+  color: #466a9c;
+  font-size: 1.5rem;
+}
+
+.head {
+  color: #268fd0;
+  text-align: left;
+  margin-left: 1rem;
+  border-bottom: 1px dotted #999999;
+  padding: 1rem 0;
+}

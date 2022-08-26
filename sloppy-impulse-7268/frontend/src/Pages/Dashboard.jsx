@@ -1,26 +1,29 @@
 import { Box } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
 import Footer from '../components/Dashboard/Footer';
 import MiddleSection from '../components/Dashboard/MiddleSection';
 import Navbar from '../components/Dashboard/Navbar'
+import FoodMain from './Foodpage/FoodMain';
+import PlanWeight from './PlanPage/PlanWeight';
+import Analysis from './Subpages/Analysis';
+import Community from './Subpages/Community';
+import Exercise from './Subpages/Exercise';
+import Setting from './Subpages/Setting';
 
 
 const Dashboard = () => {
-  const [current,setCurrent]=useState()
-  const navigate=useNavigate()
-  const handlePage=(page)=>{
-    setCurrent(page)
-  }
-  // useEffect(() => {
-  //   navigate(current.navigateTo)
-  // }, [current,navigate])
-  
-  console.log(current,"curr")
+  const [path,setPath]=useState("")
+  console.log(path.navigateTo,"path")
   return (
     <Box bg="#f0f0f0">
-      <Navbar handlePage={handlePage} />
-      <MiddleSection />
+      <Navbar setPath={setPath} />
+      {path.navigateTo === "/dashboard" ? <MiddleSection /> : ""}
+      {path.navigateTo === "/dashboard/plan" ? <PlanWeight /> : ""}
+      {path.navigateTo === "/dashboard/food" ? <FoodMain /> : ""}
+      {path.navigateTo === "/dashboard/exercise" ? <Exercise /> : ""}
+      {path.navigateTo === "/dashboard/analysis" ? <Analysis /> : ""}
+      {path.navigateTo === "/dashboard/community" ? <Community /> : ""}
+      {path.navigateTo === "/dashboard/settings" ? <Setting /> : ""}
       <Footer />
     </Box>
   );

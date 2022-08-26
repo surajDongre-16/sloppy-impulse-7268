@@ -11,6 +11,7 @@ import React from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
+import DatePicker from "react-horizontal-datepicker";
 import styles from "../../Styles/DashboardNav.module.css";
 
 const Box1 = () => {
@@ -179,13 +180,13 @@ const Box1 = () => {
       </Box>
       <Box w="35rem" m="0 auto">
         <Flex>
-          <AiOutlineLeft
-            size="1.5rem"
-            color="#3c9ec3"
-          />
+          <AiOutlineLeft size="1.5rem" color="#3c9ec3" />
           <Box className={styles.dtBord}></Box>
           <AiOutlineRight size="1.5rem" color="#3c9ec3" />
         </Flex>
+        <Box>
+          <DatePicker color={"#5cc028"} />
+        </Box>
       </Box>
     </>
   );

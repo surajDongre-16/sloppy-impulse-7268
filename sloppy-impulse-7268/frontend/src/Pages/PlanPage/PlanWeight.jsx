@@ -1,5 +1,6 @@
-import { Box, Flex, Input, Text } from '@chakra-ui/react'
+import { Flex, Input, Text } from '@chakra-ui/react'
 import React from 'react'
+
 import PlanSidebar from './PlanSidebar'
 
 function PlanWeight() {
@@ -36,7 +37,6 @@ function PlanWeight() {
                 </div>
 
             </Flex>
-
         </div >
     )
 }
