@@ -4,7 +4,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import Breakfast from './Breakfast';
-import { Box, Flex, Progress } from '@chakra-ui/react';
+import { Box, Flex, Progress, Text } from '@chakra-ui/react';
 import Lunch from './Lunch';
 import Dinner from './Dinner';
 import Snacks from './Snacks';
@@ -52,16 +52,44 @@ function FoodMain() {
             </div >
             <Flex w='70%' m='auto' h='300px' border='1px solid red'>
                 <Box mt='50px' w='25%' border='1px solid black'>
-                    <Flex>
-                        <Box pl='5px' pt='5px'>Carbs</Box>
-                        <Box pl='30px' pt='10px'>
+                    <Flex >
+                        <Box pl='5px' pt='15px'>Carbs</Box>
+                        <Box position='absolute' pl='70px' >
+                            <Text>59% cals, 14% over</Text>
+                            <Progress colorScheme='green' size='md' value={20} w='190px' />
+                        </Box>
+                    </Flex>
+                    <Flex mt='40px' >
+                        <Box pl='5px' pt='15px'>Protine</Box>
+                        <Box position='absolute' pl='70px' >
+                            <Text>7% cals, 13% under</Text>
+                            <Progress colorScheme='green' size='md' value={20} w='190px' />
+                        </Box>
+                    </Flex>
+                    <Flex mt='40px' >
+                        <Box pl='5px' pt='15px'>Fat</Box>
+                        <Box position='absolute' pl='70px'>
+                            <Text >7% cals, 13% under</Text>
                             <Progress colorScheme='green' size='md' value={20} w='190px' />
                         </Box>
                     </Flex>
                 </Box>
-                <Box></Box>
-                <Box></Box>
-                <Box></Box>
+                <Box w='25%' h='100%' border='1px solid red'>
+
+                </Box>
+                <Box display='flex' w='50%' justifyContent='space-evenly' border='1px solid green' h='50%'>
+                    <Box w='4%' h='80%' bg='green' ></Box>
+                    <Box h='50%' w='4%' bg='green' ></Box>
+                    <Box h='50%' w='4%' bg='green' ></Box>
+                    <Box h='50%' w='4%' bg='green' ></Box>
+                    <Box h='50%' w='4%' bg='green' ></Box>
+                    <div className="App">
+                        <h4> React Suite Progress Vertical</h4>
+                        <Progress.Line vertical />
+                        <Progress.Line percent={60} vertical={true} />
+                    </div>
+                </Box>
+
 
             </Flex>
             <Box h='1000px'>

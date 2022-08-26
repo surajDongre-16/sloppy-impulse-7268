@@ -168,7 +168,7 @@
 
     background-color: rgb(235, 229, 241);
     position: absolute;
-    z-index: 10px;
+    z-index: 3;
 }
 
 #mymodal {
