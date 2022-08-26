@@ -166,7 +166,7 @@
     width: 35%;
 
     background-color: rgb(235, 229, 241);
-    position: fixed;
+    position: absolute;
     z-index: 10px;
 }
 
