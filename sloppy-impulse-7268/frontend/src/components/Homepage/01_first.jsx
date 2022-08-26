@@ -10,12 +10,14 @@ const Firstcomponent = () => {
       overflow={"hidden"}
       // border="1px solid blue"
       pb="200px"
+      mt="3%"
       _before={{
         position: "absolute",
         display: "block",
         width: "100%",
         height: "60%",
         // background: '#4ea403',
+
         background:
           "url(https://s3.amazonaws.com/img.mynetdiary.com/images/texture-noise@1x.png),radial-gradient(ellipse at top,#05b24a 0,#05963d 60%)",
         borderBottomRightRadius: "100rem 5rem",
