@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import Footer from '../components/Dashboard/Footer';
 import MiddleSection from '../components/Dashboard/MiddleSection';
 import Navbar from '../components/Dashboard/Navbar'
+import AnalysisPage from './Analysis Page/AnalysisPage';
 import FoodMain from './Foodpage/FoodMain';
 import PlanWeight from './PlanPage/PlanWeight';
-import Analysis from './Subpages/Analysis';
 import Community from './Subpages/Community';
 import Exercise from './Subpages/Exercise';
 import Setting from './Subpages/Setting';
@@ -21,7 +21,7 @@ const Dashboard = () => {
       {path === "/dashboard/plan" ? <PlanWeight /> : ""}
       {path === "/dashboard/food" ? <FoodMain /> : ""}
       {path === "/dashboard/exercise" ? <Exercise /> : ""}
-      {path === "/dashboard/analysis" ? <Analysis /> : ""}
+      {path === "/dashboard/analysis" ? <AnalysisPage/> : ""}
       {path === "/dashboard/community" ? <Community /> : ""}
       {path === "/dashboard/settings" ? <Setting /> : ""}
       <Footer />
