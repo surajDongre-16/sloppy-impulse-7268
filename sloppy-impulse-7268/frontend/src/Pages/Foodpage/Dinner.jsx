@@ -44,11 +44,11 @@ function Dinner() {
 
 
     const getAllData = async () => {
-        await fetch("http://localhost:8080/food/getallbreakfast")
+        await fetch("http://localhost:8080/food/getdineer")
             .then((res) => res.json())
             .then((res) => {
-                console.log(res.breakfast)
-                setAllData(res.breakfast)
+                console.log(res.dinner)
+                setAllData(res.dinner)
             })
             .catch((err) => console.log("errrrr", err))
     }
@@ -82,16 +82,16 @@ function Dinner() {
     // get the post data
 
     const getPostBreakData = async () => {
-        await fetch("http://localhost:8080/food/getpostbreakfast")
+        await fetch("http://localhost:8080/food/getpostdinner")
             .then((res) => res.json())
             .then((res) => {
-                if (res.breakfast.length > 0) {
+                if (res.dinner.length > 0) {
                     setDelete(true)
                 }
                 else {
                     setDelete(false)
                 }
-                setBreakPostData(res.breakfast)
+                setBreakPostData(res.dinner)
 
             })
             .catch((err) => console.log(err))
