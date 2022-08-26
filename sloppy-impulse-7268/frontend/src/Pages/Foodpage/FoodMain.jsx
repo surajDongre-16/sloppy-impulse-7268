@@ -5,6 +5,8 @@ import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import Breakfast from './Breakfast';
 import { Flex } from '@chakra-ui/react';
+import Lunch from './Lunch';
+import Dinner from './Dinner';
 
 
 function FoodMain() {
@@ -87,6 +89,8 @@ function FoodMain() {
 
             </table >
             <Breakfast />
+            <Lunch />
+            <Dinner />
         </div >
     )
 }

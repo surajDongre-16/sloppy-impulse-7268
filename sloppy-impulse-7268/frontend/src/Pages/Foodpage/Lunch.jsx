@@ -17,38 +17,38 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Breakfast() {
-    const [allData, setAllData] = useState();
+function Lunch() {
+    const [allDatalunch, setAllDatalunch] = useState();
     const [value, setValue] = useState("");
-    const [suggestion, setSuggestion] = useState(false);
-    const [breakPostData, setBreakPostData] = useState();
-    const [totalCal, setTotalCal] = useState();
-    const [deleteAll, setDelete] = useState(false);
+    const [suggestionlunch, setSuggestionlunch] = useState(false);
+    const [lunchPostData, setLunchPostData] = useState();
+    const [totalCalLunch, setTotalCalLunch] = useState();
+    const [headDatalnch, setHeadDatalunch] = useState(false);
 
     // let params = useParams();
-    // if (breakPostData?.length > 0) {
+    // if (lunchPostData?.length > 0) {
     //     setDelete(true)
     // }
-    // console.log(breakPostData.length)
+    // console.log(lunchPostData.length)
 
     const autoComepeleteRef = useRef();
 
-    const searching = allData?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
+    const searching = allDatalunch?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
 
 
     const handleChange = (e) => {
         setValue(e.target.value);
     }
 
-    // get all Breakfast data from data base
+    // get all Lunch data from data base
 
 
     const getAllData = async () => {
-        await fetch("http://localhost:8080/food/getallbreakfast")
+        await fetch("http://localhost:8080/food/getlunch")
             .then((res) => res.json())
             .then((res) => {
-                console.log(res.breakfast)
-                setAllData(res.breakfast)
+                console.log(res.lunch)
+                setAllDatalunch(res.lunch)
             })
             .catch((err) => console.log("errrrr", err))
     }
@@ -82,16 +82,17 @@ function Breakfast() {
     // get the post data
 
     const getPostBreakData = async () => {
-        await fetch("http://localhost:8080/food/getpostbreakfast")
+        await fetch("http://localhost:8080/food/getpostlunch")
             .then((res) => res.json())
             .then((res) => {
-                if (res.breakfast.length > 0) {
-                    setDelete(true)
+                console.log("lunchCount   ", res.lunch.length)
+                if (res.lunch.length > 0) {
+                    setHeadDatalunch(true)
                 }
                 else {
-                    setDelete(false)
+                    setHeadDatalunch(false)
                 }
-                setBreakPostData(res.breakfast)
+                setLunchPostData(res.lunch)
 
             })
             .catch((err) => console.log(err))
@@ -162,12 +163,12 @@ function Breakfast() {
             .then((res) => res.json())
             .then((res) => {
                 console.log("allcalories", res.allcolories)
-                let dtat = res.allcolories.filter(option => option._id == 'breakfast')
-                // setBreakPostData(res.breakfast)
+                let dtat = res.allcolories.filter(option => option._id == 'lunch')
+                // setLunchPostData(res.breakfast)
 
 
 
-                setTotalCal(dtat)
+                setTotalCalLunch(dtat)
                 console.log(dtat)
 
             })
@@ -187,7 +188,7 @@ function Breakfast() {
     useEffect(() => {
         const handleOutSideClick = (e) => {
             if (autoComepeleteRef.current && !autoComepeleteRef.current.contains(e.target)) {
-                setSuggestion(false)
+                setSuggestionlunch(false)
             }
         }
 
@@ -200,13 +201,13 @@ function Breakfast() {
 
     }, [])
 
-    console.log("break post data" + breakPostData)
+    console.log("break post data" + lunchPostData)
 
 
 
     return (
         <div>
-            {allData ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
+            {allDatalunch ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
                     <AccordionButton bg='rgb(239,240,237)' >
@@ -221,7 +222,7 @@ function Breakfast() {
                                 </Flex>
                             </Box>
                             <Box w='90%' ml='150px' >
-                                {deleteAll && totalCal?.map((item) => (
+                                {headDatalnch && totalCalLunch?.map((item) => (
                                     <thead className={style.tableheadBreak}  >
 
                                         <tr>
@@ -252,7 +253,7 @@ function Breakfast() {
 
                     <AccordionPanel >
                         <Box mt='-10px'>
-                            {breakPostData?.map((item) => (
+                            {lunchPostData?.map((item) => (
 
                                 <tbody id={style.addedrows} key={item._id} >
                                     <tr>
@@ -290,7 +291,7 @@ function Breakfast() {
                                 <input
                                     className={style.inputs}
                                     onChange={handleChange}
-                                    onFocus={() => setSuggestion(true)}
+                                    onFocus={() => setSuggestionlunch(true)}
 
                                     placeholder='Please enter food name, brand or restaurant' />
                             </Box>
@@ -305,7 +306,7 @@ function Breakfast() {
             <div className={style.outermodal}>
 
                 {
-                    suggestion ? searching?.map((item, index) => (
+                    suggestionlunch ? searching?.map((item, index) => (
                         <div id={style.mymodal} key={item._id}>
                             <div onClick={() => { handelPostBreak(item) }} >
                                 <div style={{ display: 'flex' }}>
@@ -329,4 +330,4 @@ function Breakfast() {
     )
 }
 
-export default Breakfast
+export default Lunch

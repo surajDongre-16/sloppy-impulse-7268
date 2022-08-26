@@ -17,7 +17,7 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Breakfast() {
+function Dinner() {
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
@@ -40,7 +40,7 @@ function Breakfast() {
         setValue(e.target.value);
     }
 
-    // get all Breakfast data from data base
+    // get all Dinner data from data base
 
 
     const getAllData = async () => {
@@ -329,4 +329,4 @@ function Breakfast() {
     )
 }
 
-export default Breakfast
+export default Dinner
