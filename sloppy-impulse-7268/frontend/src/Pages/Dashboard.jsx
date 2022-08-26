@@ -12,18 +12,18 @@ import Setting from './Subpages/Setting';
 
 
 const Dashboard = () => {
-  const [path,setPath]=useState("")
-  console.log(path.navigateTo,"path")
+  const [path, setPath] = useState("/dashboard");
+  // console.log(path,"path")
   return (
     <Box bg="#f0f0f0">
       <Navbar setPath={setPath} />
-      {path.navigateTo === "/dashboard" ? <MiddleSection /> : ""}
-      {path.navigateTo === "/dashboard/plan" ? <PlanWeight /> : ""}
-      {path.navigateTo === "/dashboard/food" ? <FoodMain /> : ""}
-      {path.navigateTo === "/dashboard/exercise" ? <Exercise /> : ""}
-      {path.navigateTo === "/dashboard/analysis" ? <Analysis /> : ""}
-      {path.navigateTo === "/dashboard/community" ? <Community /> : ""}
-      {path.navigateTo === "/dashboard/settings" ? <Setting /> : ""}
+      {path === "/dashboard" ? <MiddleSection /> : ""}
+      {path === "/dashboard/plan" ? <PlanWeight /> : ""}
+      {path === "/dashboard/food" ? <FoodMain /> : ""}
+      {path === "/dashboard/exercise" ? <Exercise /> : ""}
+      {path === "/dashboard/analysis" ? <Analysis /> : ""}
+      {path === "/dashboard/community" ? <Community /> : ""}
+      {path === "/dashboard/settings" ? <Setting /> : ""}
       <Footer />
     </Box>
   );
