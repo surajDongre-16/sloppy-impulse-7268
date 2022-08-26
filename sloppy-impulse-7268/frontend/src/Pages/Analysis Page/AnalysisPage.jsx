@@ -91,7 +91,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/daily_analysis1.png"
               />
-              <Text marginLeft="50px" textAlign="left">
+              <Text marginLeft="30px" textAlign="left">
                 Daily Analysis{" "}
               </Text>
             </Flex>
@@ -186,7 +186,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/weekly_analysis1.png"
               />
-              <Text marginLeft="40px">Weekly Analysis 🔒</Text>
+              <Text marginLeft="30px">Weekly Analysis 🔒</Text>
             </Flex>
           </Box>
 
@@ -207,7 +207,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/advice1.png"
               />
-              <Text marginLeft="50px">My Advice</Text>
+              <Text marginLeft="30px">My Advice</Text>
             </Flex>
           </Box>
 
@@ -220,10 +220,10 @@ const AnalysisPage = ({
                       <Flex>
                         <Image
                           boxSize="30px"
-                          marginLeft="-0px"
+                          marginLeft="5px"
                           src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/cals_analysis1.png"
                         />
-                        <Text marginLeft="50px">Calories Analysis</Text>
+                        <Text marginLeft="30px">Calories Analysis</Text>
                       </Flex>
                     </Box>
                     <AccordionIcon />
@@ -237,10 +237,22 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
+                    
                     onClick={summaryToggle}
                   >
                     {sumtitle}
-                    <Text marginLeft="-30px">Summary & Foods</Text>
+                    <Text textAlign="left" marginLeft="60px">Summary & Foods</Text>
+                  </Box>
+                  <Box
+                    as="button"
+                    height="48px"
+                    width="280px"
+                    _hover={{ bg: "#CECECE" }}
+                    textAlign="left"
+                    borderBottom="1px"
+                    borderColor="#D3D3D3"
+                  >
+                    <Text textAlign="left" marginLeft="60px">Weight Loss</Text>
                   </Box>
                   <Box
                     as="button"
@@ -250,7 +262,7 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text marginLeft="-30px">Weight Loss</Text>
+                    <Text textAlign="left" marginLeft="60px">Meal Analysis</Text>
                   </Box>
                   <Box
                     as="button"
@@ -260,17 +272,7 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text marginLeft="-30px">Meal Analysis</Text>
-                  </Box>
-                  <Box
-                    as="button"
-                    height="48px"
-                    width="280px"
-                    _hover={{ bg: "#CECECE" }}
-                    borderBottom="1px"
-                    borderColor="#D3D3D3"
-                  >
-                    <Text marginLeft="-30px">Cals From Nutrients</Text>
+                    <Text textAlign="left" marginLeft="60px">Cals From Nutrients</Text>
                   </Box>
                 </AccordionPanel>
               </AccordionItem>
@@ -286,10 +288,10 @@ const AnalysisPage = ({
                       <Flex>
                         <Image
                           boxSize="30px"
-                          marginLeft="-0px"
+                          marginLeft="5px"
                           src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/macros_analysis1.png"
                         />
-                        <Text marginLeft="50px">Carbs,protein & Fat</Text>
+                        <Text marginLeft="30px">Carbs,protein & Fat</Text>
                       </Flex>
                     </Box>
                     <AccordionIcon />
@@ -305,7 +307,7 @@ const AnalysisPage = ({
                     borderColor="#D3D3D3"
                     // onClick={summaryToggle}
                   >
-                    <Text marginLeft="-30px">Total Carbs 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">Total Carbs 🔒</Text>
                   </Box>
                   <Box
                     as="button"
@@ -315,7 +317,7 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text marginLeft="-30px">Protein 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">Protein 🔒</Text>
                   </Box>
                   <Box
                     as="button"
@@ -325,7 +327,7 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text marginLeft="-30px">Total Fat</Text>
+                    <Text textAlign="left" marginLeft="70px">Total Fat</Text>
                   </Box>
                 </AccordionPanel>
               </AccordionItem>
@@ -341,10 +343,10 @@ const AnalysisPage = ({
                       <Flex>
                         <Image
                           boxSize="30px"
-                          marginLeft="-0px"
+                          marginLeft="5px"
                           src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/nutr_analysis1.png"
                         />
-                        <Text marginLeft="50px">My Nutrients 🔒</Text>
+                        <Text marginLeft="30px">My Nutrients 🔒</Text>
                       </Flex>
                     </Box>
                     <AccordionIcon />
@@ -360,7 +362,7 @@ const AnalysisPage = ({
                     borderColor="#D3D3D3"
                     // onClick={summaryToggle}
                   >
-                    <Text marginLeft="-30px">Saturated Fat 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">Saturated Fat 🔒</Text>
                   </Box>
                   <Box
                     as="button"
@@ -370,7 +372,7 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text marginLeft="-30px">Trans Fat 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">Trans Fat 🔒</Text>
                   </Box>
                   <Box
                     as="button"
@@ -380,72 +382,14 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text marginLeft="-30px">Sodium</Text>
+                    <Text textAlign="left" marginLeft="70px" >Sodium</Text>
                   </Box>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
           </Box>
 
-          {/* <Box as="Menu" borderBottom="1px" borderColor="#D3D3D3">
-            <Menu>
-              <MenuButton
-                as={Button}
-                rightIcon={<ChevronDownIcon />}
-                marginleft="0px"
-                height="48px"
-                width="280px"
-                _hover={{ bg: "#CECECE" }}
-                _expanded={{ bg: "#CECECE" }}
-              >
-                <Flex>
-                  <Image
-                    boxSize="30px"
-                    marginRight="20px"
-                    src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/cals_analysis1.png"
-                  />
-                  <span>Calories Analysis</span>
-                </Flex>
-              </MenuButton>
-              <MenuList bg={"#F0F0F0"}>
-                <MenuItem
-                  height="48px"
-                  width="280px"
-                  _hover={{ bg: "#CECECE" }}
-                >
-                  Download
-                </MenuItem>
-                <MenuItem
-                  height="48px"
-                  width="280px"
-                  _hover={{ bg: "#CECECE" }}
-                >
-                  Create a Copy
-                </MenuItem>
-                <MenuItem
-                  height="48px"
-                  width="280px"
-                  _hover={{ bg: "#CECECE" }}
-                >
-                  Mark as Draft
-                </MenuItem>
-                <MenuItem
-                  height="48px"
-                  width="280px"
-                  _hover={{ bg: "#CECECE" }}
-                >
-                  Delete
-                </MenuItem>
-                <MenuItem
-                  height="48px"
-                  width="280px"
-                  _hover={{ bg: "#CECECE" }}
-                >
-                  Attend a Workshop
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </Box> */}
+          
 
           <Box
             as="button"
@@ -462,7 +406,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/steps/steps_analysis.png"
               />
-              <Text marginLeft="50px">Steps Analysis</Text>
+              <Text marginLeft="30px">Steps Analysis</Text>
             </Flex>
           </Box>
 
@@ -481,7 +425,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/weight_cals_chart1.png"
               />
-              <Text marginLeft="20px"> Weight & Calories Chart</Text>
+              <Text marginLeft="30px"> Weight & Calories Chart</Text>
             </Flex>
           </Box>
 
@@ -500,7 +444,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/steps/steps_chart.png"
               />
-              <Text marginLeft="50px">Steps Chart</Text>
+              <Text marginLeft="30px">Steps Chart</Text>
             </Flex>
           </Box>
 
@@ -519,7 +463,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/water/water_charts_icon.png"
               />
-              <Text marginLeft="50px">Water Chart</Text>
+              <Text marginLeft="30px">Water Chart</Text>
             </Flex>
           </Box>
 
@@ -538,7 +482,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/day_report1.png"
               />
-              <Text marginLeft="50px">Day Report</Text>
+              <Text marginLeft="30px">Day Report</Text>
             </Flex>
           </Box>
 
@@ -556,7 +500,7 @@ const AnalysisPage = ({
                 marginLeft="20px"
                 src="https://s3.amazonaws.com/img.mynetdiary.com/analysis/data_export1.png"
               />
-              <Text marginLeft="50px">Data Export</Text>
+              <Text marginLeft="30px">Data Export</Text>
             </Flex>
           </Box>
         </Box>
@@ -571,12 +515,13 @@ const AnalysisPage = ({
                   fontWeight="semibold"
                   marginLeft="10px"
                   margin="10px"
+                  textAlign="left"
                 >
                   Daily Analysis
                 </Text>
                 <hr></hr>
               </Box>
-              <Text margin="10px" marginLeft="20px" fontSize="sm" color="green">
+              <Text margin="10px" marginLeft="20px" fontSize="sm" color="green" textAlign="left">
                 Am I on Target Today?
               </Text>
 
@@ -609,9 +554,10 @@ const AnalysisPage = ({
                 width="auto"
                 _hover={{ bg: "#CECECE" }}
                 margin="10px"
-                marginLeft="20px"
+                marginLeft="-72%"
+               
               >
-                <Text fontWeight="semibold" color="#3c9ec3">
+                <Text fontWeight="semibold" color="#3c9ec3" >
                   CALORIES ANALYSIS
                 </Text>
               </Box>
@@ -647,8 +593,8 @@ const AnalysisPage = ({
           )}
 
           {showMyAdvice && (
-            <Box id={styles.myAdvice}>
-              <Text fontSize="xl" fontWeight="semibold" marginLeft="10px">
+            <Box id={styles.myAdvice} >
+              <Text fontSize="xl" fontWeight="semibold" marginLeft="-82%"  >
                 My Advice
               </Text>
               <Box
@@ -656,9 +602,9 @@ const AnalysisPage = ({
                 height="48px"
                 width="680px"
                 _hover={{ bg: "#CECECE" }}
-                marginTop="20px"
+                // marginTop="20px"
                 marginBottom="10px"
-                marginLeft="20px"
+                marginLeft="-90px"
               >
                 {myadvchild}
                 <Flex>
@@ -679,7 +625,7 @@ const AnalysisPage = ({
                 height="48px"
                 width="680px"
                 _hover={{ bg: "#CECECE" }}
-                marginLeft="20px"
+                marginLeft="-90px"
                 marginBottom="10px"
               >
                 <Flex>
@@ -700,7 +646,7 @@ const AnalysisPage = ({
                 height="48px"
                 width="800px"
                 _hover={{ bg: "#CECECE" }}
-                marginLeft="20px"
+                marginLeft="30px"
                 marginBottom="10px"
               >
                 <Flex>
@@ -722,7 +668,7 @@ const AnalysisPage = ({
                 height="48px"
                 width="680px"
                 _hover={{ bg: "#CECECE" }}
-                marginLeft="20px"
+                marginLeft="-90px"
                 marginBottom="10px"
               >
                 <Flex>
@@ -743,7 +689,7 @@ const AnalysisPage = ({
                 height="48px"
                 width="800px"
                 _hover={{ bg: "#CECECE" }}
-                marginLeft="20px"
+                marginLeft="30px"
                 marginBottom="10px"
               >
                 <Flex>
@@ -765,7 +711,7 @@ const AnalysisPage = ({
                 as="button"
                 height="30px"
                 width="auto"
-                marginLeft="20px"
+                marginLeft="-70%"
                 _hover={{ bg: "#CECECE" }}
               >
                 <Text marginLeft="" fontWeight="semibold" color="#3c9ec3">
@@ -777,7 +723,7 @@ const AnalysisPage = ({
                 fontSize="xl"
                 fontWeight="semibold"
                 marginTop="20px"
-                marginLeft="10px"
+                marginLeft="-75%"
               >
                 Upcoming Advice
               </Text>
@@ -807,7 +753,7 @@ const AnalysisPage = ({
                 as="button"
                 height="30px"
                 width="auto"
-                marginLeft="20px"
+                marginLeft="-75%"
                 _hover={{ bg: "#CECECE" }}
                 marginTop="10px"
               >
@@ -822,7 +768,7 @@ const AnalysisPage = ({
             <Box id={styles.Summary}>
               {sumchild}
               <Tabs isFitted variant="line" colorScheme="twitter">
-                <TabList>
+                <TabList >
                   <Tab>Summary & Foods</Tab>
                   <Tab>Weight Loss</Tab>
                   <Tab>Meal Analysis</Tab>
@@ -834,8 +780,9 @@ const AnalysisPage = ({
                     <Text
                       fontSize="xl"
                       fontWeight="semibold"
-                      margin="30px"
-                      mb="30px"
+                      marginLeft="-70%"
+                      mb="10px"
+                      mt="10px"
                     >
                       Calories Anlaysis
                     </Text>
@@ -861,9 +808,10 @@ const AnalysisPage = ({
                     <hr></hr>
                     <Text
                       margin="10px"
-                      marginLeft="20px"
+                      marginLeft="-65%"
                       fontSize="sm"
                       color="green"
+                      fontWeight="semibold"
                     >
                       Recent Foods Providing Most Calories
                     </Text>
@@ -873,7 +821,7 @@ const AnalysisPage = ({
                       height="50px"
                       width="650px"
                       _hover={{ bg: "#CECECE" }}
-                      marginLeft="20px"
+                      marginLeft="-230px"
                       marginTop="10px"
                     >
                       <Flex>
@@ -887,12 +835,13 @@ const AnalysisPage = ({
                         </Text>
                       </Flex>
                     </Box>
+                    <br />
                     <Box
                       as="button"
                       height="50px"
                       width="650px"
                       _hover={{ bg: "#CECECE" }}
-                      marginLeft="20px"
+                      marginLeft="-230px"
                       marginTop="10px"
                     >
                       <Flex>
@@ -906,12 +855,13 @@ const AnalysisPage = ({
                         </Text>
                       </Flex>
                     </Box>
+                    <br />
                     <Box
                       as="button"
                       height="50px"
                       width="650px"
                       _hover={{ bg: "#CECECE" }}
-                      marginLeft="20px"
+                      marginLeft="-230px"
                       marginTop="10px"
                     >
                       <Flex>
@@ -928,13 +878,14 @@ const AnalysisPage = ({
                     <hr />
                     <Text
                       margin="10px"
-                      marginLeft="20px"
+                      marginLeft="-80%"
                       fontSize="sm"
                       color="green"
+                      fontWeight="semibold"
                     >
                       About Calories
                     </Text>
-                    <Text margin="30px">
+                    <Text  textAlign="left" marginLeft="40px">
                       Calories measure the amount of energy we consume from
                       foods and beverages and the amount we burn from basal
                       metabolism (at complete rest), thermogenesis (to digest
@@ -951,7 +902,7 @@ const AnalysisPage = ({
                         height="30px"
                         width="auto"
                         marginLeft="40px"
-                        mt="-20px"
+                        mt="20px"
                         mb="20px"
                         _hover={{ bg: "#CECECE" }}
                       >
@@ -969,7 +920,7 @@ const AnalysisPage = ({
                         height="30px"
                         width="auto"
                         marginLeft="20px"
-                        mt="-20px"
+                        mt="20px"
                         mb="20px"
                         _hover={{ bg: "#CECECE" }}
                       >
