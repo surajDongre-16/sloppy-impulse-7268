@@ -10,12 +10,6 @@ import {
     AccordionPanel,
     AccordionIcon,
     Box,
-    Input,
-    Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
     Flex,
     Text,
 
@@ -25,39 +19,17 @@ function Breakfast() {
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
+    const [breakPostData, setBreakPostData] = useState();
+    
 
     const autoComepeleteRef = useRef();
 
-    // const searching = allData?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
+    const searching = allData?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
 
 
     const handleChange = (e) => {
         setValue(e.target.value);
     }
-
-
-    const handelPostBreak = async (data) => {
-        console.log(data)
-
-        await fetch("https://polar-ocean-66702.herokuapp.com/task/add", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem("token")}`
-            },
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                console.log("added statuss" + res)
-                alert("Task added")
-                navigate("/taskshome")
-            })
-            .catch((err) => console.log("err from backend" + err))
-    }
-
-
-
     const getAllData = async () => {
         await fetch("http://localhost:8080/food/getallbreakfast")
             .then((res) => res.json())
@@ -68,8 +40,65 @@ function Breakfast() {
             .catch((err) => alert(err))
     }
 
+    const handelPostBreak = async (data) => {
+        console.log(data)
+
+        await fetch("http://localhost:8080/food/foodpost", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log("added statuss" + res)
+
+
+            })
+            .catch((err) => console.log("err from backend" + err))
+    }
+
+
+    const getPostBreakData = async () => {
+        await fetch("http://localhost:8080/food/getpostbreakfast")
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res.breakfast)
+                setBreakPostData(res.breakfast)
+            })
+            .catch((err) => alert(err))
+    }
+
+    const deleteBreakPostDataOne = async (id) => {
+        console.log(id)
+        await fetch(`http://localhost:8080/food/deleteeach?id=${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res)
+                alert("Your Task Deleted Successfully done")
+                // console.log("hii")
+                // setData(res)
+                // window.location.reload();
+
+            })
+            .catch((err) => console.log(err))
+    }
+
+    useEffect(() => {
+        getPostBreakData();
+    }, [])
+
     useEffect(() => {
         getAllData();
+        handelPostBreak();
 
     }, [])
 
@@ -89,6 +118,10 @@ function Breakfast() {
 
     }, [])
 
+    console.log("break post data" + breakPostData)
+    // breakPostData?.map((i) => (
+    //     console.log(i)
+    // ))
 
 
     return (
@@ -136,25 +169,28 @@ function Breakfast() {
 
                     <AccordionPanel >
                         <Box mt='-10px'>
+                            {breakPostData?.map((item) => (
 
-                            <tbody id={style.addedrows}>
-                                <tr>
-                                    <td data-lable="Consumed food, amount">1</td>
-                                    <td data-lable="Calories">Calories</td>
-                                    <td data-lable="Carbs g">Carbs g</td>
-                                    <td data-lable="Protein g">Protein g</td>
-                                    <td data-lable="Total Fat g">Total Fat g</td>
-                                    <td data-lable="Fd. Grade">Fd. Grade</td>
-                                    <td data-lable="Sat. Fat g">Sat. Fat g</td>
-                                    <td data-lable="Trans Fat g">Trans Fat g</td>
-                                    <td data-lable="Sodium mg">Sodium mg</td>
-                                    <td data-lable="Fiber g">Fiber g</td>
-                                    <td data-lable="Calcium %">Calcium %</td>
-                                    <td data-lable="Marks"><BsThreeDotsVertical /></td>
+                                <tbody id={style.addedrows} key={item._id} >
+                                    <tr>
+                                        <td data-lable="Consumed food, amount"> </td>
+                                        <td data-lable="Calories">Calories</td>
+                                        <td data-lable="Carbs g">Carbs g</td>
+                                        <td data-lable="Protein g">Protein g</td>
+                                        <td data-lable="Total Fat g">Total Fat g</td>
+                                        <td data-lable="Fd. Grade">Fd. Grade</td>
+                                        <td data-lable="Sat. Fat g">Sat. Fat g</td>
+                                        <td data-lable="Trans Fat g">Trans Fat g</td>
+                                        <td data-lable="Sodium mg">Sodium mg</td>
+                                        <td data-lable="Fiber g">Fiber g</td>
+                                        <td data-lable="Calcium %">Calcium %</td>
+                                        <td onClick={() => deleteBreakPostDataOne(item._id)} data-lable="Marks"><BsThreeDotsVertical /></td>
 
-                                </tr>
+                                    </tr>
 
-                            </tbody>
+                                </tbody>
+
+                            ))}
                         </Box>
                         <Flex mt='10px'>
 
@@ -178,7 +214,7 @@ function Breakfast() {
             <div className={style.outermodal}>
 
                 {
-                    suggestion ? allData?.map((item, index) => (
+                    suggestion ? searching?.map((item, index) => (
                         <div id={style.mymodal} key={item._id}>
                             <div onClick={() => { handelPostBreak(item) }} >
                                 <div style={{ display: 'flex' }}>
