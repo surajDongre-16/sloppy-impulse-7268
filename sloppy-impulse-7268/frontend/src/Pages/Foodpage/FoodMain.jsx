@@ -4,7 +4,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import Breakfast from './Breakfast';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Progress } from '@chakra-ui/react';
 import Lunch from './Lunch';
 import Dinner from './Dinner';
 import Snacks from './Snacks';
@@ -50,7 +50,21 @@ function FoodMain() {
 
 
             </div >
-            <Box w='100%' h='500px' bg='red'>
+            <Flex w='70%' m='auto' h='300px' border='1px solid red'>
+                <Box mt='50px' w='25%' border='1px solid black'>
+                    <Flex>
+                        <Box pl='5px' pt='5px'>Carbs</Box>
+                        <Box pl='30px' pt='10px'>
+                            <Progress colorScheme='green' size='md' value={20} w='190px' />
+                        </Box>
+                    </Flex>
+                </Box>
+                <Box></Box>
+                <Box></Box>
+                <Box></Box>
+
+            </Flex>
+            <Box h='1000px'>
 
             </Box>
 
