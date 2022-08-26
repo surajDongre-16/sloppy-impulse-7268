@@ -4,7 +4,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { AiTwotoneSetting } from "react-icons/ai";
 import Breakfast from './Breakfast';
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import Lunch from './Lunch';
 import Dinner from './Dinner';
 
@@ -88,9 +88,13 @@ function FoodMain() {
 
 
             </table >
-            <Breakfast />
-            <Lunch />
-            <Dinner />
+            <div>
+                <Breakfast />
+                <Lunch />
+                <Dinner />
+            </div>
+
+
         </div >
     )
 }

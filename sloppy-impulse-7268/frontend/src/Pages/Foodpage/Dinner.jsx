@@ -162,7 +162,7 @@ function Dinner() {
             .then((res) => res.json())
             .then((res) => {
                 console.log("allcalories", res.allcolories)
-                let dtat = res.allcolories.filter(option => option._id == 'breakfast')
+                let dtat = res.allcolories.filter(option => option._id == 'dinner')
                 // setBreakPostData(res.breakfast)
 
 
@@ -216,7 +216,7 @@ function Dinner() {
                         <Flex textAlign='center' mt='-5px' h='45px'>
                             <Box w='20%' >
                                 <Flex  >
-                                    <Text pl='10px'> BREAKFAST</Text>
+                                    <Text pl='10px'> DINNER</Text>
 
                                 </Flex>
                             </Box>

@@ -217,7 +217,7 @@ function Lunch() {
                         <Flex textAlign='center' mt='-5px' h='45px'>
                             <Box w='20%' >
                                 <Flex  >
-                                    <Text pl='10px'> BREAKFAST</Text>
+                                    <Text pl='10px'> LUNCH</Text>
 
                                 </Flex>
                             </Box>
