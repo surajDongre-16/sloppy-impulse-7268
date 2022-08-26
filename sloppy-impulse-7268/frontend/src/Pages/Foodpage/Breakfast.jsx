@@ -24,6 +24,7 @@ function Breakfast() {
     const [breakPostData, setBreakPostData] = useState();
     const [render, setRender] = useState(false);
     const [totalCal, setTotalCal] = useState();
+    const [deleteAll, setDelete] = useState(false);
 
     // let params = useParams();
     // console.log(params)
@@ -36,6 +37,10 @@ function Breakfast() {
     const handleChange = (e) => {
         setValue(e.target.value);
     }
+
+    // get all data from data base
+
+
     const getAllData = async () => {
         await fetch("http://localhost:8080/food/getallbreakfast")
             .then((res) => res.json())
@@ -45,6 +50,10 @@ function Breakfast() {
             })
             .catch((err) => console.log("errrrr", err))
     }
+
+
+    //Post the data         
+
 
     const handelPostBreak = async (data) => {
         console.log(data)
@@ -60,12 +69,15 @@ function Breakfast() {
             .then((res) => res.json())
             .then((res) => {
                 console.log("added statuss" + res)
+                getPostBreakData();
+                getAllCalories();
 
 
             })
             .catch((err) => console.log("err from backend" + err))
     }
 
+    // get the post data
 
     const getPostBreakData = async () => {
         await fetch("http://localhost:8080/food/getpostbreakfast")
@@ -77,6 +89,8 @@ function Breakfast() {
             })
             .catch((err) => console.log(err))
     }
+
+    //  delete one data 
 
     const deleteBreakPostDataOne = async (id) => {
         console.log(id)
@@ -94,11 +108,42 @@ function Breakfast() {
                 // console.log("hii")
                 // setData(res)
                 // window.location.reload();
+                getPostBreakData();
+
 
             })
             .catch((err) => console.log(err))
     }
 
+
+    // delete all data
+
+
+
+    const deleteBreakPostDataAll = async () => {
+
+
+        await fetch(`http://localhost:8080/food/deletebreakfastall`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                // console.log(res)
+                alert(res)
+                // console.log("hii")
+                // setData(res)
+                // window.location.reload();
+
+            })
+            .catch((err) => console.log(err))
+
+    }
+
+    //  get all delete data
 
     const getAllCalories = async () => {
         // http://localhost:8080/food/allcalories
@@ -120,8 +165,9 @@ function Breakfast() {
     }
     useEffect(() => {
         getPostBreakData();
-        getAllCalories();
-    }, [render])
+
+
+    }, [])
 
     useEffect(() => {
         getAllData();
@@ -146,9 +192,7 @@ function Breakfast() {
     }, [])
 
     console.log("break post data" + breakPostData)
-    // breakPostData?.map((i) => (
-    //     console.log(i)
-    // ))
+
 
 
     return (
@@ -182,7 +226,7 @@ function Breakfast() {
                                             <th data-lable="Sodium mg">{item.totalSodium}</th>
                                             <th data-lable="Fiber g">{item.totalFiber}</th>
                                             <th data-lable="Calcium %">{item.totalCalcium}</th>
-                                            <th data-lable="Marks"><BsThreeDotsVertical /></th>
+                                            <th onClick={deleteBreakPostDataAll} data-lable="Marks"><BsThreeDotsVertical /></th>
                                         </tr>
 
                                     </thead>
