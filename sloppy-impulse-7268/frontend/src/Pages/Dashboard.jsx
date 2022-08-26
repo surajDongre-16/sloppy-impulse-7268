@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Footer from '../components/Dashboard/Footer';
 import MiddleSection from '../components/Dashboard/MiddleSection';
 import Navbar from '../components/Dashboard/Navbar'
+import AnalysisPage from './Analysis Page/AnalysisPage';
 import FoodMain from './Foodpage/FoodMain';
 import PlanWeight from './PlanPage/PlanWeight';
 import Community from './Subpages/Community';
