@@ -77,22 +77,18 @@ function FoodMain() {
                 <Box w='25%' h='100%' border='1px solid red'>
 
                 </Box>
-                <Box display='flex' w='50%' justifyContent='space-evenly' border='1px solid green' h='50%'>
+                <Box display='flex' w='50%' alignContent='baseline' justifyContent='space-evenly' border='1px solid green' h='50%'>
                     <Box w='4%' h='80%' bg='green' ></Box>
                     <Box h='50%' w='4%' bg='green' ></Box>
                     <Box h='50%' w='4%' bg='green' ></Box>
                     <Box h='50%' w='4%' bg='green' ></Box>
-                    <Box h='50%' w='4%' bg='green' ></Box>
-                    <div className="App">
-                        <h4> React Suite Progress Vertical</h4>
-                        <Progress.Line vertical />
-                        <Progress.Line percent={60} vertical={true} />
-                    </div>
+
                 </Box>
 
 
             </Flex>
-            <Box h='1000px'>
+            <Box h='100px' w='70%' border='1px solid red' m='auto'>
+
 
             </Box>
 
