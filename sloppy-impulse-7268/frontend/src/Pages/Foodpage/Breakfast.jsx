@@ -28,12 +28,36 @@ function Breakfast() {
 
     const autoComepeleteRef = useRef();
 
-    const searching = allData?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
+    // const searching = allData?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
 
 
     const handleChange = (e) => {
         setValue(e.target.value);
     }
+
+
+    const handelPostBreak = async (data) => {
+        console.log(data)
+
+        await fetch("https://polar-ocean-66702.herokuapp.com/task/add", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log("added statuss" + res)
+                alert("Task added")
+                navigate("/taskshome")
+            })
+            .catch((err) => console.log("err from backend" + err))
+    }
+
+
+
     const getAllData = async () => {
         await fetch("http://localhost:8080/food/getallbreakfast")
             .then((res) => res.json())
@@ -66,9 +90,6 @@ function Breakfast() {
     }, [])
 
 
-    const handelPostBreak = (data) => {
-        console.log(data)
-    }
 
     return (
         <div>
@@ -157,16 +178,19 @@ function Breakfast() {
             <div className={style.outermodal}>
 
                 {
-                    suggestion && searching?.map((i, index) => (
-                        <div id={style.mymodal} key={i._id}>
-                            <div onClick={handelPostBreak(index)} style={{ display: 'flex' }}>
-                                <img src={i.img} alt='img' />
-                                <div> {i.name}</div>
-                                <span>{i.subName}</span>
+                    suggestion ? allData?.map((item, index) => (
+                        <div id={style.mymodal} key={item._id}>
+                            <div onClick={() => { handelPostBreak(item) }} >
+                                <div style={{ display: 'flex' }}>
+                                    <img src={item.img} alt='img' />
+                                    <div> {item.name}</div>
+                                    <span>{item.subName}</span>
+                                    {/* {console.log(item)} */}
+                                </div>
+                                <div className={style.mymodal_last}><p>{item.calories}</p></div>
                             </div>
-                            <div className={style.mymodal_last}><p>{i.calories}</p></div>
                         </div>
-                    ))
+                    )) : null
                 }
             </div>
 

@@ -108,16 +108,16 @@
     border-radius: 10px;
     margin-left: 275px;
     width: 35%;
+
     background-color: rgb(235, 229, 241);
     position: fixed;
     z-index: 10px;
 }
 
 #mymodal {
-    display: flex;
     cursor: pointer;
     border-radius: 10px;
-    justify-content: space-between;
+    height: 50px;
 }
 
 #mymodal img {
@@ -135,10 +135,12 @@
 }
 
 #mymodal div {
-
+    justify-content: space-between;
+    display: flex;
     padding: 10px 10px;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: -8px;
 }
 
 
