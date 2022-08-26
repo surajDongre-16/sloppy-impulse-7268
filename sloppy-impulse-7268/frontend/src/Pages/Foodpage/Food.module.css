@@ -6,7 +6,6 @@
 }
 
 
-
 .table {
     width: 70%;
     margin: auto;
@@ -16,7 +15,7 @@
 }
 
 .table th {
-    padding: 12px 5px;
+    padding: 12px 6px;
     border: 1px solid black;
     text-align: center;
     font-size: 12px;
@@ -66,29 +65,89 @@
 
 /* breakfast table */
 .tableheadBreak th {
-    padding: 5px 18px;
+    padding: 16px 30px;
     border-right: 0.1px solid rgb(199, 199, 199);
-
-
+    cursor: pointer;
+    border-left: 0.1px solid rgb(199, 199, 199);
+    font-size: 12px;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     height: 40px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
+.tableheadBreak th:nth-last-child(-n+1) {
+    border: none;
+
+
+}
+
+.tableheadBreak th:nth-last-child(-n+1):hover {
+
+    background-color: rgb(199, 199, 199);
+    transition: 0.3s;
+}
+
+.tableheadBreak th:nth-child(1) {
+    color: green;
+}
 
 /* Added rows */
 
+#hov:hover {
+    background-color: red;
+
+
+}
 
 #addedrows td {
-    padding: 5px 18px;
+    padding: 16px 29px;
     border-right: 0.1px solid rgb(199, 199, 199);
     border-bottom: 0.1px solid rgb(199, 199, 199);
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     height: 40px;
     font-weight: 400;
     background-color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#addedrows td img {
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-left: -10px;
+}
+
+#addedrows td:nth-child(2) {
+    color: green;
+}
+
+#addedrows td:nth-last-child(-n+1):hover {
+    background-color: rgb(199, 199, 199);
+    transition: 0.3s;
+}
+
+
+.fisrstColoum {
+    display: flex;
+    margin-left: 0;
+}
+
+.fisrstColoum p:nth-child(2) {
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 5px;
+
+}
+
+.fisrstColoum p:nth-child(3) {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(199, 199, 199);
+
 }
 
 #addedrows td:nth-child(1) {
@@ -97,10 +156,64 @@
     background-color: white;
 }
 
-/* .tableBreak td:nth-child(1) {
-    margin-left: 550px;
-} */
 
+
+
+
+
+.outermodal {
+    border-radius: 10px;
+    margin-left: 275px;
+    width: 35%;
+
+    background-color: rgb(235, 229, 241);
+    position: absolute;
+    z-index: 3;
+}
+
+#mymodal {
+    cursor: pointer;
+    border-radius: 10px;
+    height: 50px;
+}
+
+#mymodal img {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}
+
+#mymodal span {
+
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: gray;
+}
+
+#mymodal div {
+    justify-content: space-between;
+    display: flex;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: -8px;
+}
+
+
+
+#mymodal:hover {
+    background-color: rgb(199, 199, 199);
+
+}
+
+.inputs {
+    width: 340px;
+    padding-top: 20px;
+
+    outline: none;
+    border-bottom: 1px solid black;
+}
 
 /* @media (min-width:0px)and (max-width:558px) {
     .table thead {
