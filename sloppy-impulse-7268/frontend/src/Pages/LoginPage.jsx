@@ -91,7 +91,7 @@ import {
           margin={"auto"}
           marginTop={2}
          maxW={'75%'}
-         border={"2px solid"}
+         
             rounded={'4%'}
             boxShadow={'lg'}
              px={180}
@@ -109,8 +109,8 @@ import {
                 </Text>
             <Stack  margin={"auto"} width="100%">
                
-              <HStack width={"100%"} border={"2px solid"} justifyContent={"space-between"}>
-                <Box border="2px solid" width="50%" height="100%">
+              <HStack width={"100%"} justifyContent={"space-between"}>
+                <Box width="50%" height="100%">
                 <FormControl marginBottom={10}>
              <InputGroup>
                <Input type={'text'}  
@@ -156,7 +156,7 @@ import {
             <Button colorScheme='blue' textAlign={"center"} py={7} px={12} textDecoration={"underline"} fontSize={"1.2rem"} background="none" color={'#33B621'}>Forgot password?</Button>
             </Box>
                 </Box>
-               <Image  border={"2px solid"} marginTop={"6rem"} height="70%" width={"46%"} src="https://raw.githubusercontent.com/sohailshaik8328/sohailMagnesumProject/main/images/signupOne%20scst.PNG"></Image>
+               <Image   marginTop={"6rem"} height="70%" width={"46%"} src="https://raw.githubusercontent.com/sohailshaik8328/sohailMagnesumProject/main/images/signupOne%20scst.PNG"></Image>
               </HStack>
              <Text  textAlign={"center"} fontSize={"1.2rem"} fontWeight={"500"}>No account? <Button  fontWeight={"500"} textDecoration={"underline"} fontSize={"1.2rem"} background="none" mx={-5}  mt={-2}  onChange={handleClc} color={'#33B621'}>Sign Up</Button> , it's easy.</Text>
             </Stack>
