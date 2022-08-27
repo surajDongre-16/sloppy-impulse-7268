@@ -125,7 +125,7 @@ foodRouter.get("/getpostbreakfast", async (req, res) => {
 
 foodRouter.delete("/deletebreakfastall", (req, res) => {
     // console.log(req.query.id)
-    postFood.deleteMany({ food: "breakfast" })
+    postFood.deleteMany({ food: req.query.food })
         .then(() => res.json("breakfast Deleted"))
         .catch(err => res.status(400).json('Error' + err))
 
@@ -133,7 +133,7 @@ foodRouter.delete("/deletebreakfastall", (req, res) => {
 
 
 
-// lunch data=================================================================
+// lunch get all data=================================================================
 
 foodRouter.get("/getlunch", async (req, res) => {
 
