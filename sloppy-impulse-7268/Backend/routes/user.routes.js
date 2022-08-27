@@ -1,8 +1,10 @@
 const express = require("express")
 const bcrypt = require("bcrypt")
-const UserModel  = require("../models/User.model")
+require("dotenv").config();
 const jwt = require("jsonwebtoken")
 const userController = express.Router();
+
+const UserModel  = require("../models/User.model")
 
 
 userController.post("/register",  (req, res) => {
@@ -35,7 +37,7 @@ userController.post("/login", async (req, res) => {
     const userId = user._id
     bcrypt.compare(password, hash, function(err, result){
        if(result){
-        var token = jwt.sign({email, userId}, "secret")
+        var token = jwt.sign({ email, userId }, process.env.SECRETKEY);
        return res.send({"message": "Login sucess", "token": token,"id":_id})
        }
        else{
