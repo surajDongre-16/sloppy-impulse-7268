@@ -8,12 +8,15 @@ app.use(cors());
 
 const connection = require("./config/db");
 
-
+const weightRoutes = require("./routes/weights.routes");
 const foodRouter = require("./routes/foods.routes");
 const userController = require("./routes/user.routes")
-const authentication = require("./middlewares/authentication")  
+const authentication = require("./middlewares/authentication")
+
+
+app.use("/weight", weightRoutes);
 app.use("/user", userController)
-app.use(authentication)
+// app.use(authentication)
 app.use("/food", foodRouter);
 
 
