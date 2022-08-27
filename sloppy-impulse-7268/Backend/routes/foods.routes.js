@@ -27,7 +27,7 @@ foodRouter.post("/postalldata", async (req, res) => {
 foodRouter.get("/getallfoods", async (req, res) => {
 
     const dataGet = await foodModel.find();
-    console.log(dataGet);
+    // console.log(dataGet);
     res.send({ "message": "get data successfully", dataGet });
 })
 

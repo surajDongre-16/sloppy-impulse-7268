@@ -18,7 +18,7 @@ weightRoutes.post("/postweight", async (req, res) => {
 weightRoutes.get("/get_weight", async (req, res) => {
 
     const getData = await WeightModel.find();
-    console.log(getData);
+    // console.log(getData);
     res.send({ "message": "Get all data", getData });
 })
 
