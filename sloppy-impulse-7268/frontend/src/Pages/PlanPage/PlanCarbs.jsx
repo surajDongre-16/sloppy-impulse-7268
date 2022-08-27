@@ -8,6 +8,8 @@ import {
 
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import Footer from '../../components/Dashboard/Footer'
+import Navbar from '../../components/Dashboard/Navbar'
 import PlanSidebar from './PlanSidebar'
 function PlanCarbs() {
     const [sliderValue, setSliderValue] = useState(45)
@@ -15,7 +17,8 @@ function PlanCarbs() {
 
     return (
         <div>
-            <Flex w='75%' border='1px solid black' h='500px' m='auto' mt='50px'>
+            <Navbar />
+            <Flex w='75%'  h='500px' m='auto' mt='50px'>
                 <PlanSidebar />
 
                 <Box w='85%' bg='white'>
@@ -48,6 +51,7 @@ function PlanCarbs() {
 
             </Flex>
 
+            <Footer />
         </div >
     )
 }

@@ -234,7 +234,7 @@ function Lunch({ setTrick }) {
 
     return (
         <div>
-            {allDatalunch ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
+            {allDatalunch ? <Accordion w='70%' m='auto'  allowMultiple>
                 <AccordionItem >
 
                     <AccordionButton className={style.break}  bg='rgb(232,245,233)' >
