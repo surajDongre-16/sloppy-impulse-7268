@@ -210,7 +210,7 @@ function Lunch() {
             {allDatalunch ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
-                    <AccordionButton bg='rgb(239,240,237)' >
+                    <AccordionButton bg='rgb(232,245,233)' >
                         <AccordionIcon fontSize='30px' />
 
 
@@ -283,7 +283,7 @@ function Lunch() {
 
                             ))}
                         </Box>
-                        <Flex mt='10px'>
+                        <Flex bg='white' p='10px'>
 
                             <Box mt='10px' mr='10px' fontSize='20px'><IoPencilSharp /> </Box>
 

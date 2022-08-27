@@ -40,8 +40,8 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+// import { ChevronDownIcon } from "@chakra-ui/icons";
+// import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 const AnalysisPage = ({
   title,
@@ -82,7 +82,7 @@ const AnalysisPage = ({
             borderBottom="1px"
             borderColor="#D3D3D3"
             onClick={toggle}
-            // {showDaily ? <DailyAnalysis/> : null}
+          // {showDaily ? <DailyAnalysis/> : null}
           >
             {title}
             <Flex>
@@ -237,7 +237,7 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
-                    
+
                     onClick={summaryToggle}
                   >
                     {sumtitle}
@@ -305,7 +305,7 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
-                    // onClick={summaryToggle}
+                  // onClick={summaryToggle}
                   >
                     <Text textAlign="left" marginLeft="70px">Total Carbs 🔒</Text>
                   </Box>
@@ -360,7 +360,7 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
-                    // onClick={summaryToggle}
+                  // onClick={summaryToggle}
                   >
                     <Text textAlign="left" marginLeft="70px">Saturated Fat 🔒</Text>
                   </Box>
@@ -389,7 +389,7 @@ const AnalysisPage = ({
             </Accordion>
           </Box>
 
-          
+
 
           <Box
             as="button"
@@ -555,7 +555,7 @@ const AnalysisPage = ({
                 _hover={{ bg: "#CECECE" }}
                 margin="10px"
                 marginLeft="-72%"
-               
+
               >
                 <Text fontWeight="semibold" color="#3c9ec3" >
                   CALORIES ANALYSIS
@@ -885,7 +885,7 @@ const AnalysisPage = ({
                     >
                       About Calories
                     </Text>
-                    <Text  textAlign="left" marginLeft="40px">
+                    <Text textAlign="left" marginLeft="40px">
                       Calories measure the amount of energy we consume from
                       foods and beverages and the amount we burn from basal
                       metabolism (at complete rest), thermogenesis (to digest

@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 
 
 const authentication = (req, res, next) => {
+    console.log(req.headers,"reqHead")
     if(!req.headers.authorization){
         return res.send("Please login again")
     }
