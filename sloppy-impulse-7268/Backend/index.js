@@ -10,6 +10,10 @@ const connection = require("./config/db");
 
 
 const foodRouter = require("./routes/foods.routes");
+const userController = require("./routes/user.routes")
+const authentication = require("./middlewares/authentication")  
+app.use("/user", userController)
+app.use(authentication)
 app.use("/food", foodRouter);
 
 
