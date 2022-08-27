@@ -20,6 +20,7 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';     
+import { useNavigate } from "react-router-dom";
   
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
