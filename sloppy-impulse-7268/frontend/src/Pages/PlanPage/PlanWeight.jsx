@@ -6,7 +6,7 @@ import PlanSidebar from './PlanSidebar'
 function PlanWeight() {
     return (
         <div>
-            <Flex w='75%' border='1px solid black' h='500px' m='auto' mt='50px'>
+            <Flex w='75%' bg='white' h='500px' m='auto' mt='50px'>
                 <PlanSidebar />
 
                 <div w='85%' bg='white'  >

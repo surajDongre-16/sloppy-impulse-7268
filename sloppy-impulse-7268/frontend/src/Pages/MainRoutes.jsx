@@ -10,7 +10,7 @@ import Homepage from "./Homepage";
 // import Plan from "./Subpages/Plan";
 
 import Exercise from "./Subpages/Exercise";
-import Analysis from "./Subpages/Analysis"; 
+import Analysis from "./Subpages/Analysis";
 import Community from "./Subpages/Community";
 import Setting from "./Subpages/Setting";
 
@@ -39,12 +39,12 @@ const MainRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path='/library' element={<Library/>} />
+        <Route path='/library' element={<Library />} />
         <Route path="/dashboard/:id" element={<Dashboard />} />
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/signin' element={<LoginPage/>}/>
-        {/* <Route path="/dashboard/plan" element={<PlanWeight />} />
-        <Route path="/dashboard/food" element={<FoodMain />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/signin' element={<LoginPage />} />
+        {/* <Route path="/dashboard/plan" element={<PlanWeight />} /> */}
+        {/* <Route path="/dashboard/food" element={<FoodMain />} />
         <Route path="/dashboard/exercise" element={<Exercise />} />
         <Route path="/dashboard/analysis" element={<AnalysisPage />} />
         <Route path="/dashboard/community" element={<Community />} />
