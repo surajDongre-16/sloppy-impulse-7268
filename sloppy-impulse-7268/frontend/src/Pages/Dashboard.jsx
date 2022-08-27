@@ -9,7 +9,7 @@ import PlanWeight from './PlanPage/PlanWeight';
 import Community from './Subpages/Community';
 import Exercise from './Subpages/Exercise';
 import Setting from './Subpages/Setting';
-import AnalysisPage from "./Analysis Page/AnalysisPage"
+// import AnalysisPage from "./Analysis Page/AnalysisPage"
 
 const Dashboard = () => {
   const [path, setPath] = useState("/dashboard");
