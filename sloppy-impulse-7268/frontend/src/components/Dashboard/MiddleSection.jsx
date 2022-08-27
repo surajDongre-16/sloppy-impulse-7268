@@ -9,6 +9,7 @@ import Box6 from "./Box6";
 import Box7 from "./Box7";
 
 const MiddleSection = () => {
+
   const [totalCal, setTotalCal] = useState();
   const [calSum, setCalSum] = useState();
   const [totC, setC] = useState();

@@ -17,7 +17,7 @@ const Dashboard = () => {
   return (
     <Box bg="#f0f0f0">
       <Navbar setPath={setPath} />
-      {path === "/dashboard" ? <MiddleSection /> : ""}
+      {path === "/dashboard" ? <MiddleSection a={"ac"} /> : ""}
       {path === "/dashboard/plan" ? <PlanWeight /> : ""}
       {path === "/dashboard/food" ? <FoodMain /> : ""}
       {path === "/dashboard/exercise" ? <Exercise /> : ""}
