@@ -209,7 +209,7 @@ function Dinner() {
             {allData ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
-                    <AccordionButton bg='rgb(239,240,237)' >
+                    <AccordionButton bg='rgb(232,245,233)' >
                         <AccordionIcon fontSize='30px' />
 
 

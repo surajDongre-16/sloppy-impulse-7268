@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: white;
+}
+
 
 .table {
     width: 70%;
@@ -166,9 +170,10 @@
     margin-left: 275px;
     width: 35%;
 
-    background-color: rgb(235, 229, 241);
+    background-color: white;
     position: absolute;
     z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #mymodal {

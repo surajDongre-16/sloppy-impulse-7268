@@ -209,7 +209,7 @@ function Breakfast() {
             {allData ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
-                    <AccordionButton bg='rgb(239,240,237)' >
+                    <AccordionButton bg='rgb(232,245,233)' >
                         <AccordionIcon fontSize='30px' />
 
 
@@ -250,7 +250,7 @@ function Breakfast() {
 
                     </AccordionButton>
 
-                    <AccordionPanel >
+                    <AccordionPanel w='120%' >
                         <Box mt='-10px'>
                             {breakPostData?.map((item) => (
 
@@ -282,9 +282,9 @@ function Breakfast() {
 
                             ))}
                         </Box>
-                        <Flex mt='10px'>
+                        <Flex bg='white' p='10px'>
 
-                            <Box mt='10px' mr='10px' fontSize='20px'><IoPencilSharp /> </Box>
+                            <Box pt='10px' mr='10px' fontSize='20px'><IoPencilSharp /> </Box>
 
                             <Box w='40%' ml='-20px' ref={autoComepeleteRef} >
                                 <input
