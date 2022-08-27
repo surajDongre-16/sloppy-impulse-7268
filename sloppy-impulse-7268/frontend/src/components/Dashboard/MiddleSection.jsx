@@ -19,7 +19,14 @@ const MiddleSection = () => {
   const getAllCalories = async () => {
     // http://localhost:8080/food/allcalories
 
-    await fetch("http://localhost:8080/food/allcalories")
+    await fetch("http://localhost:8080/food/allcalories", {
+
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem("token")}`
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         const carbs = [];
@@ -84,7 +91,7 @@ const MiddleSection = () => {
       })
       .catch((err) => console.log(err));
   };
-  console.log(calSum, totC,totF,totP);
+  console.log(calSum, totC, totF, totP);
   useEffect(() => {
     getAllCalories();
   }, []);

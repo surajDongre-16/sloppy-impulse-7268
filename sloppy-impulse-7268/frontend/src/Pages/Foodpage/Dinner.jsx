@@ -44,7 +44,14 @@ function Dinner({setTrick}) {
 
 
     const getAllData = async () => {
-        await fetch("http://localhost:8080/food/getdineer")
+        await fetch("http://localhost:8080/food/getdineer", {
+
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
             .then((res) => res.json())
             .then((res) => {
                 console.log(res.dinner)
@@ -64,7 +71,9 @@ function Dinner({setTrick}) {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+
 
             },
         })
@@ -82,7 +91,14 @@ function Dinner({setTrick}) {
     // get the post data
 
     const getPostBreakData = async () => {
-        await fetch("http://localhost:8080/food/getpostdinner")
+        await fetch("http://localhost:8080/food/getpostdinner", {
+
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
             .then((res) => res.json())
             .then((res) => {
                 if (res.dinner.length > 0) {
@@ -104,7 +120,9 @@ function Dinner({setTrick}) {
         await fetch(`http://localhost:8080/food/deleteeach?id=${id}`, {
             method: "DELETE",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+
 
             },
         })
@@ -133,7 +151,9 @@ function Dinner({setTrick}) {
         await fetch(`http://localhost:8080/food/deletebreakfastall?food=${foodName}`, {
             method: "DELETE",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+
 
             },
         })
@@ -158,7 +178,14 @@ function Dinner({setTrick}) {
     const getAllCalories = async () => {
         // http://localhost:8080/food/allcalories
 
-        await fetch("http://localhost:8080/food/allcalories")
+        await fetch("http://localhost:8080/food/allcalories", {
+
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
             .then((res) => res.json())
             .then((res) => {
                 console.log("allcalories", res.allcolories)
@@ -209,7 +236,7 @@ function Dinner({setTrick}) {
             {allData ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
-                    <AccordionButton bg='rgb(232,245,233)' >
+                    <AccordionButton className={style.break}  bg='rgb(232,245,233)' >
                         <AccordionIcon fontSize='30px' />
 
 
