@@ -45,7 +45,14 @@ function Breakfast({ setTrick }) {
 
 
     const getAllData = async () => {
-        await fetch("http://localhost:8080/food/getallbreakfast")
+        await fetch("http://localhost:8080/food/getallbreakfast", {
+
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
             .then((res) => res.json())
             .then((res) => {
                 console.log(res.breakfast)
@@ -65,7 +72,9 @@ function Breakfast({ setTrick }) {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+
 
             },
         })
@@ -83,7 +92,14 @@ function Breakfast({ setTrick }) {
     // get the post data
 
     const getPostBreakData = async () => {
-        await fetch("http://localhost:8080/food/getpostbreakfast")
+        await fetch("http://localhost:8080/food/getpostbreakfast", {
+
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
             .then((res) => res.json())
             .then((res) => {
                 if (res.breakfast.length > 0) {
@@ -105,7 +121,9 @@ function Breakfast({ setTrick }) {
         await fetch(`http://localhost:8080/food/deleteeach?id=${id}`, {
             method: "DELETE",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+
 
             },
         })
@@ -134,7 +152,8 @@ function Breakfast({ setTrick }) {
         await fetch(`http://localhost:8080/food/deletebreakfastall?food=${foodName}`, {
             method: "DELETE",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
 
             },
         })
@@ -159,7 +178,14 @@ function Breakfast({ setTrick }) {
     const getAllCalories = async () => {
         // http://localhost:8080/food/allcalories
 
-        await fetch("http://localhost:8080/food/allcalories")
+        await fetch("http://localhost:8080/food/allcalories", {
+
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
+        })
             .then((res) => res.json())
             .then((res) => {
                 console.log("allcalories", res.allcolories)
@@ -210,7 +236,7 @@ function Breakfast({ setTrick }) {
             {allData ? <Accordion w='70%' m='auto' defaultIndex={[0]} allowMultiple>
                 <AccordionItem >
 
-                    <AccordionButton bg='rgb(232,245,233)' >
+                    <AccordionButton className={style.break} bg='rgb(232,245,233)' >
                         <AccordionIcon fontSize='30px' />
 
 
