@@ -6,14 +6,17 @@ const userController = express.Router();
 
 
 userController.post("/register",  (req, res) => {
-    const {email, password} = req.body;
+    const {email, password,name,weight,Tweight} = req.body;
     bcrypt.hash(password, 6, async function(err, hash){
         if(err){
             res.send("Please try again")
         }
         const user = new UserModel({
             email,
-            password: hash
+            password: hash,
+            name,
+            weight,
+            Tweight
         })
         await user.save();
     })

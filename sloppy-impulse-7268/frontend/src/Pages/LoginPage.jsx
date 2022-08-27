@@ -1,4 +1,5 @@
-import React from "react";
+import React,  { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
     Flex,
     Box,
@@ -23,8 +24,48 @@ import {
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   
   export default function LoginPage() {
-    const [showPassword, setShowPassword] = useState(false);
-    const [count,setCount]=useState(1);
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const navigate=useNavigate()
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePaasordChange = (e) => {
+        setPassword(e.target.value)
+    }
+
+    const handleSubmit = async () => {
+        const payload ={
+            email,
+            password
+        }
+        const response = await fetch("http://localhost:8080/user/login", {
+            method : "POST",
+            body : JSON.stringify(payload),
+            headers: {
+                "Content-Type" : "application/json"
+            }, 
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            const {id}=res;
+            console.log(id,"d")
+            alert("Login Success")
+            localStorage.setItem("token", res.token)
+           navigate(`/todos/${id}`)
+        })
+        .catch((err) => alert("Login Failed")
+        
+        )
+       
+        
+    }
+  
+    const handleClc=()=>{
+      navigate("/signup")
+    }
   
     return (
       <Box   maxW={'100%'}  margin={"auto"}  _before={{
@@ -73,13 +114,16 @@ import {
                 <FormControl marginBottom={10}>
              <InputGroup>
                <Input type={'text'}  
-               placeHolder={"Your first name"}
+               placeHolder={"User Name"}
                padding={7}
                fontSize={'1.1rem'}
                 borderTop={"2px solid"} 
                 borderLeft={"2px solid"} 
                 borderRight={"2px solid"} borderBottom={"2px solid"} 
-                borderRadius={"0.2rem"}/>
+                borderRadius={"0.2rem"}
+                onChange={handleEmailChange}
+                
+                />
              </InputGroup>
            </FormControl>
            
@@ -92,7 +136,9 @@ import {
                  borderTop={"2px solid"} 
                  borderLeft={"2px solid"} 
                  borderRight={"2px solid"} borderBottom={"2px solid"} 
-                 borderRadius={"0.2rem"}/>
+                 borderRadius={"0.2rem"}
+                 onChange={handlePaasordChange}
+                 />
                <InputRightElement h={'full'}>
                  <Button
                    variant={'ghost'}
@@ -106,13 +152,13 @@ import {
            </FormControl>
            <Checkbox  marginBottom={10}> <Text fontSize={"1.3rem"} fontWeight={"450"}> Remember me on this computer </Text></Checkbox>
            <Box margin={"auto"} display={"flex"} justifyContent="space-around" marginBottom={"3rem"}>
-            <Button backgroundColor='#33B621'  color="white" textAlign={"center"} py={7} px={12} fontSize={"1.2rem"} >SIGN IN</Button>
+            <Button backgroundColor='#33B621'  color="white" textAlign={"center"} py={7} px={12} fontSize={"1.2rem"} onClick={handleSubmit}>SIGN IN</Button>
             <Button colorScheme='blue' textAlign={"center"} py={7} px={12} textDecoration={"underline"} fontSize={"1.2rem"} background="none" color={'#33B621'}>Forgot password?</Button>
             </Box>
                 </Box>
                <Image  border={"2px solid"} marginTop={"6rem"} height="70%" width={"46%"} src="https://raw.githubusercontent.com/sohailshaik8328/sohailMagnesumProject/main/images/signupOne%20scst.PNG"></Image>
               </HStack>
-             <Text  textAlign={"center"} fontSize={"1.2rem"} fontWeight={"500"}>No account? <Button  fontWeight={"500"} textDecoration={"underline"} fontSize={"1.2rem"} background="none" mx={-5}  mt={-2} color={'#33B621'}>Sign Up</Button> , it's easy.</Text>
+             <Text  textAlign={"center"} fontSize={"1.2rem"} fontWeight={"500"}>No account? <Button  fontWeight={"500"} textDecoration={"underline"} fontSize={"1.2rem"} background="none" mx={-5}  mt={-2}  onChange={handleClc} color={'#33B621'}>Sign Up</Button> , it's easy.</Text>
             </Stack>
             
           </Box>
