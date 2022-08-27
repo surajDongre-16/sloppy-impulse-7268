@@ -40,7 +40,7 @@ const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path='/library' element={<Library/>} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/:id" element={<Dashboard />} />
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/signin' element={<LoginPage/>}/>
         {/* <Route path="/dashboard/plan" element={<PlanWeight />} />

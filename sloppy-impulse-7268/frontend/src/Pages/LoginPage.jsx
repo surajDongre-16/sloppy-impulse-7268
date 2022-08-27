@@ -20,10 +20,10 @@ import {
     Link,
     Radio 
   } from '@chakra-ui/react';
-  import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   
   export default function LoginPage() {
+    const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate=useNavigate()
@@ -54,7 +54,7 @@ import {
             console.log(id,"d")
             alert("Login Success")
             localStorage.setItem("token", res.token)
-           navigate(`/todos/${id}`)
+           navigate(`/dashboard/${id}`)
         })
         .catch((err) => alert("Login Failed")
         
