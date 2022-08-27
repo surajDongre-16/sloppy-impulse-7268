@@ -12,7 +12,7 @@ import Setting from './Subpages/Setting';
 // import AnalysisPage from "./Analysis Page/AnalysisPage"
 
 const Dashboard = () => {
-    const [trick, setTrick] = useState(false);
+  const [trick, setTrick] = useState(false);
 
   const [path, setPath] = useState("/dashboard");
   const [totalCal, setTotalCal] = useState();
@@ -24,7 +24,7 @@ const Dashboard = () => {
   const getAllCalories = async () => {
     // http://localhost:8080/food/allcalories
 
-    await fetch("http://localhost:8080/food/allcalories", {
+    await fetch("https://my-net-dairy-backend.herokuapp.com/food/allcalories", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -44,7 +44,7 @@ function Snacks({ setTrick }) {
 
 
     const getAllData = async () => {
-        await fetch("http://localhost:8080/food/getsnacks", {
+        await fetch("https://my-net-dairy-backend.herokuapp.com/food/getsnacks", {
 
             method: "GET",
             headers: {
@@ -67,7 +67,7 @@ function Snacks({ setTrick }) {
     const handelPostBreak = async (data) => {
         console.log(data)
 
-        await fetch("http://localhost:8080/food/foodpost", {
+        await fetch("https://my-net-dairy-backend.herokuapp.com/food/foodpost", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -92,7 +92,7 @@ function Snacks({ setTrick }) {
     // get the post data
 
     const getPostBreakData = async () => {
-        await fetch("http://localhost:8080/food/getpostsnacks", {
+        await fetch("https://my-net-dairy-backend.herokuapp.com/food/getpostsnacks", {
 
             method: "GET",
             headers: {
@@ -118,7 +118,7 @@ function Snacks({ setTrick }) {
 
     const deleteBreakPostDataOne = async (id) => {
         console.log(id)
-        await fetch(`http://localhost:8080/food/deleteeach?id=${id}`, {
+        await fetch(`https://my-net-dairy-backend.herokuapp.com/food/deleteeach?id=${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ function Snacks({ setTrick }) {
     const deleteBreakPostDataAll = async (foodName) => {
 
         console.log(foodName)
-        await fetch(`http://localhost:8080/food/deletebreakfastall?food=${foodName}`, {
+        await fetch(`https://my-net-dairy-backend.herokuapp.com/food/deletebreakfastall?food=${foodName}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ function Snacks({ setTrick }) {
     const getAllCalories = async () => {
         // http://localhost:8080/food/allcalories
 
-        await fetch("http://localhost:8080/food/allcalories", {
+        await fetch("https://my-net-dairy-backend.herokuapp.com/food/allcalories", {
 
             method: "GET",
             headers: {
