@@ -17,7 +17,7 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Dinner() {
+function Dinner({setTrick}) {
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
@@ -73,7 +73,7 @@ function Dinner() {
                 console.log("added statuss" + res)
                 getPostBreakData();
                 getAllCalories();
-
+                setTrick((prv) => !prv);
 
             })
             .catch((err) => console.log("err from backend" + err))
@@ -116,7 +116,7 @@ function Dinner() {
                 // setData(res)
                 // window.location.reload();
                 getPostBreakData();
-
+                setTrick((prv) => !prv);
 
             })
             .catch((err) => console.log(err))
@@ -282,7 +282,7 @@ function Dinner() {
 
                             ))}
                         </Box>
-                        <Flex mt='10px'>
+                        <Flex bg='white' p='10px'>
 
                             <Box mt='10px' mr='10px' fontSize='20px'><IoPencilSharp /> </Box>
 

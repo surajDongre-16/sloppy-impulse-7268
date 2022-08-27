@@ -17,7 +17,7 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Snacks() {
+function Snacks({ setTrick }) {
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
@@ -73,6 +73,7 @@ function Snacks() {
                 console.log("added statuss" + res)
                 getPostBreakData();
                 getAllCalories();
+                setTrick((prv) => !prv);
 
 
             })
@@ -116,6 +117,7 @@ function Snacks() {
                 // setData(res)
                 // window.location.reload();
                 getPostBreakData();
+                setTrick((prv) => !prv);
 
 
             })
@@ -282,7 +284,7 @@ function Snacks() {
 
                             ))}
                         </Box>
-                        <Flex mt='10px'>
+                        <Flex bg='white' p='10px'>
 
                             <Box mt='10px' mr='10px' fontSize='20px'><IoPencilSharp /> </Box>
 

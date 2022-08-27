@@ -20,7 +20,7 @@ body {
 
 .table th {
     padding: 12px 6px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
     font-size: 12px;
     height: 40px;

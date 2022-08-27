@@ -19,8 +19,12 @@ import {
     Radio 
   } from '@chakra-ui/react';
   import { useState } from 'react';
-  import {useNavigate} from "react-router-dom";
+
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';     
+
+import { useNavigate } from "react-router-dom";
+
+
 
   
   export default function Signup() {

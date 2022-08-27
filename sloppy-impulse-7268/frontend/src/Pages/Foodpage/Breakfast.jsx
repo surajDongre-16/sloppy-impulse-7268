@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IoPencilSharp } from "react-icons/io5";
 import style from './Food.module.css'
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 import {
     Accordion,
@@ -17,7 +17,8 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Breakfast() {
+function Breakfast({ setTrick }) {
+
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
@@ -73,7 +74,7 @@ function Breakfast() {
                 console.log("added statuss" + res)
                 getPostBreakData();
                 getAllCalories();
-
+                setTrick((prv) => !prv);
 
             })
             .catch((err) => console.log("err from backend" + err))
@@ -116,7 +117,7 @@ function Breakfast() {
                 // setData(res)
                 // window.location.reload();
                 getPostBreakData();
-
+                setTrick((prv) => !prv);
 
             })
             .catch((err) => console.log(err))
