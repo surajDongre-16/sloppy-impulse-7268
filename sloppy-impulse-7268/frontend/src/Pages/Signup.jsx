@@ -1,9 +1,7 @@
 import React from "react";
 import {
-  Flex,
   Box,
   FormControl,
-  FormLabel,
   RadioGroup,
   Input,
   Image,
@@ -14,8 +12,6 @@ import {
   Button,
   Heading,
   Text,
-  useColorModeValue,
-  Link,
   Radio
 } from '@chakra-ui/react';
 import { useState } from 'react';
@@ -100,7 +96,7 @@ export default function Signup() {
           alt="bg-img"
           position={"absolute"}
         />
-        {count == 0 ? (
+        {count === 0 ? (
           <Stack maxW={"100%"} py={20}>
             <Box
               maxW={"100%"}
