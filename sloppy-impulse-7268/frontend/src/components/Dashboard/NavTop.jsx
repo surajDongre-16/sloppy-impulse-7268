@@ -24,7 +24,7 @@ import "react-calendar/dist/Calendar.css";
 import styles from "../../Styles/DashboardNav.module.css";
 import { useNavigate } from "react-router-dom";
 
-const NavTop = () => {
+const NavTop = ({x}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modelOpen, setModelOpen] = useState(false);
   const [value, setValue] = useState(new Date());
@@ -87,7 +87,6 @@ const NavTop = () => {
         </Box>
       </Box>
       <Box
-        border="1px solid black"
         w="20rem"
         display={"flex"}
         justifyContent="space-between"
@@ -95,16 +94,20 @@ const NavTop = () => {
         <Flex flexDirection={"column"}>
           <Text color="white">Calorie Budget</Text>
           <Text color="yellow" fontSize={"1.5rem"}>
-            2170
+            2,170
           </Text>
         </Flex>
         <Flex flexDirection={"column"}>
           <Text color="white">Eaten</Text>
-          <Text color="yellow" fontSize={"1.5rem"}>2170</Text>
+          <Text color="yellow" fontSize={"1.5rem"}>
+            {x > 0 ? x : 0}
+          </Text>
         </Flex>
         <Flex flexDirection={"column"}>
           <Text color="white">Left</Text>
-          <Text color="yellow" fontSize={"1.5rem"}>2170</Text>
+          <Text color="yellow" fontSize={"1.5rem"}>
+            {x > 0 ? 2173 - x : "2,173"}
+          </Text>
         </Flex>
       </Box>
       <Box display="flex" w="20%" alignItems={"center"} justifyContent="right">

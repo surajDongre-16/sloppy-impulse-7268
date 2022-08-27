@@ -21,7 +21,7 @@ const Box1 = ({ calSum, totC, totF, totP }) => {
   const carbs = totC?.reduce((a, b) => a + b, 0);
   const protein = totP?.reduce((a, b) => a + b, 0);
   const fat = totF?.reduce((a, b) => a + b, 0);
-  console.log(carbs, protein, fat);
+  console.log(carbs, protein, fat,"box1");
   return (
     <>
       <Box m="1.5rem auto" w="33rem">
