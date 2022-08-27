@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -16,7 +17,7 @@ const authentication = require("./middlewares/authentication")
 
 app.use("/weight", weightRoutes);
 app.use("/user", userController)
-// app.use(authentication)
+app.use(authentication)
 app.use("/food", foodRouter);
 
 
