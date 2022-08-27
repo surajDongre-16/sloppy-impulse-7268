@@ -17,7 +17,7 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Lunch() {
+function Lunch({ setTrick }) {
     const [allDatalunch, setAllDatalunch] = useState();
     const [value, setValue] = useState("");
     const [suggestionlunch, setSuggestionlunch] = useState(false);
@@ -73,7 +73,7 @@ function Lunch() {
                 console.log("added statuss" + res)
                 getPostBreakData();
                 getAllCalories();
-
+                setTrick((prv) => !prv);
 
             })
             .catch((err) => console.log("err from backend" + err))
@@ -118,7 +118,7 @@ function Lunch() {
                 // window.location.reload();
                 getPostBreakData();
 
-
+                setTrick((prv) => !prv);
             })
             .catch((err) => console.log(err))
     }

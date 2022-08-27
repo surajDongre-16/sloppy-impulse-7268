@@ -12,79 +12,82 @@ import CircularProgressBar from "../../components/Dashboard/CircularProgress";
 import HorizontalProg from "../../components/Dashboard/HorizontalProg";
 
 function FoodMain() {
-    const [calSum, setCalSum] = useState();
-    const [totC, setC] = useState();
-    const [totF, setF] = useState();
-    const [totP, setP] = useState();
-     const x = calSum?.reduce((a, b) => a + b, 0);
-     const carbs = totC?.reduce((a, b) => a + b, 0);
-     const protein = totP?.reduce((a, b) => a + b, 0);
-     const fat = totF?.reduce((a, b) => a + b, 0);
-    const getAllCalories = async () => {
-      // http://localhost:8080/food/allcalories
+  const [trick, setTrick] = useState(false);
 
-      await fetch("http://localhost:8080/food/allcalories")
-        .then((res) => res.json())
-        .then((res) => {
-          const carbs = [];
-          const fat = [];
-          const prot = [];
-          const sum = [];
-          const diner = res.allcolories.filter(
-            (option) => option._id === "dinner"
-          );
-          const breakfast = res.allcolories.filter(
-            (option) => option._id === "breakfast"
-          );
-          const lunch = res.allcolories.filter(
-            (option) => option._id === "lunch"
-          );
-          const snacks = res.allcolories.filter(
-            (option) => option._id === "snacks"
-          );
-          breakfast?.map((item) => sum.push(item.totalCalo));
-          lunch?.map((item) => sum.push(item.totalCalo));
-          diner?.map((item) => sum.push(item.totalCalo));
-          snacks?.map((item) => sum.push(item.totalCalo));
-          setCalSum(sum);
+  const [calSum, setCalSum] = useState();
+  const [totC, setC] = useState();
+  const [totF, setF] = useState();
+  const [totP, setP] = useState();
 
-          breakfast?.map((item) => {
-            return (
-              carbs.push(item.totalCarbs),
-              fat.push(item.totalFat),
-              prot.push(item.totalProtein)
-            );
-          });
-          lunch?.map((item) => {
-            return (
-              carbs.push(item.totalCarbs),
-              fat.push(item.totalFat),
-              prot.push(item.totalProtein)
-            );
-          });
-          diner?.map((item) => {
-            return (
-              carbs.push(item.totalCarbs),
-              fat.push(item.totalFat),
-              prot.push(item.totalProtein)
-            );
-          });
-          snacks?.map((item) => {
-            return (
-              carbs.push(item.totalCarbs),
-              fat.push(item.totalFat),
-              prot.push(item.totalProtein)
-            );
-          });
-          setC(carbs);
-          setF(fat);
-          setP(prot);
-        })
-        .catch((err) => console.log(err));
-    };
-    useEffect(() => {
-      getAllCalories();
-    }, []);
+  const x = calSum?.reduce((a, b) => a + b, 0);
+  const carbs = totC?.reduce((a, b) => a + b, 0);
+  const protein = totP?.reduce((a, b) => a + b, 0);
+  const fat = totF?.reduce((a, b) => a + b, 0);
+  const getAllCalories = async () => {
+    // http://localhost:8080/food/allcalories
+
+    await fetch("http://localhost:8080/food/allcalories")
+      .then((res) => res.json())
+      .then((res) => {
+        const carbs = [];
+        const fat = [];
+        const prot = [];
+        const sum = [];
+        const diner = res.allcolories.filter(
+          (option) => option._id === "dinner"
+        );
+        const breakfast = res.allcolories.filter(
+          (option) => option._id === "breakfast"
+        );
+        const lunch = res.allcolories.filter(
+          (option) => option._id === "lunch"
+        );
+        const snacks = res.allcolories.filter(
+          (option) => option._id === "snacks"
+        );
+        breakfast?.map((item) => sum.push(item.totalCalo));
+        lunch?.map((item) => sum.push(item.totalCalo));
+        diner?.map((item) => sum.push(item.totalCalo));
+        snacks?.map((item) => sum.push(item.totalCalo));
+        setCalSum(sum);
+
+        breakfast?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        lunch?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        diner?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        snacks?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        setC(carbs);
+        setF(fat);
+        setP(prot);
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    getAllCalories();
+  }, [trick]);
   return (
     <>
       <div>
@@ -134,10 +137,10 @@ function FoodMain() {
           </thead>
         </table>
         <div>
-          <Breakfast />
-          <Lunch />
-          <Dinner />
-          <Snacks />
+          <Breakfast setTrick={setTrick} />
+          <Lunch setTrick={setTrick} />
+          <Dinner setTrick={setTrick} />
+          <Snacks setTrick={setTrick} />
         </div>
       </div>
       <Flex w="70%" m="auto" h="300px">
