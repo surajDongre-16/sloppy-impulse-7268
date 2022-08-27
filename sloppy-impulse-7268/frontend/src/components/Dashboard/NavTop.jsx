@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Flex,
   Image,
   ModalFooter,
   Text,
@@ -21,6 +22,7 @@ import { AiOutlineMore } from "react-icons/ai";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../../Styles/DashboardNav.module.css";
+import { useNavigate } from "react-router-dom";
 
 const NavTop = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,7 +30,7 @@ const NavTop = () => {
   const [value, setValue] = useState(new Date());
   const dateTitle = value.toDateString().split(" ");
   const [showCalendar, setShowCalendar] = useState(false);
-
+  const navigate=useNavigate()
   function onChange(nextValue) {
     setValue(nextValue);
   }
@@ -58,13 +60,9 @@ const NavTop = () => {
         alt="logo"
         height={"30%"}
         cursor="pointer"
+        onClick={() => navigate("/")}
       />
-      <Box
-        display={"flex"}
-        w="30%"
-        ml="-15rem"
-        justifyContent={"space-between"}
-      >
+      <Box display={"flex"} w="30%" ml="0rem" justifyContent={"space-between"}>
         <Image
           src="https://www.mynetdiary.com/img/icon/date_range.png"
           alt="calendar logo"
@@ -87,6 +85,27 @@ const NavTop = () => {
           </Text>
           <AiOutlineRight size="35px" color="white" cursor="pointer" />
         </Box>
+      </Box>
+      <Box
+        border="1px solid black"
+        w="20rem"
+        display={"flex"}
+        justifyContent="space-between"
+      >
+        <Flex flexDirection={"column"}>
+          <Text color="white">Calorie Budget</Text>
+          <Text color="yellow" fontSize={"1.5rem"}>
+            2170
+          </Text>
+        </Flex>
+        <Flex flexDirection={"column"}>
+          <Text color="white">Eaten</Text>
+          <Text color="yellow" fontSize={"1.5rem"}>2170</Text>
+        </Flex>
+        <Flex flexDirection={"column"}>
+          <Text color="white">Left</Text>
+          <Text color="yellow" fontSize={"1.5rem"}>2170</Text>
+        </Flex>
       </Box>
       <Box display="flex" w="20%" alignItems={"center"} justifyContent="right">
         <Image

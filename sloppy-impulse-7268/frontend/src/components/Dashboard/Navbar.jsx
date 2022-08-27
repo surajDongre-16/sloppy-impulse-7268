@@ -7,7 +7,7 @@ const Navbar = ({setPath}) => {
 
   return (
     <Box>
-      <Box bg="#3b8302" h="125px" border={"1px solid #3b8302"}>
+      <Box bg="#3b8302" h="auto" border={"1px solid #3b8302"}>
         <Container maxW={"75rem"}>
           <NavTop />
           <NavBottom onClick={(val) => setPath(val)} />
