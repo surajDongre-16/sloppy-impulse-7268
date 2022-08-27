@@ -21,6 +21,7 @@ import {
   import { useState } from 'react';
   import {useNavigate} from "react-router-dom";
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';     
+
   
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);

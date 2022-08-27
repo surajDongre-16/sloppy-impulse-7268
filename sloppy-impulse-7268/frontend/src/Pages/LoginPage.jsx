@@ -20,12 +20,14 @@ import {
     Link,
     Radio 
   } from '@chakra-ui/react';
+
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   
   export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
     const navigate=useNavigate()
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
@@ -49,7 +51,7 @@ import {
         })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
+            console.log(res,"login res")
             const {id}=res;
             console.log(id,"d")
             alert("Login Success")
