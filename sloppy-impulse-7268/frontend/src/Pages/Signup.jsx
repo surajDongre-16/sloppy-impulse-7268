@@ -21,10 +21,55 @@ import {
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';     
   
-  
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
-    const [count,setCount]=useState(1);
+    const [count,setCount]=useState(0);
+    const [name,setname]=useState("");
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [weight, setweight] = useState("")
+    const [Tweight, setTweight] = useState("")
+    const navigate =useNavigate()
+    
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePaasordChange = (e) => {
+        setPassword(e.target.value)
+    }
+    const handleweight = (e) => {
+      setweight(e.target.value)
+  }
+  const handlenameChange = (e) => {
+    setname(e.target.value)
+}
+
+  const handleTweight = (e) => {
+      setTweight(e.target.value)
+  }
+
+    const handleSubmit = async () => {
+        const payload ={
+          name,
+            email,
+            password,
+            weight,
+            Tweight
+        }
+        await fetch("http://localhost:8080/user/register", {
+            method : "POST",
+            body : JSON.stringify(payload),
+            headers: {
+                "Content-Type" : "application/json"
+            }, 
+        }).then((res)=>{
+            alert("SignUp successful");
+            navigate("/login")
+        }).catch((err)=>{
+            alert("something went wrong")
+        })
+    }
   
     return (count==0)?(
       
@@ -54,7 +99,9 @@ import {
                    borderLeft={"none"}
                    borderRight={"none"}
                    borderBottom={"2px solid"}
-                   borderRadius={"none"}/>
+                   borderRadius={"none"}
+                   onClick={handleweight}
+                   />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -76,7 +123,9 @@ import {
                   borderLeft={"none"}
                   borderRight={"none"}
                    borderBottom={"2px solid"} 
-                   borderRadius={"none"}/>
+                   borderRadius={"none"}
+                   onClick={handleTweight}
+                   />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -106,7 +155,7 @@ import {
 </RadioGroup>   
             </Stack>
             <Box margin={"auto"} width={"25%"} pb={100}  pt={20}>
-            <Button colorScheme='blue' textAlign={"center"} width ={"100%"}>NEXT</Button>
+            <Button colorScheme='blue' textAlign={"center"} width ={"100%"}  onClick={()=>setCount(count+1)}>NEXT</Button>
             </Box>
           </Box>
         </Stack>
@@ -144,7 +193,9 @@ import {
                   borderLeft={"none"}
                   borderRight={"none"}
                    borderBottom={"2px solid"} 
-                   borderRadius={"none"}/>
+                   borderRadius={"none"} 
+                   onChange={handlenameChange}
+                   />
                   <InputRightElement h={'full'}>
                   </InputRightElement>
                 </InputGroup>
@@ -159,7 +210,10 @@ import {
                borderLeft={"none"}
                borderRight={"none"}
                 borderBottom={"2px solid"} 
-                borderRadius={"none"}/>
+                borderRadius={"none"}
+                onChange={handleEmailChange}
+                
+                />
                <InputRightElement h={'full'}>
                </InputRightElement>
              </InputGroup>
@@ -173,7 +227,10 @@ import {
                    borderLeft={"none"}
                    borderRight={"none"}
                    borderBottom={"2px solid"}
-                   borderRadius={"none"}/>
+                   borderRadius={"none"}
+                   onChange={handlePaasordChange}
+                   
+                   />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -187,11 +244,11 @@ import {
               </FormControl>
             </Stack>
             <Box margin={"auto"} width={"25%"}  pt={20}>
-            <Button colorScheme='blue' textAlign={"center"} py={"1.6rem"} width ={"70%"}>NEXT</Button>
+            <Button colorScheme='blue' textAlign={"center"} py={"1.6rem"} width ={"70%"}  onClick={handleSubmit}>NEXT</Button>
            
             </Box>
-            <Box marginTop={"-1rem"}  width={"10%"} marginLeft={"-4rem"} mb={100}  >
-            <Text fontWeight={"bold"} color={"blue"} fontSize={"1.1rem"}><Text as="span" fontSize={"1.5rem"}> {"<"}</Text> BACK</Text> 
+            <Box marginTop={"-1rem"}  width={"10%"} marginLeft={"-4rem"} mb={100} onClick={()=>setCount(count-1)} >
+            <Text fontWeight={"bold"} color={"blue"} fontSize={"1.1rem"} ><Text as="span" fontSize={"1.5rem"}> {"<"} </Text> BACK</Text> 
             </Box>
           </Box>
         </Stack>
