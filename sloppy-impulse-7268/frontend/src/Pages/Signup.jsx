@@ -19,6 +19,7 @@ import {
     Radio 
   } from '@chakra-ui/react';
   import { useState } from 'react';
+  import {useNavigate} from "react-router-dom";
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';     
   
   export default function Signup() {
@@ -27,8 +28,8 @@ import {
     const [name,setname]=useState("");
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [weight, setweight] = useState("")
-    const [Tweight, setTweight] = useState("")
+    const [weight, setweight] = useState("80")
+    const [Tweight, setTweight] = useState("70")
     const navigate =useNavigate()
     
     const handleEmailChange = (e) => {
@@ -65,7 +66,7 @@ import {
             }, 
         }).then((res)=>{
             alert("SignUp successful");
-            navigate("/login")
+            navigate("/signin")
         }).catch((err)=>{
             alert("something went wrong")
         })
@@ -100,7 +101,7 @@ import {
                    borderRight={"none"}
                    borderBottom={"2px solid"}
                    borderRadius={"none"}
-                   onClick={handleweight}
+                   onChange={handleweight}
                    />
                   <InputRightElement h={'full'}>
                     <Button
@@ -124,7 +125,7 @@ import {
                   borderRight={"none"}
                    borderBottom={"2px solid"} 
                    borderRadius={"none"}
-                   onClick={handleTweight}
+                   onChange={handleTweight}
                    />
                   <InputRightElement h={'full'}>
                     <Button
