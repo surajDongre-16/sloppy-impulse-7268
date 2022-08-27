@@ -1,0 +1,51 @@
+#main{
+    /* border: 1px solid red; */
+    background-color:#F0F0F0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+
+.leftmain{
+    /* border: 1px solid blue; */
+    width: 300px;
+    height: auto;
+    margin: 50px;
+}
+.rightmain{
+    /* border: 1px solid green;
+    width: 80%;
+    height: 300px;
+    margin: 50px;
+    background-color:#fff; */
+
+    
+}
+
+#DailyAnalysis{
+    /* border: 1px solid green; */
+    width: 100%;
+    height: auto;
+    margin: 50px;
+    background-color:#fff;
+    margin-left: -10px;
+}
+
+#myAdvice{
+    /* border: 1px solid green; */
+    width: 90%;
+    height: 570px;
+    margin: 50px;
+    background-color:#fff;
+    margin-left: -10px;
+}
+
+#Summary{
+    /* border: 1px solid green; */
+    width: auto;
+    height: auto;
+    margin: 50px;
+    background-color:#fff;
+    margin-left: -10px;
+}

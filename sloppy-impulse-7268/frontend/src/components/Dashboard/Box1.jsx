@@ -11,9 +11,12 @@ import React from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
+import DatePicker from "react-horizontal-datepicker";
 import styles from "../../Styles/DashboardNav.module.css";
 
-const Box1 = () => {
+const Box1 = ({ calSum }) => {
+  const x = calSum?.reduce((a, b) => a + b, 0);
+  console.log(x, "X");
   return (
     <>
       <Box m="1.5rem auto" w="33rem">
@@ -22,7 +25,7 @@ const Box1 = () => {
         <Box position="relative">
           <Text color="gray">Calorie Budget</Text>
           <Text fontSize={"1.5rem"} color="#3c9ec3">
-            1,953
+            2,170
           </Text>
           <AiOutlineMore className={styles.bx1dot} />
         </Box>
@@ -91,7 +94,7 @@ const Box1 = () => {
             justifyContent="center"
           >
             <CircularProgress
-              value={90}
+              value={x > 0 ? Math.floor((x / 2173) * 100) : 0}
               thickness="10px"
               size="15rem"
               color="#8fe124"
@@ -101,13 +104,13 @@ const Box1 = () => {
                 color="#5cc028"
                 fontSize={"1.5rem"}
               >
-                0
+                {x > 0 ? x : 0}
               </CircularProgressLabel>
               <CircularProgressLabel fontSize={"1.2rem"} color="gray" mt="1rem">
                 Left
               </CircularProgressLabel>
               <CircularProgressLabel fontSize={"1.5rem"} color="gray" mt="4rem">
-                1,953
+                {x > 0 ? 2173 - x : "2,173"}
               </CircularProgressLabel>
             </CircularProgress>
           </Flex>
@@ -123,19 +126,19 @@ const Box1 = () => {
           >
             <Text>Breakfast</Text>
             <Text fontSize={"1.5rem"} color="#3c9ec3">
-              0
+              {calSum?.length > 0 ? calSum[0] : 0}
             </Text>
             <Text>Lunch</Text>
             <Text fontSize={"1.5rem"} color="#3c9ec3">
-              0
+              {calSum?.length > 1 ? calSum[1] : 0}
             </Text>
             <Text>Dinner</Text>
             <Text fontSize={"1.5rem"} color="#3c9ec3">
-              0
+              {calSum?.length > 2 ? calSum[2] : 0}
             </Text>
             <Text>Snacks</Text>
             <Text fontSize={"1.5rem"} color="#3c9ec3">
-              0
+              {calSum?.length > 3 ? calSum[3] : 0}
             </Text>
           </Flex>
         </Flex>
@@ -179,13 +182,13 @@ const Box1 = () => {
       </Box>
       <Box w="35rem" m="0 auto">
         <Flex>
-          <AiOutlineLeft
-            size="1.5rem"
-            color="#3c9ec3"
-          />
+          <AiOutlineLeft size="1.5rem" color="#3c9ec3" />
           <Box className={styles.dtBord}></Box>
           <AiOutlineRight size="1.5rem" color="#3c9ec3" />
         </Flex>
+        <Box>
+          <DatePicker color={"#5cc028"} />
+        </Box>
       </Box>
     </>
   );

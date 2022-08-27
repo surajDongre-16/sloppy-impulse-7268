@@ -1,14 +1,17 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
+import Cards from "../components/Library/Cards";
 import Menus from "../components/Library/Menus";
 
 const Library = () => {
   return (
-    <Box border={"1px solid"} display="flex">
-      <Box border="1px solid" h="auto" w="25rem">
+    <Box display="flex">
+      <Box h="auto" w="25rem">
         <Menus />
       </Box>
-      <Box border="1px solid red" h="50rem" w="75rem"></Box>
+      <Box h="auto" w="75rem">
+        <Cards/>
+      </Box>
     </Box>
   );
 };

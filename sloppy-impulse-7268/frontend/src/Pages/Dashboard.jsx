@@ -3,27 +3,27 @@ import React, { useState } from 'react'
 import Footer from '../components/Dashboard/Footer';
 import MiddleSection from '../components/Dashboard/MiddleSection';
 import Navbar from '../components/Dashboard/Navbar'
+import AnalysisPage from './Analysis Page/AnalysisPage';
 import FoodMain from './Foodpage/FoodMain';
 import PlanWeight from './PlanPage/PlanWeight';
-import Analysis from './Subpages/Analysis';
 import Community from './Subpages/Community';
 import Exercise from './Subpages/Exercise';
 import Setting from './Subpages/Setting';
-
+import AnalysisPage from "./Analysis Page/AnalysisPage"
 
 const Dashboard = () => {
-  const [path,setPath]=useState("")
-  console.log(path.navigateTo,"path")
+  const [path, setPath] = useState("/dashboard");
+  // console.log(path,"path")
   return (
     <Box bg="#f0f0f0">
       <Navbar setPath={setPath} />
-      {path.navigateTo === "/dashboard" ? <MiddleSection /> : ""}
-      {path.navigateTo === "/dashboard/plan" ? <PlanWeight /> : ""}
-      {path.navigateTo === "/dashboard/food" ? <FoodMain /> : ""}
-      {path.navigateTo === "/dashboard/exercise" ? <Exercise /> : ""}
-      {path.navigateTo === "/dashboard/analysis" ? <Analysis /> : ""}
-      {path.navigateTo === "/dashboard/community" ? <Community /> : ""}
-      {path.navigateTo === "/dashboard/settings" ? <Setting /> : ""}
+      {path === "/dashboard" ? <MiddleSection /> : ""}
+      {path === "/dashboard/plan" ? <PlanWeight /> : ""}
+      {path === "/dashboard/food" ? <FoodMain /> : ""}
+      {path === "/dashboard/exercise" ? <Exercise /> : ""}
+      {path === "/dashboard/analysis" ? <AnalysisPage /> : ""}
+      {path === "/dashboard/community" ? <Community /> : ""}
+      {path === "/dashboard/settings" ? <Setting /> : ""}
       <Footer />
     </Box>
   );

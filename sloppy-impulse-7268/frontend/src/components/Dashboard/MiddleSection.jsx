@@ -1,10 +1,5 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  Image,
-} from "@chakra-ui/react";
-import React from "react";
+import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import styles from "../../Styles/DashboardNav.module.css";
 import Box1 from "./Box1";
 import Box2 from "./Box2";
@@ -14,6 +9,41 @@ import Box6 from "./Box6";
 import Box7 from "./Box7";
 
 const MiddleSection = () => {
+  const [totalCal, setTotalCal] = useState();
+  const [calSum, setCalSum] = useState();
+  const sum=[]
+  const getAllCalories = async () => {
+    // http://localhost:8080/food/allcalories
+
+    await fetch("http://localhost:8080/food/allcalories")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("allcalories", res.allcolories);
+        let diner = res.allcolories.filter((option) => option._id == "dinner");
+        let breakfast = res.allcolories.filter(
+          (option) => option._id == "breakfast"
+        );
+        let lunch = res.allcolories.filter((option) => option._id == "lunch");
+        let snacks = res.allcolories.filter((option) => option._id == "snacks");
+        breakfast?.map((item) => sum.push(item.totalCalo));
+        lunch?.map((item) => sum.push(item.totalCalo));
+        diner?.map((item) => sum.push(item.totalCalo));
+        snacks?.map((item) => sum.push(item.totalCalo));
+          setCalSum(sum)
+        // breakfast?.map((item) => setCalSum([...calSum, item.totalCalo]));
+        // lunch?.map((item) => setCalSum([...calSum, item.totalCalo]));
+        // snacks?.map((item) => setCalSum([...calSum, item.totalCalo]));
+
+        setTotalCal(res.allcolories);
+        // console.log(s1);
+      })
+      .catch((err) => console.log(err));
+  };
+  console.log(calSum)
+  useEffect(() => {
+    getAllCalories();
+  }, []);
+
   return (
     <Box bg="#f0f0f0" w="73rem" margin={"auto"}>
       <Grid
@@ -46,13 +76,8 @@ const MiddleSection = () => {
             `,
         }}
       >
-        <GridItem
-          area="bx1"
-          bg="white"
-          h="38rem"
-          className={styles.grid}
-        >
-            <Box1/>
+        <GridItem area="bx1" bg="white" h="38rem" className={styles.grid}>
+          <Box1 calSum={calSum} />
         </GridItem>
         <GridItem area="bx2" bg="white" className={styles.grid}>
           <Box2 />

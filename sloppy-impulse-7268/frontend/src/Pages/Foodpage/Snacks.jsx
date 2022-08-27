@@ -17,7 +17,7 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
-function Breakfast() {
+function Snacks() {
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");
     const [suggestion, setSuggestion] = useState(false);
@@ -40,15 +40,15 @@ function Breakfast() {
         setValue(e.target.value);
     }
 
-    // get all Breakfast data from data base
+    // get all Snacks data from data base
 
 
     const getAllData = async () => {
-        await fetch("http://localhost:8080/food/getallbreakfast")
+        await fetch("http://localhost:8080/food/getsnacks")
             .then((res) => res.json())
             .then((res) => {
-                console.log(res.breakfast)
-                setAllData(res.breakfast)
+                console.log(res.snacks)
+                setAllData(res.snacks)
             })
             .catch((err) => console.log("errrrr", err))
     }
@@ -82,16 +82,16 @@ function Breakfast() {
     // get the post data
 
     const getPostBreakData = async () => {
-        await fetch("http://localhost:8080/food/getpostbreakfast")
+        await fetch("http://localhost:8080/food/getpostsnacks")
             .then((res) => res.json())
             .then((res) => {
-                if (res.breakfast.length > 0) {
+                if (res.snacks.length > 0) {
                     setDelete(true)
                 }
                 else {
                     setDelete(false)
                 }
-                setBreakPostData(res.breakfast)
+                setBreakPostData(res.snacks)
 
             })
             .catch((err) => console.log(err))
@@ -162,7 +162,7 @@ function Breakfast() {
             .then((res) => res.json())
             .then((res) => {
                 console.log("allcalories", res.allcolories)
-                let dtat = res.allcolories.filter(option => option._id == 'breakfast')
+                let dtat = res.allcolories.filter(option => option._id == 'snacks')
                 // setBreakPostData(res.breakfast)
 
 
@@ -216,7 +216,7 @@ function Breakfast() {
                         <Flex textAlign='center' mt='-5px' h='45px'>
                             <Box w='20%' >
                                 <Flex  >
-                                    <Text pl='10px'> BREAKFAST</Text>
+                                    <Text pl='10px'> SNACKS</Text>
 
                                 </Flex>
                             </Box>
@@ -329,4 +329,4 @@ function Breakfast() {
     )
 }
 
-export default Breakfast
+export default Snacks

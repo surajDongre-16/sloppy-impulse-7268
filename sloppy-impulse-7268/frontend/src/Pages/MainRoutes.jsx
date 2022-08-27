@@ -6,6 +6,17 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Dashboard";
 
 import Homepage from "./Homepage";
+
+// import Plan from "./Subpages/Plan";
+
+import Exercise from "./Subpages/Exercise";
+import Analysis from "./Subpages/Analysis"; 
+import Community from "./Subpages/Community";
+import Setting from "./Subpages/Setting";
+
+
+import PlanWeight from "./PlanPage/PlanWeight";
+
 // import Plan from "./Subpages/Plan";
 // import Food from "./Subpages/Food";
 // import Exercise from "./Subpages/Exercise";
@@ -15,6 +26,7 @@ import Homepage from "./Homepage";
 
 // import PlanSidebar from "./PlanPage/PlanSidebar";
 // import PlanWeight from "./PlanPage/PlanWeight";
+
 import PlanCarbs from "./PlanPage/PlanCarbs";
 import PlanExericse from "./PlanPage/PlanExericse";
 import PlanNutrient from "./PlanPage/PlanNutrient";
@@ -34,9 +46,9 @@ const MainRoutes = () => {
         {/* <Route path="/dashboard/plan" element={<PlanWeight />} />
         <Route path="/dashboard/food" element={<FoodMain />} />
         <Route path="/dashboard/exercise" element={<Exercise />} />
-        <Route path="/dashboard/analysis" element={<Analysis />} />
+        <Route path="/dashboard/analysis" element={<AnalysisPage />} />
         <Route path="/dashboard/community" element={<Community />} />
-        <Route path="/dashboard/settings" element={<Setting />} /> */}
+  <Route path="/dashboard/settings" element={<Setting />} /> */}
         {/* Plan Routes */}
         <Route path="/plancarbs" element={<PlanCarbs />} />
         <Route path="/planexericse" element={<PlanExericse />} />
