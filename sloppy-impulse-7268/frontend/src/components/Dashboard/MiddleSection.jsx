@@ -8,93 +8,91 @@ import Box5 from "./Box5";
 import Box6 from "./Box6";
 import Box7 from "./Box7";
 
-const MiddleSection = () => {
+const MiddleSection = ({ calSum, totC, totF, totP }) => {
+  // const [totalCal, setTotalCal] = useState();
+  // const [calSum, setCalSum] = useState();
+  // const [totC, setC] = useState();
+  // const [totF, setF] = useState();
+  // const [totP, setP] = useState();
 
-  const [totalCal, setTotalCal] = useState();
-  const [calSum, setCalSum] = useState();
-  const [totC, setC] = useState();
-  const [totF, setF] = useState();
-  const [totP, setP] = useState();
+  // const getAllCalories = async () => {
+  //   // http://localhost:8080/food/allcalories
 
-  const getAllCalories = async () => {
-    // http://localhost:8080/food/allcalories
+  //   await fetch("http://localhost:8080/food/allcalories", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       const carbs = [];
+  //       const fat = [];
+  //       const prot = [];
+  //       const sum = [];
+  //       const diner = res.allcolories.filter(
+  //         (option) => option._id === "dinner"
+  //       );
+  //       const breakfast = res.allcolories.filter(
+  //         (option) => option._id === "breakfast"
+  //       );
+  //       const lunch = res.allcolories.filter(
+  //         (option) => option._id === "lunch"
+  //       );
+  //       const snacks = res.allcolories.filter(
+  //         (option) => option._id === "snacks"
+  //       );
+  //       breakfast?.map((item) => sum.push(item.totalCalo));
+  //       lunch?.map((item) => sum.push(item.totalCalo));
+  //       diner?.map((item) => sum.push(item.totalCalo));
+  //       snacks?.map((item) => sum.push(item.totalCalo));
+  //       setCalSum(sum);
 
-    await fetch("http://localhost:8080/food/allcalories", {
+  //       breakfast?.map((item) => {
+  //         return (
+  //           carbs.push(item.totalCarbs),
+  //           fat.push(item.totalFat),
+  //           prot.push(item.totalProtein)
+  //         );
+  //       });
+  //       lunch?.map((item) => {
+  //         return (
+  //           carbs.push(item.totalCarbs),
+  //           fat.push(item.totalFat),
+  //           prot.push(item.totalProtein)
+  //         );
+  //       });
+  //       diner?.map((item) => {
+  //         return (
+  //           carbs.push(item.totalCarbs),
+  //           fat.push(item.totalFat),
+  //           prot.push(item.totalProtein)
+  //         );
+  //       });
+  //       snacks?.map((item) => {
+  //         return (
+  //           carbs.push(item.totalCarbs),
+  //           fat.push(item.totalFat),
+  //           prot.push(item.totalProtein)
+  //         );
+  //       });
+  //       setC(carbs);
+  //       setF(fat);
+  //       setP(prot);
+  //       // breakfast?.map((item) => setCalSum([...calSum, item.totalCalo]));
+  //       // lunch?.map((item) => setCalSum([...calSum, item.totalCalo]));
+  //       // snacks?.map((item) => setCalSum([...calSum, item.totalCalo]));
 
-      method: "GET",
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem("token")}`
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        const carbs = [];
-        const fat = [];
-        const prot = [];
-        const sum = [];
-        const diner = res.allcolories.filter(
-          (option) => option._id === "dinner"
-        );
-        const breakfast = res.allcolories.filter(
-          (option) => option._id === "breakfast"
-        );
-        const lunch = res.allcolories.filter(
-          (option) => option._id === "lunch"
-        );
-        const snacks = res.allcolories.filter(
-          (option) => option._id === "snacks"
-        );
-        breakfast?.map((item) => sum.push(item.totalCalo));
-        lunch?.map((item) => sum.push(item.totalCalo));
-        diner?.map((item) => sum.push(item.totalCalo));
-        snacks?.map((item) => sum.push(item.totalCalo));
-        setCalSum(sum);
-
-        breakfast?.map((item) => {
-          return (
-            carbs.push(item.totalCarbs),
-            fat.push(item.totalFat),
-            prot.push(item.totalProtein)
-          );
-        });
-        lunch?.map((item) => {
-          return (
-            carbs.push(item.totalCarbs),
-            fat.push(item.totalFat),
-            prot.push(item.totalProtein)
-          );
-        });
-        diner?.map((item) => {
-          return (
-            carbs.push(item.totalCarbs),
-            fat.push(item.totalFat),
-            prot.push(item.totalProtein)
-          );
-        });
-        snacks?.map((item) => {
-          return (
-            carbs.push(item.totalCarbs),
-            fat.push(item.totalFat),
-            prot.push(item.totalProtein)
-          );
-        });
-        setC(carbs);
-        setF(fat);
-        setP(prot);
-        // breakfast?.map((item) => setCalSum([...calSum, item.totalCalo]));
-        // lunch?.map((item) => setCalSum([...calSum, item.totalCalo]));
-        // snacks?.map((item) => setCalSum([...calSum, item.totalCalo]));
-
-        setTotalCal(res.allcolories);
-        // console.log(s1);
-      })
-      .catch((err) => console.log(err));
-  };
-  console.log(calSum, totC, totF, totP);
-  useEffect(() => {
-    getAllCalories();
-  }, []);
+  //       setTotalCal(res.allcolories);
+  //       // console.log(s1);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+  // console.log(calSum, totC, totF, totP);
+  // useEffect(() => {
+  //   getAllCalories();
+  // }, []);
 
   return (
     <Box bg="#f0f0f0" w="73rem" margin={"auto"}>

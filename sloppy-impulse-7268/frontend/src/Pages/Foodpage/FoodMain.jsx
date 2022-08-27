@@ -12,8 +12,8 @@ import CircularProgressBar from "../../components/Dashboard/CircularProgress";
 import HorizontalProg from "../../components/Dashboard/HorizontalProg";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-function FoodMain() {
-  const [trick, setTrick] = useState(false);
+function FoodMain({ setTrick,trick }) {
+//   const [trick, setTrick] = useState(false);
 
   const [calSum, setCalSum] = useState();
   const [totC, setC] = useState();
@@ -28,11 +28,10 @@ function FoodMain() {
     // http://localhost:8080/food/allcalories
 
     await fetch("http://localhost:8080/food/allcalories", {
-
       method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem("token")}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
@@ -152,11 +151,16 @@ function FoodMain() {
         </div>
       </div>
 
-      <Flex w="70%" m="auto" h="300px" bg='white' className={style.shoe}>
+      <Flex w="70%" m="auto" h="300px" bg="white" className={style.shoe}>
         <Box w={"20rem"} p="0 0 5rem 0">
           <CircularProgressBar x={x} />
         </Box>
-        <Box w="43rem" display='flex' flexDirection={'column'} justifyContent='space-around' >
+        <Box
+          w="43rem"
+          display="flex"
+          flexDirection={"column"}
+          justifyContent="space-around"
+        >
           <HorizontalProg
             carbs={carbs}
             protein={protein}
@@ -165,57 +169,56 @@ function FoodMain() {
             totF={totF}
             totP={totP}
             ml="1rem"
-            w='40rem'
+            w="40rem"
           />
         </Box>
       </Flex>
-      <Flex h="110px" w="70%" m="auto" mt='20px'>
-
-        <Box w='60%' bg='white' className={style.second} h='100%' >
+      <Flex h="110px" w="70%" m="auto" mt="20px">
+        <Box w="60%" bg="white" className={style.second} h="100%">
           <Flex>
             <Box>
-              <img style={{ width: "40px", margin: "10px" }} src='https://s3.amazonaws.com/img.mynetdiary.com/advice/2020/15_search_global@3x.png' alt='img' />
+              <img
+                style={{ width: "40px", margin: "10px" }}
+                src="https://s3.amazonaws.com/img.mynetdiary.com/advice/2020/15_search_global@3x.png"
+                alt="img"
+              />
             </Box>
             <Box>
-
-              <Text w='80%' textAlign='left' fontSize='14px' p='10px'>Import, customize, and log recipes from your favorite
-                websites with our Recipe Import feature.</Text>
+              <Text w="80%" textAlign="left" fontSize="14px" p="10px">
+                Import, customize, and log recipes from your favorite websites
+                with our Recipe Import feature.
+              </Text>
             </Box>
-            <Box m='20px' cursor='pointer'>
+            <Box m="20px" cursor="pointer">
               <BsThreeDotsVertical />
             </Box>
           </Flex>
 
-          <Flex ml='63%' w='35%' h='38px'>
-            <Button colorScheme='teal' variant='ghost'>
+          <Flex ml="63%" w="35%" h="38px">
+            <Button colorScheme="teal" variant="ghost">
               MORE
             </Button>
 
-            <Button ml='10px' colorScheme='teal' variant='ghost'>
+            <Button ml="10px" colorScheme="teal" variant="ghost">
               MY ADVICE
             </Button>
           </Flex>
-
         </Box>
 
-        <Flex w='35%' h='50px' >
-
-          <Button ml='10px' colorScheme='teal' variant='ghost'>
+        <Flex w="35%" h="50px">
+          <Button ml="10px" colorScheme="teal" variant="ghost">
             DAILY REPORT
           </Button>
 
-          <Button ml='10px' colorScheme='teal' variant='ghost'>
+          <Button ml="10px" colorScheme="teal" variant="ghost">
             DAILY ANALYSIS
           </Button>
 
-          <Button ml='10px' colorScheme='teal' variant='ghost'>
+          <Button ml="10px" colorScheme="teal" variant="ghost">
             HELP
           </Button>
-
         </Flex>
-
       </Flex>
-
     </>
   );
 }
