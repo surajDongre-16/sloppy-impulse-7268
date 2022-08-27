@@ -19,7 +19,8 @@ import {
     Radio 
   } from '@chakra-ui/react';
   import { useState } from 'react';
-  import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+  import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';     
+  
   
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);

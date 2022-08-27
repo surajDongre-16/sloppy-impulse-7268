@@ -33,7 +33,7 @@ import PlanNutrient from "./PlanPage/PlanNutrient";
 import PlanCycling from "./PlanPage/PlanCycling";
 import Library from "./Library";
 import Signup from "./Signup";
-
+import LoginPage from "./LoginPage"
 const MainRoutes = () => {
   return (
     <div>
@@ -42,6 +42,7 @@ const MainRoutes = () => {
         <Route path='/library' element={<Library/>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/signin' element={<LoginPage/>}/>
         {/* <Route path="/dashboard/plan" element={<PlanWeight />} />
         <Route path="/dashboard/food" element={<FoodMain />} />
         <Route path="/dashboard/exercise" element={<Exercise />} />
