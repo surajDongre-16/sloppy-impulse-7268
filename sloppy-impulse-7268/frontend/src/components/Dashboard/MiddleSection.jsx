@@ -11,25 +11,69 @@ import Box7 from "./Box7";
 const MiddleSection = () => {
   const [totalCal, setTotalCal] = useState();
   const [calSum, setCalSum] = useState();
-  const sum=[]
+  const [totC, setC] = useState();
+  const [totF, setF] = useState();
+  const [totP, setP] = useState();
+
   const getAllCalories = async () => {
     // http://localhost:8080/food/allcalories
 
     await fetch("http://localhost:8080/food/allcalories")
       .then((res) => res.json())
       .then((res) => {
-        console.log("allcalories", res.allcolories);
-        let diner = res.allcolories.filter((option) => option._id == "dinner");
-        let breakfast = res.allcolories.filter(
-          (option) => option._id == "breakfast"
+        const carbs = [];
+        const fat = [];
+        const prot = [];
+        const sum = [];
+        const diner = res.allcolories.filter(
+          (option) => option._id === "dinner"
         );
-        let lunch = res.allcolories.filter((option) => option._id == "lunch");
-        let snacks = res.allcolories.filter((option) => option._id == "snacks");
+        const breakfast = res.allcolories.filter(
+          (option) => option._id === "breakfast"
+        );
+        const lunch = res.allcolories.filter(
+          (option) => option._id === "lunch"
+        );
+        const snacks = res.allcolories.filter(
+          (option) => option._id === "snacks"
+        );
         breakfast?.map((item) => sum.push(item.totalCalo));
         lunch?.map((item) => sum.push(item.totalCalo));
         diner?.map((item) => sum.push(item.totalCalo));
         snacks?.map((item) => sum.push(item.totalCalo));
-          setCalSum(sum)
+        setCalSum(sum);
+
+        breakfast?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        lunch?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        diner?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        snacks?.map((item) => {
+          return (
+            carbs.push(item.totalCarbs),
+            fat.push(item.totalFat),
+            prot.push(item.totalProtein)
+          );
+        });
+        setC(carbs);
+        setF(fat);
+        setP(prot);
         // breakfast?.map((item) => setCalSum([...calSum, item.totalCalo]));
         // lunch?.map((item) => setCalSum([...calSum, item.totalCalo]));
         // snacks?.map((item) => setCalSum([...calSum, item.totalCalo]));
@@ -39,7 +83,7 @@ const MiddleSection = () => {
       })
       .catch((err) => console.log(err));
   };
-  console.log(calSum)
+  console.log(calSum, totC,totF,totP);
   useEffect(() => {
     getAllCalories();
   }, []);
@@ -77,7 +121,7 @@ const MiddleSection = () => {
         }}
       >
         <GridItem area="bx1" bg="white" h="38rem" className={styles.grid}>
-          <Box1 calSum={calSum} />
+          <Box1 calSum={calSum} totC={totC} totF={totF} totP={totP} />
         </GridItem>
         <GridItem area="bx2" bg="white" className={styles.grid}>
           <Box2 />
