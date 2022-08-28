@@ -325,15 +325,15 @@ const NAV_ITEMS = [
     children: [
       {
         label: "Weight Loss Blog",
-        href: "/library/dietitians-blog/dietitians-blog",
+        href: "/library",
       },
       {
         label: "Diet Library",
-        href: "/library/diets/diet-library",
+        href: "/library",
       },
       {
         label: "Dietitian team",
-        href: "/library/dietitian-team/dietitian-team",
+        href: "/library",
       },
     ],
   },

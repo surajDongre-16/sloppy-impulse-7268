@@ -16,8 +16,6 @@ const Homepage = () => {
     <Box>
       <Navbar />
       <br></br>
-      <br></br>
-      <br></br>
       <Firstcomponent />
       <SecondComponent />
       <ThirdComponent />
