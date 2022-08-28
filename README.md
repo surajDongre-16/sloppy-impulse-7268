@@ -16,6 +16,8 @@ The project has been completed within the duration of 5 days. Each of us had sha
 
 **Link of our deployed project**: https://my-net-diary.netlify.app/
 
+**Watch the explain video**:https://drive.google.com/file/d/1OPORH2Iz8I_YqWu-7prxXLPswW4vBi8y/view
+
 ## Tech Stack and features
 - React
 - Redux
