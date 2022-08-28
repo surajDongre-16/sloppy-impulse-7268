@@ -1,8 +1,10 @@
 import { Box, Button, Flex, Image, Text, Tooltip } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../../Styles/DashboardNav.module.css";
 
 const Box6 = () => {
+  const navigate=useNavigate()
   return (
     <Box m="1.5rem auto" w="33rem" >
       <Flex alignItems={"center"}>
@@ -54,6 +56,7 @@ const Box6 = () => {
             color="#3c9ec3"
             variant={"ghost"}
             size="sm"
+            onClick={()=>navigate('/library')}
           >
             LIBRARY
           </Button>
