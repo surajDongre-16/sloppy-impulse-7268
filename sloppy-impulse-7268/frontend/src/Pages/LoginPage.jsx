@@ -13,55 +13,54 @@ import {
   Button,
   Heading,
   Text,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
 
   const handlePaasordChange = (e) => {
-    setPassword(e.target.value)
-  }
+    setPassword(e.target.value);
+  };
 
   const handleSubmit = async () => {
     const payload = {
       email,
-      password
-    }
-    const response = await fetch("https://my-net-dairy-backend.herokuapp.com/user/login", {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json"
-      },
-    })
+      password,
+    };
+    const response = await fetch(
+      "https://my-net-dairy-backend.herokuapp.com/user/login",
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res, "login res")
+        console.log(res, "login res");
         const { id } = res;
-        console.log(id, "d")
-        alert("Login Success")
-        localStorage.setItem("token", res.token)
-        navigate(`/dashboard/${id}`)
+        console.log(id, "d");
+        alert("Login Success");
+        localStorage.setItem("token", res.token);
+        navigate(`/dashboard/${id}`);
       })
-      .catch((err) => alert("Login Failed")
-
-      )
-
-
-  }
+      .catch((err) => alert("Login Failed"));
+  };
 
   const handleClc = () => {
-    navigate("/signup")
-  }
+    navigate("/signup");
+  };
 
   return (
     <>
@@ -72,7 +71,7 @@ export default function LoginPage() {
         borderRadius={"0 0 10rem 10rem"}
         bg="#0a923f"
         border={"1px solid #0a923f"}
-        position='relative'
+        position="relative"
         top={0}
         backgroundImage={
           "https://s3.amazonaws.com/img.mynetdiary.com/images/bg-start-signup@1x.png"
@@ -217,7 +216,7 @@ export default function LoginPage() {
                 background="none"
                 mx={-5}
                 mt={-2}
-                onChange={handleClc}
+                onClick={handleClc}
                 color={"#33B621"}
               >
                 Sign Up

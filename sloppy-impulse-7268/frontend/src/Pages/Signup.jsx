@@ -12,44 +12,41 @@ import {
   Button,
   Heading,
   Text,
-  Radio
-} from '@chakra-ui/react';
-import { useState } from 'react';
+  Radio,
+} from "@chakra-ui/react";
+import { useState } from "react";
 
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 import { useNavigate } from "react-router-dom";
-
-
-
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [count, setCount] = useState(0);
   const [name, setname] = useState("");
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [weight, setweight] = useState("80")
-  const [Tweight, setTweight] = useState("70")
-  const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [weight, setweight] = useState("80");
+  const [Tweight, setTweight] = useState("70");
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
 
   const handlePaasordChange = (e) => {
-    setPassword(e.target.value)
-  }
+    setPassword(e.target.value);
+  };
   const handleweight = (e) => {
-    setweight(e.target.value)
-  }
+    setweight(e.target.value);
+  };
   const handlenameChange = (e) => {
-    setname(e.target.value)
-  }
+    setname(e.target.value);
+  };
 
   const handleTweight = (e) => {
-    setTweight(e.target.value)
-  }
+    setTweight(e.target.value);
+  };
 
   const handleSubmit = async () => {
     const payload = {
@@ -57,21 +54,23 @@ export default function Signup() {
       email,
       password,
       weight,
-      Tweight
-    }
+      Tweight,
+    };
     await fetch("https://my-net-dairy-backend.herokuapp.com/user/register", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-    }).then((res) => {
-      alert("SignUp successful");
-      navigate("/signin")
-    }).catch((err) => {
-      alert("something went wrong")
     })
-  }
+      .then((res) => {
+        alert("SignUp successful");
+        navigate("/signin");
+      })
+      .catch((err) => {
+        alert("something went wrong");
+      });
+  };
 
   return (
     <Box>
@@ -84,12 +83,11 @@ export default function Signup() {
         <Image
           src="https://s3.amazonaws.com/img.mynetdiary.com/images/logo-main.svg"
           alt="logo"
-          w='20rem'
-          position={'absolute'}
+          w="20rem"
+          position={"absolute"}
           top={0}
           left={"35rem"}
-          cursor='pointer'
-          
+          cursor="pointer"
         />
         <Image
           src="https://www.mynetdiary.com/images/bg-start-signup@2x.png"
@@ -121,7 +119,7 @@ export default function Signup() {
                   <InputGroup>
                     <Input
                       type={"text"}
-                      placeHolder={"How much do you weigh?"}
+                      placeHolder={"How much do you weight?"}
                       fontSize={"2xl"}
                       borderTop={"none"}
                       borderLeft={"none"}
@@ -129,6 +127,7 @@ export default function Signup() {
                       borderBottom={"2px solid"}
                       borderRadius={"none"}
                       onChange={handleweight}
+                      variant="flushed"
                     />
                     <InputRightElement h={"full"}>
                       <Button
@@ -154,6 +153,7 @@ export default function Signup() {
                       borderBottom={"2px solid"}
                       borderRadius={"none"}
                       onChange={handleTweight}
+                      variant="flushed"
                     />
                     <InputRightElement h={"full"}>
                       <Button
@@ -268,6 +268,7 @@ export default function Signup() {
                       borderBottom={"2px solid"}
                       borderRadius={"none"}
                       onChange={handlenameChange}
+                      variant="flushed"
                     />
                     <InputRightElement h={"full"}></InputRightElement>
                   </InputGroup>
@@ -284,6 +285,7 @@ export default function Signup() {
                       borderBottom={"2px solid"}
                       borderRadius={"none"}
                       onChange={handleEmailChange}
+                      variant="flushed"
                     />
                     <InputRightElement h={"full"}></InputRightElement>
                   </InputGroup>
@@ -300,6 +302,7 @@ export default function Signup() {
                       borderBottom={"2px solid"}
                       borderRadius={"none"}
                       onChange={handlePaasordChange}
+                      variant="flushed"
                     />
                     <InputRightElement h={"full"}>
                       <Button
@@ -352,5 +355,4 @@ export default function Signup() {
       </Box>
     </Box>
   );
-
 }
