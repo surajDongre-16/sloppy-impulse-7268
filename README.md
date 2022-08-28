@@ -28,39 +28,6 @@ The project has been completed within the duration of 5 days. Each of us had sha
 - Mongoose
 - Chakra UI
 
-
-## Glimpse and screenshots of our cloned website:
-**Landing Page**
-
-
-**Hotel Page**
-
-**Hootel See Avilablity Page**
-
-
-**Hotel Checkout page**
-
-
-**Hotel payment Page**
-
-
-**Flight Page**
-
-
-**Flight Option Page**
-
-**Flight Details Page**
-
-
-**Flight Contact details Page**
-
-
-**Payment authentication Page**
-
-
-
-
-
 ## Team Members Contributions:
  ⁍ Suraj Kishor Dongre:
  
