@@ -13,6 +13,7 @@ import {
   Button,
   Heading,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -21,7 +22,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const toast = useToast();
   const navigate = useNavigate();
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -51,8 +52,9 @@ export default function LoginPage() {
         console.log(res, "login res");
         const { id } = res;
         console.log(id, "d");
-        alert("Login Success");
+        // alert("Login Success");
         localStorage.setItem("token", res.token);
+       
         navigate(`/dashboard/${id}`);
       })
       .catch((err) => alert("Login Failed"));
@@ -182,7 +184,15 @@ export default function LoginPage() {
                     py={7}
                     px={12}
                     fontSize={"1.2rem"}
-                    onClick={handleSubmit}
+                    onClick={() => {
+                      handleSubmit()
+                       toast({
+                         title: "Login Succesful.",
+                         status: "success",
+                         duration: 3000,
+                         isClosable: true,
+                       });
+                    }}
                   >
                     SIGN IN
                   </Button>

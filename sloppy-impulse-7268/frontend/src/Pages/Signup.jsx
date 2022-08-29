@@ -13,6 +13,7 @@ import {
   Heading,
   Text,
   Radio,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -29,6 +30,8 @@ export default function Signup() {
   const [weight, setweight] = useState("80");
   const [Tweight, setTweight] = useState("70");
   const navigate = useNavigate();
+    const toast = useToast();
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -64,7 +67,7 @@ export default function Signup() {
       },
     })
       .then((res) => {
-        alert("SignUp successful");
+        // alert("SignUp successful");
         navigate("/signin");
       })
       .catch((err) => {
@@ -323,7 +326,16 @@ export default function Signup() {
                   textAlign={"center"}
                   py={"1.6rem"}
                   width={"70%"}
-                  onClick={handleSubmit}
+                  onClick={() => {
+                    handleSubmit();
+                    toast({
+                      title: "Account created.",
+                      description: "We've created your account for you.",
+                      status: "success",
+                      duration: 5000,
+                      isClosable: true,
+                    });
+                  }}
                 >
                   NEXT
                 </Button>
