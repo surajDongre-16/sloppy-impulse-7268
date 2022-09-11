@@ -2,13 +2,13 @@ import React from "react";
 import {
   Box,
   Heading,
-  Grid,
   Button,
   Image,
-  Text,
   Flex,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 const EighthComponent = () => {
+  const navigate = useNavigate();
   return (
     <Box
       as="section"
@@ -112,7 +112,7 @@ const EighthComponent = () => {
                     background:
                       "linear-gradient(to bottom,#0dd85f 0,#0bba51 100%)",
                   }}
-                  onClick={() => console.log("someone clicked me")}
+                  onClick={() => navigate('/signup')}
                 >
                   SIGN UP
                 </Button>

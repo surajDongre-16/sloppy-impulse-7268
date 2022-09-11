@@ -47,6 +47,7 @@ const FourthComponent = () => {
               borderColor: "#0bb850",
               backgroundColor: "#0bb850",
             }}
+            cursor='default'
           >
             {counterData.btn1}
             <Box ml={3}>
@@ -127,6 +128,7 @@ const FourthComponent = () => {
               borderColor: "#0bb850",
               backgroundColor: "#0bb850",
             }}
+            cursor='default'
           >
             {counterData.btn2}
             <Box ml={3}>

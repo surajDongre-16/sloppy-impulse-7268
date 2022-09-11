@@ -189,6 +189,7 @@ const Slider = ({ item }) => {
             borderColor: "#0bb850",
             backgroundColor: "#0bb850",
           }}
+          cursor='default'
         >
           Read Success Story
           <Box ml={3}>
