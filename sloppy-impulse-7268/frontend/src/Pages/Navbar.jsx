@@ -24,11 +24,15 @@ import icon7 from "../Assets/dietpage/VegeterianDiet.svg";
 import icon8 from "../Assets/dietpage/VeganDiet.svg";
 // import homeLogo from "../Assets/homepage/nav/logo-dark.svg";
 import { Link, useNavigate } from "react-router-dom";
+
+import styles from "../Styles/Navbar.module.css";
+
 const Navbar = () => {
   const navigate = useNavigate();
 
   return (
     <Box
+      className={styles.container}
       as="nav"
       position={"fixed"}
       top="0"
@@ -37,30 +41,17 @@ const Navbar = () => {
       p="0 10px"
       background="white"
     >
-      <Flex maxW={"1470px"} m="auto" p="5px 15px">
+      <Flex maxW={"98%"} m="auto" p="5px 15px">
         {/* Logo  */}
         <Link to="/">
           <Box
-            cursor="pointer"
-            height={"50px"}
-            width="220px"
-            display={"block"}
-            background={`url(https://s3.amazonaws.com/img.mynetdiary.com/images/logo-dark.svg) 50% 50% no-repeat`}
-            backgroundSize={"contain"}
-            marginBottom="5px"
+          className={styles.logo}
           ></Box>
         </Link>
         {/* Right Side  */}
 
-        <Flex flex="1" justifyContent={"space-between"}>
-          <UnorderedList
-            display={"flex"}
-            alignItems={"center"}
-            listStyleType="none"
-            ml="0"
-            justifyContent={"center"}
-            flex="1"
-          >
+        <Flex flex="1" justifyContent={"space-between"} position='relative'>
+          <UnorderedList listStyleType="none" className={styles.menus}>
             {NAV_ITEMS &&
               NAV_ITEMS.map((navItem, index) => (
                 <Menu key={uuidv4()}>
@@ -173,9 +164,9 @@ const Navbar = () => {
                 </Menu>
               ))}
           </UnorderedList>
-          <Flex justifyContent={"flex-end"}>
+          <Flex justifyContent={"flex-end"} className={styles.sign}>
             <Button
-              as="div"
+              // as="div"
               cursor="pointer"
               height="100%"
               colorScheme="green"

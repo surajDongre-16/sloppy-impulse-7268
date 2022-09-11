@@ -5,9 +5,6 @@ import {
   Grid,
   Image,
   Text,
-  UnorderedList,
-  ListItem,
-  Flex,
   Button,
 } from "@chakra-ui/react";
 import { BsFillCaretRightFill } from "react-icons/bs";
@@ -87,7 +84,7 @@ const SixthComponents = () => {
             borderColor="rgba(11,184,80,.4)"
             fontSize={["1.2rem", "1.4rem"]}
             p={["30px 30px", "35px 40px"]}
-            onClick={() => console.log("someone clicked me")}
+            cursor='default'
           >
             View All Articles
             <Box ml={2}>

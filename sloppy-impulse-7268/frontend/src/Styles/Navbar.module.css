@@ -1,0 +1,56 @@
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-left: 0;
+}
+.logo {
+  cursor: pointer;
+  height: 50px;
+  width: 220px;
+  display: block;
+  background: url(https://s3.amazonaws.com/img.mynetdiary.com/images/logo-dark.svg)
+    50% 50% no-repeat;
+  background-size: contain;
+  margin-bottom: 5px;
+}
+@media only screen and (min-width: 421px) and (max-width: 780px) {
+  .menus {
+    display: none;
+  }
+  .sign {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+  }
+  .sign > button {
+    height: 2.5rem;
+    width: 5rem;
+    font-size: 1rem;
+  }
+  .logo {
+    width: 10rem;
+  }
+}
+
+@media only screen and (min-width: 70px) and (max-width: 420px) {
+  .logo {
+    width: 7rem;
+  }
+  .menus {
+    display: none;
+  }
+  .sign {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+  }
+   .sign > button {
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+  }
+}

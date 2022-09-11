@@ -230,7 +230,6 @@ const Footer = () => {
                   p={["0 10px", "0 15px"]}
                   _hover={{
                     textDecoration: "underline",
-                    cursor: "pointer",
                   }}
                 >
                   Contact Us
@@ -243,7 +242,6 @@ const Footer = () => {
                   p={["0 10px", "0 15px"]}
                   _hover={{
                     textDecoration: "underline",
-                    cursor: "pointer",
                   }}
                 >
                   FAQ
@@ -256,7 +254,6 @@ const Footer = () => {
                   p={["0 10px", "0 15px"]}
                   _hover={{
                     textDecoration: "underline",
-                    cursor: "pointer",
                   }}
                 >
                   Privacy
@@ -269,7 +266,6 @@ const Footer = () => {
                   p={["0 10px", "0 15px"]}
                   _hover={{
                     textDecoration: "underline",
-                    cursor: "pointer",
                   }}
                 >
                   Terms of Use

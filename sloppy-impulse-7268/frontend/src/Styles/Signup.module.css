@@ -1,0 +1,36 @@
+.container {
+  height: 50rem;
+  border-radius: 0 0 10rem 10rem;
+  background-color: #0a923f;
+  position: relative;
+}
+
+.logo {
+  width: 20rem;
+  position: absolute;
+  top: 0;
+  left: 35rem;
+  cursor: pointer;
+}
+.heading {
+  padding-top: 10;
+  text-align: center;
+  color: #268fd0;
+  width: 50rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 421px) and (max-width: 1111px) {
+  .logo {
+    left: 0;
+  }
+  .heading {
+    width: 25rem;
+  }
+}
+
+@media only screen and (min-width: 70px) and (max-width: 420px) {
+  .logo {
+    left: 0;
+  }
+}
