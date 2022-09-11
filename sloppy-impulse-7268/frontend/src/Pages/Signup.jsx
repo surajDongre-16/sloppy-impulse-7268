@@ -21,6 +21,8 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 import { useNavigate } from "react-router-dom";
 
+import styles from "../Styles/Signup.module.css";
+
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [count, setCount] = useState(0);
@@ -30,8 +32,7 @@ export default function Signup() {
   const [weight, setweight] = useState("80");
   const [Tweight, setTweight] = useState("70");
   const navigate = useNavigate();
-    const toast = useToast();
-
+  const toast = useToast();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -76,21 +77,12 @@ export default function Signup() {
   };
 
   return (
-    <Box>
-      <Box
-        h="90vh"
-        borderRadius={"0 0 10rem 10rem"}
-        bg="#0a923f"
-        position={"relative"}
-      >
+    <Box h={"100%"}>
+      <Box className={styles.container}>
         <Image
           src="https://s3.amazonaws.com/img.mynetdiary.com/images/logo-main.svg"
           alt="logo"
-          w="20rem"
-          position={"absolute"}
-          top={0}
-          left={"35rem"}
-          cursor="pointer"
+          className={styles.logo}
         />
         <Image
           src="https://www.mynetdiary.com/images/bg-start-signup@2x.png"
@@ -98,7 +90,7 @@ export default function Signup() {
           position={"absolute"}
         />
         {count === 0 ? (
-          <Stack maxW={"100%"} py={20}>
+          <Stack maxW={"100%"} py={20} border='1px solid' >
             <Box
               maxW={"100%"}
               rounded={"4%"}
@@ -106,13 +98,10 @@ export default function Signup() {
               px={230}
               margin={"auto"}
               bg="white"
+              // pos={'relative'}
             >
               <Heading
-                fontSize={"5xl"}
-                pt={"10"}
-                textAlign={"center"}
-                color={"#268fd0"}
-                width={"100%"}
+                className={styles.heading}
               >
                 Sign Up: Your Weight plan
               </Heading>
