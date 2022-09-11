@@ -98,7 +98,6 @@ export default function Signup() {
               px={230}
               margin={"auto"}
               bg="white"
-              // pos={'relative'}
             >
               <Heading
                 className={styles.heading}
