@@ -36,9 +36,6 @@
 }
 
 @media only screen and (min-width: 70px) and (max-width: 420px) {
-  .container {
-    border: 1px solid red;
-  }
   .logo {
     width: 7rem;
   }
