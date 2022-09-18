@@ -17,6 +17,16 @@ import {
 
 } from '@chakra-ui/react'
 import { useRef } from 'react';
+
+// This looks awfully similar to Breakfast.jsx. If the code was more modular and well thought through, such
+// copy paste could've been avoided. The issue with this approach is obvious - if anything is changed in
+// one place, for consistency that same change will have to be replicated here. Copy-paste code stems from
+// a poor idea of getting things done fast and easily. This however leads to a lot of big and complex
+// problems later as the application grows. It also propagates the same bugs, errors in multiple places in
+// the codebase making fixes more time consuming.
+//
+// PS: It is not just Breakfast.jsx but Lunch.jsx and Snacks.jsx too. Duplicated all over the place with
+// the same commented code and typos.
 function Dinner({setTrick}) {
     const [allData, setAllData] = useState();
     const [value, setValue] = useState("");

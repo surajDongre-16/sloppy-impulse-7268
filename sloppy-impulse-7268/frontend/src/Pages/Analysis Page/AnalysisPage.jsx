@@ -145,6 +145,8 @@ const AnalysisPage = ({
                         marginLeft="20px"
                         src="https://www.mynetdiary.com/img/advice/adviceChart@3x.png"
                       />
+                      {/* As mentioned elsewhere, such hardcoded text should be fetched from some constants file.
+                      As it is now, it overly restricts what this component can do. */}
                       <Text marginLeft="50px" textAlign="left">
                         Learn your key nutrient averages with weekly analysis to
                         make sure you are getting enough of each nutrient. Some

@@ -1,3 +1,6 @@
+# This README looks like it has been simply copy pasted from elsewhere. A good example of a great
+# README for frontend projects is - https://github.com/mozilla/addons-frontend#readme.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

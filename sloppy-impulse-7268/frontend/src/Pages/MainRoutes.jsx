@@ -9,6 +9,8 @@ import Homepage from "./Homepage";
 
 // import Plan from "./Subpages/Plan";
 
+// Lots of unused imports in this file. Dead code is not good. Increases maintenance cost of code.
+
 import Exercise from "./Subpages/Exercise";
 import Analysis from "./Subpages/Analysis";
 import Community from "./Subpages/Community";
