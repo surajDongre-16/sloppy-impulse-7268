@@ -4,9 +4,59 @@ const foodRouter = require('express').Router();
 let foodModel = require('../models/food.model');
 let postFood = require("../models/foodPost.model");
 
+// This comment is not helpful at all. It should provide a good description about:
+// 1. what the API does
+// 2. what the request looks like
+// 3. what responses can be expected (success and failure cases both included)
 // post all the data 
 
+// The API path is not at all indicative of what is happening. This doesn't conform to REST principles.
+// Please read - https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9.
+// The path should be something like: /api/v1/food/ and the http method should be POST.
+// The prefix '/api/v1' should be a global and inherited by all routes. This route should only append
+// '/food' to the global path prefix.
 foodRouter.post("/postalldata", async (req, res) => {
+    // The very first statement in any API function should be to log the incoming request.
+    // In case of any failure downstream, knowing the incoming request helps a lot during
+    // debugging and understanding what could've caused the failure. Logging is extremely helpful
+    // and logging the right things in the right place with the right messages can be the
+    // difference between spending hours in finding the root error causes vs just looking at the
+    // logs and figuring it out in 2 minutes.
+    //
+    // Each API function should follow the following structure -
+    //
+    // router._http_method_("/resource/{:_optional_param_}", async (req, res) => {
+    //   console.group('Received request from {req.user.id} to add food items, with body: {req.body}.');
+    //   try {
+    //     console.log('Performing _operation_ with params: {_params_}.')
+    //     // perform API specific operations here
+    //     console.log('Successfully performed _operation_.');
+    //     res.status(_status_code_)
+    //   } catch (e) {
+    //     console.error('Could not perform _operation_.', e.message);
+    //     // add some retry logic here.
+    //     if (numRetries > retryLimit) {
+    //        res.status(500).send({ "error": "_relevant_error_message_goes_here_" });
+    //     }
+    //   }
+    //   console.groupEnd();
+    // });
+    // 
+
+    // Deserialisation can be done is a better way. Usually for serialisation and deserialisation
+    // static functions are defined in the model class itself. Something like this for example -
+    //
+    // In models/Food.js
+    //
+    // // This function deserialises the input json into a Food object.
+    // static from(food_json) {
+    //   return Object.assign(new Food(), food_json);
+    // }
+    //
+    // Its invocation would be something like -
+    // const food = Food.from(req.body);
+    //
+    // This looks much cleaner in the API function code and avoid duplication all over the place.
     const { food, name, subName, img,
         calories, carbs, protein, totalFat,
         fdGrade, satFat, tranFat, sodium,
@@ -19,13 +69,16 @@ foodRouter.post("/postalldata", async (req, res) => {
         fiber, calcium
     })
 
+    // Missing error handling. What happens when this save() operation fails.
     await addData.save();
+
+    // This should be using the 201 status code. By default it will return 200 which is wrong for
+    // an API which is "posting" (creating) a new resource. 
     res.send({ "message": "Data successfullay added", addData })
 })
 
 
 foodRouter.get("/getallfoods", async (req, res) => {
-
     const dataGet = await foodModel.find();
     // console.log(dataGet);
     res.send({ "message": "get data successfully", dataGet });
@@ -199,6 +252,9 @@ foodRouter.delete("/deletedinnerall", (req, res) => {
     // console.log(req.query.id)
     postFood.deleteMany({ food: "dinner" })
         .then(() => res.json("dinner Deleted"))
+        // 40x statuses are used for client errors not server errors. This should be one of the 50x
+        // errors (mostly a 500 Internal Server Error). 400 is the Bad Request error status. This
+        // usually means that the client sent some bad input in the request which cannot be processed.
         .catch(err => res.status(400).json('Error' + err))
 
 })

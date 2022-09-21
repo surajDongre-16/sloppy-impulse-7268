@@ -1,3 +1,6 @@
+// Code formatting is all over the place. Please use a good code linter to keep code neatly formatted
+// following the proper guidelines to improve readbility.
+
 import React, { useEffect, useState } from 'react'
 import { IoPencilSharp } from "react-icons/io5";
 import style from './Food.module.css'
@@ -34,6 +37,7 @@ function Breakfast({ setTrick }) {
 
     const autoComepeleteRef = useRef();
 
+    // Good use of the ?. operator and lowercase string checks.
     const searching = allData?.filter(option => option.name.toLowerCase().includes(value.toLowerCase()))
 
 
@@ -55,9 +59,16 @@ function Breakfast({ setTrick }) {
         })
             .then((res) => res.json())
             .then((res) => {
+                // Unhelpful logging statement.
                 console.log(res.breakfast)
                 setAllData(res.breakfast)
             })
+            // What purpose is this error log serving? It is not even at the error level.
+            // Having error catch blocks just to log the error isn't a good solution.
+            // Errors should be caught iff it can be handled (retried, recovered from)
+            // or is fatal and should cause the component to crash / reload.
+            // Big web apps never ever have this pattern of catching and just logging the
+            // error.
             .catch((err) => console.log("errrrr", err))
     }
 
@@ -79,6 +90,13 @@ function Breakfast({ setTrick }) {
             },
         })
             .then((res) => res.json())
+            // What if the response is a 20x but not what is expected? POST requests usually expect a 201
+            // status to signify that the request was successful. But what if the server sent a 200 or 204
+            // or some other status code and subsequently the response body didn't have what was expected
+            // here. All the API calls just magically assume that things work correctly all the time and
+            // there will be no failures. It is missing all forms of validation of the response returned.
+            // This is the biggest cause of failures and crashes in code (doesn't matter if it is frontend
+            // or backend). Always validate the response returned from an API call.
             .then((res) => {
                 console.log("added statuss" + res)
                 getPostBreakData();

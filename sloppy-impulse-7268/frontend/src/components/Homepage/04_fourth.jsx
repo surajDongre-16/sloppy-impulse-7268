@@ -3,6 +3,7 @@ import { Box, Heading, Grid, Image, Text, Button } from "@chakra-ui/react";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { v4 as uuidv4 } from "uuid";
 
+// Very unintuitive name. Reader gets no idea what FourthComponent is expected to do or what purpose it serves.
 const FourthComponent = () => {
   return (
     <Box as="section" roundedBottom="100rem 5rem" mb={"-20px"}>
@@ -143,6 +144,14 @@ const FourthComponent = () => {
 
 export default FourthComponent;
 
+// Having data hardcoded like this and directly referenced using this variable makes refactoring this
+// difficult when data is actually fetched from a real database. The component should instead, always
+// rely on some function to return the list of data items. It is upto the function how to return it.
+// Initially it can be a hardcoded array but later on devs can add business logic to fetch it from
+// the database or some local cache. The advantage of this approach is that, it keeps the component
+// code separate from the data layer and will not involve touching the JSX at all. The component really
+// doesn't care where the data comes from. This keeps newer changes localised and prevents them from
+// bleeding into previous changes.
 const counterData = {
   heading: "Top Rated Calorie Counter App",
   description:

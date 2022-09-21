@@ -133,6 +133,10 @@ const Navbar = () => {
                                   </MenuItem>
                                 </Link>
                               ) : (
+                                // This statement has indentation level of 15. This is a lot. The indentation
+                                // basically takes up more than a third of the viewing screen. Not a good
+                                // reading experience at all. Should avoid writing such code and think of ways
+                                // to prevent so many identation levels.
                                 <MenuItem
                                   key={uuidv4()}
                                   rounded="5px"
