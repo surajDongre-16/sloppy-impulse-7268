@@ -68,11 +68,24 @@ export default function Signup() {
       },
     })
       .then((res) => {
-        // alert("SignUp successful");
+        toast({
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
         navigate("/signin");
       })
       .catch((err) => {
-        alert("something went wrong");
+        toast({
+          title: "Signup failed.",
+          description: "We are unable to create your account.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+        console.log("Error in Singup page", err);
       });
   };
 
@@ -90,7 +103,7 @@ export default function Signup() {
           position={"absolute"}
         />
         {count === 0 ? (
-          <Stack maxW={"100%"} py={20} border='1px solid' >
+          <Stack maxW={"100%"} py={20} border="1px solid">
             <Box
               maxW={"100%"}
               rounded={"4%"}
@@ -99,9 +112,7 @@ export default function Signup() {
               margin={"auto"}
               bg="white"
             >
-              <Heading
-                className={styles.heading}
-              >
+              <Heading className={styles.heading}>
                 Sign Up: Your Weight plan
               </Heading>
               <Stack spacing={59} px={100}>
@@ -316,13 +327,6 @@ export default function Signup() {
                   width={"70%"}
                   onClick={() => {
                     handleSubmit();
-                    toast({
-                      title: "Account created.",
-                      description: "We've created your account for you.",
-                      status: "success",
-                      duration: 5000,
-                      isClosable: true,
-                    });
                   }}
                 >
                   NEXT
