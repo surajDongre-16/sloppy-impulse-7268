@@ -1,3 +1,2 @@
-# Node modules are still in the git repo. This is an absolute path not a relative path.
-/node_modules
+node_modules/
 .env
