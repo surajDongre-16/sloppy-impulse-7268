@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const authentication = (req, res, next) => {
     // Such logging messages don't help. I'm guessing it was added for debugging purposes but never removed.
-    console.log(req.headers,"reqHead")
+    // console.log(req.headers,"reqHead")
     if(!req.headers.authorization){
         // This is not a good way to return error responses. APIs should conform to REST principles.
         // All error response should be formatted in a certain way so that the client knows what to expect.
@@ -21,7 +21,7 @@ const authentication = (req, res, next) => {
       if (err) {
         return res.send("Please login againn");
       }
-      console.log(decoded);
+      // console.log(decoded);
       // Instead of adding the requesting user's information to the body, it should be added on a new
       // 'user' field on the request so it does not interfere with the request body.
       req.body.email = decoded.email;
