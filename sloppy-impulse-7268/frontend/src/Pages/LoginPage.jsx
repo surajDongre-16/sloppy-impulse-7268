@@ -49,15 +49,28 @@ export default function LoginPage() {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res, "login res");
+        // console.log(res, "login res");
         const { id } = res;
-        console.log(id, "d");
-        // alert("Login Success");
+        // console.log(id, "d");
+        toast({
+          title: "Login Succesful.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
         localStorage.setItem("token", res.token);
-       
+
         navigate(`/dashboard/${id}`);
       })
-      .catch((err) => alert("Login Failed"));
+      .catch((err) => {
+        toast({
+          title: "Login Failed.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+        console.log("Error from login page", err);
+      });
   };
 
   const handleClc = () => {
@@ -125,7 +138,7 @@ export default function LoginPage() {
                   <InputGroup>
                     <Input
                       type={"text"}
-                      placeHolder={"User Name"}
+                      placeholder={"User email"}
                       padding={7}
                       fontSize={"1.1rem"}
                       borderTop={"2px solid"}
@@ -142,7 +155,7 @@ export default function LoginPage() {
                   <InputGroup>
                     <Input
                       type={showPassword ? "text" : "password"}
-                      placeHolder={"Your password"}
+                      placeholder={"User password"}
                       padding={7}
                       fontSize={"1.1rem"}
                       borderTop={"2px solid"}
@@ -185,13 +198,7 @@ export default function LoginPage() {
                     px={12}
                     fontSize={"1.2rem"}
                     onClick={() => {
-                      handleSubmit()
-                       toast({
-                         title: "Login Succesful.",
-                         status: "success",
-                         duration: 3000,
-                         isClosable: true,
-                       });
+                      handleSubmit();
                     }}
                   >
                     SIGN IN

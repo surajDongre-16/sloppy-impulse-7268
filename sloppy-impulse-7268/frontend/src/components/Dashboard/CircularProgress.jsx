@@ -26,8 +26,6 @@ const CircularProgressBar = ({x}) => {
         <CircularProgressLabel fontSize={"1.2rem"} color="gray" mt="1rem">
           Left
         </CircularProgressLabel>
-        {/* Using hardcoded magic numbers like 2173 (with no comments event) is not a good pattern.
-        This usually leads to layouts which aren't correctly responsive. */}
         <CircularProgressLabel fontSize={"1.5rem"} color="gray" mt="4rem">
           {x > 0 ? 2173 - x : "2,173"}
         </CircularProgressLabel>

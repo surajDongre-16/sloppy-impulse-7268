@@ -3,23 +3,11 @@ import styles from "./Analysis.module.css";
 import DatePicker from "react-horizontal-datepicker";
 import {
   Progress,
-  Stack,
-  HStack,
-  VStack,
   Box,
   Text,
-  Heading,
   Button,
   Image,
   Flex,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -29,8 +17,6 @@ import {
   TabList,
   TabPanels,
   Tab,
-  TabPanel,
-  Spacer,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -82,7 +68,7 @@ const AnalysisPage = ({
             borderBottom="1px"
             borderColor="#D3D3D3"
             onClick={toggle}
-          // {showDaily ? <DailyAnalysis/> : null}
+            // {showDaily ? <DailyAnalysis/> : null}
           >
             {title}
             <Flex>
@@ -239,11 +225,12 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
-
                     onClick={summaryToggle}
                   >
                     {sumtitle}
-                    <Text textAlign="left" marginLeft="60px">Summary & Foods</Text>
+                    <Text textAlign="left" marginLeft="60px">
+                      Summary & Foods
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -254,7 +241,9 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="60px">Weight Loss</Text>
+                    <Text textAlign="left" marginLeft="60px">
+                      Weight Loss
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -264,7 +253,9 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="60px">Meal Analysis</Text>
+                    <Text textAlign="left" marginLeft="60px">
+                      Meal Analysis
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -274,7 +265,9 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="60px">Cals From Nutrients</Text>
+                    <Text textAlign="left" marginLeft="60px">
+                      Cals From Nutrients
+                    </Text>
                   </Box>
                 </AccordionPanel>
               </AccordionItem>
@@ -307,9 +300,11 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
-                  // onClick={summaryToggle}
+                    // onClick={summaryToggle}
                   >
-                    <Text textAlign="left" marginLeft="70px">Total Carbs 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">
+                      Total Carbs 🔒
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -319,7 +314,9 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="70px">Protein 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">
+                      Protein 🔒
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -329,7 +326,9 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="70px">Total Fat</Text>
+                    <Text textAlign="left" marginLeft="70px">
+                      Total Fat
+                    </Text>
                   </Box>
                 </AccordionPanel>
               </AccordionItem>
@@ -362,9 +361,11 @@ const AnalysisPage = ({
                     _hover={{ bg: "#CECECE" }}
                     borderBottom="1px"
                     borderColor="#D3D3D3"
-                  // onClick={summaryToggle}
+                    // onClick={summaryToggle}
                   >
-                    <Text textAlign="left" marginLeft="70px">Saturated Fat 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">
+                      Saturated Fat 🔒
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -374,7 +375,9 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="70px">Trans Fat 🔒</Text>
+                    <Text textAlign="left" marginLeft="70px">
+                      Trans Fat 🔒
+                    </Text>
                   </Box>
                   <Box
                     as="button"
@@ -384,14 +387,14 @@ const AnalysisPage = ({
                     borderBottom="1px"
                     borderColor="#D3D3D3"
                   >
-                    <Text textAlign="left" marginLeft="70px" >Sodium</Text>
+                    <Text textAlign="left" marginLeft="70px">
+                      Sodium
+                    </Text>
                   </Box>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
           </Box>
-
-
 
           <Box
             as="button"
@@ -523,7 +526,13 @@ const AnalysisPage = ({
                 </Text>
                 <hr></hr>
               </Box>
-              <Text margin="10px" marginLeft="20px" fontSize="sm" color="green" textAlign="left">
+              <Text
+                margin="10px"
+                marginLeft="20px"
+                fontSize="sm"
+                color="green"
+                textAlign="left"
+              >
                 Am I on Target Today?
               </Text>
 
@@ -557,9 +566,8 @@ const AnalysisPage = ({
                 _hover={{ bg: "#CECECE" }}
                 margin="10px"
                 marginLeft="-72%"
-
               >
-                <Text fontWeight="semibold" color="#3c9ec3" >
+                <Text fontWeight="semibold" color="#3c9ec3">
                   CALORIES ANALYSIS
                 </Text>
               </Box>
@@ -595,8 +603,8 @@ const AnalysisPage = ({
           )}
 
           {showMyAdvice && (
-            <Box id={styles.myAdvice} >
-              <Text fontSize="xl" fontWeight="semibold" marginLeft="-82%"  >
+            <Box id={styles.myAdvice}>
+              <Text fontSize="xl" fontWeight="semibold" marginLeft="-82%">
                 My Advice
               </Text>
               <Box
@@ -770,7 +778,7 @@ const AnalysisPage = ({
             <Box id={styles.Summary}>
               {sumchild}
               <Tabs isFitted variant="line" colorScheme="twitter">
-                <TabList >
+                <TabList>
                   <Tab>Summary & Foods</Tab>
                   <Tab>Weight Loss</Tab>
                   <Tab>Meal Analysis</Tab>

@@ -9,8 +9,6 @@ const Box6 = () => {
     <Box m="1.5rem auto" w="33rem" >
       <Flex alignItems={"center"}>
         <Image
-          // If the image (any asset for that matter) is static, it is better to render it from local
-          // directories for lower latency
           src="https://s3.amazonaws.com/img.mynetdiary.com/blog/testing-your-blood-sugar.jpeg"
           alt="logo1"
           w="9rem"

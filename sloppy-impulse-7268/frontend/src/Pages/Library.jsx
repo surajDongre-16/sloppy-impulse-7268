@@ -8,12 +8,7 @@ const Library = () => {
   return (
     <>
       <Navbar />
-      {/* Use CSS for adding space not br */}
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <Box display="flex">
+      <Box display="flex" mt='8rem' >
         <Box h="auto" w="25rem">
           <Menus />
         </Box>

@@ -3,7 +3,6 @@ import {
   Flex,
   HStack,
   Image,
-  List,
   ListItem,
   Text,
   UnorderedList,
@@ -13,10 +12,6 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 import styles from "../../Styles/DashboardNav.module.css";
 
-// Such strings should be declared in one place in a separate class or js file.
-// For example, see - https://github.com/mozilla/addons-frontend/blob/master/src/amo/constants.js
-// This makes managing static text easier. It also becomes easier to add support l10n and i18n
-// so the app can render text for different languages (like rtl languages).
 const l1 = [
   { id: 1, text: "Success Stories" },
   { id: 2, text: "Efficacy report" },
