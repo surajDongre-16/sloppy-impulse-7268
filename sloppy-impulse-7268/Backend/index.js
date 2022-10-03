@@ -12,8 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/weight", weightRoutes);
 app.use("/user", userController);
+app.use("/weight", weightRoutes);
+
 app.use(authentication);
 app.use("/food", foodRouter);
 

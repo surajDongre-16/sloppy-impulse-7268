@@ -14,12 +14,16 @@ const authentication = (req, res, next) => {
         // res.status(401).send({ error: "Authorization header was missing" });
         // Same applies below. Using the same error message doesn't help identify what the client end
         // issue was.
-        return res.send("Please login again")
+        return res
+          .status(401)
+          .send({ error: "Authorization header was missing" });
     }
     const user_token = req.headers.authorization.split(" ")[1]
     jwt.verify(user_token, process.env.SECRETKEY, function (err, decoded) {
       if (err) {
-        return res.send("Please login againn");
+        return res
+          .status(401)
+          .send({ error: "Authorization header was missing" });
       }
       // console.log(decoded);
       // Instead of adding the requesting user's information to the body, it should be added on a new
