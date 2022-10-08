@@ -49,7 +49,7 @@ export default function LoginPage() {
     )
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res, "login res");
+        console.log(res, "login res");
         const { id } = res;
         // console.log(id, "d");
         toast({
