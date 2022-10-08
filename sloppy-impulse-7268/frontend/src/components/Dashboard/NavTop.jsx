@@ -94,7 +94,7 @@ const NavTop = ({x}) => {
         <Flex flexDirection={"column"}>
           <Text color="white">Calorie Budget</Text>
           <Text color="yellow" fontSize={"1.5rem"}>
-            2,170
+            2,173
           </Text>
         </Flex>
         <Flex flexDirection={"column"}>
